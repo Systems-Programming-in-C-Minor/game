@@ -44,6 +44,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-build/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test/cmake_install.cmake")
 endif()
 

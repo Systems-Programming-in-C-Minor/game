@@ -14,8 +14,23 @@
 # EXTERNAL cache entries
 ########################
 
+//Build the Box2D documentation
+BOX2D_BUILD_DOCS:BOOL=OFF
+
+//Build the Box2D testbed
+BOX2D_BUILD_TESTBED:BOOL=OFF
+
+//Build the Box2D unit tests
+BOX2D_BUILD_UNIT_TESTS:BOOL=OFF
+
+//Override Box2D settings with b2UserSettings.h
+BOX2D_USER_SETTINGS:BOOL=OFF
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
+
+//Build Box2D as a shared library
+BUILD_SHARED_LIBS:BOOL=OFF
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/addr2line.exe
@@ -205,13 +220,13 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=game
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=1.12.1
+CMAKE_PROJECT_VERSION:STATIC=2.4.1
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=2
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=12
+CMAKE_PROJECT_VERSION_MINOR:STATIC=4
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_PATCH:STATIC=1
@@ -313,6 +328,10 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_QUIET:BOOL=ON
 
 //When not empty, overrides where to find pre-populated content
+// for box2d
+FETCHCONTENT_SOURCE_DIR_BOX2D:PATH=
+
+//When not empty, overrides where to find pre-populated content
 // for fmt
 FETCHCONTENT_SOURCE_DIR_FMT:PATH=
 
@@ -326,6 +345,9 @@ FETCHCONTENT_SOURCE_DIR_UNENGINE:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of box2d
+FETCHCONTENT_UPDATES_DISCONNECTED_BOX2D:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of fmt
 FETCHCONTENT_UPDATES_DISCONNECTED_FMT:BOOL=OFF
@@ -402,6 +424,15 @@ SDL2_DIR:PATH=C:/Users/Laero/Programming/cpp/!lib/cmake
 
 //The directory containing a CMake configuration file for SDL2_image.
 SDL2_image_DIR:PATH=C:/Users/Laero/Programming/cpp/!lib/cmake
+
+//Value Computed by CMake
+box2d_BINARY_DIR:STATIC=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-build
+
+//Value Computed by CMake
+box2d_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+box2d_SOURCE_DIR:STATIC=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src
 
 //Value Computed by CMake
 engine-tests_BINARY_DIR:STATIC=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test
@@ -629,7 +660,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -55,6 +55,8 @@ build CMakeFiles/game.dir/src/game.cpp.obj: CXX_COMPILER__game_Debug C$:/Users/L
   INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include
   OBJECT_DIR = CMakeFiles\game.dir
   OBJECT_FILE_DIR = CMakeFiles\game.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\game.dir\game.pdb
+  TARGET_PDB = libgame.pdb
 
 
 # =============================================================================
@@ -69,8 +71,9 @@ build libgame.a: CXX_STATIC_LIBRARY_LINKER__game_Debug CMakeFiles/game.dir/src/g
   OBJECT_DIR = CMakeFiles\game.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\game.dir\game.pdb
   TARGET_FILE = libgame.a
-  TARGET_PDB = game.a.dbg
+  TARGET_PDB = libgame.pdb
 
 
 #############################################
@@ -149,42 +152,88 @@ build install/strip: phony CMakeFiles/install/strip.util
 #############################################
 # Order-only phony target for engine
 
-build cmake_object_order_depends_target_engine: phony || cmake_object_order_depends_target_fmt
+build cmake_object_order_depends_target_engine: phony || cmake_object_order_depends_target_box2d cmake_object_order_depends_target_fmt
 
 build _deps/unengine-build/CMakeFiles/engine.dir/src/color.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/color.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\color.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
   OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
   OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
+
+build _deps/unengine-build/CMakeFiles/engine.dir/src/components/audiosource.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/components/audiosource.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\components\audiosource.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
+  OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src\components
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
 
 build _deps/unengine-build/CMakeFiles/engine.dir/src/components/component.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/components/component.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\components\component.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
   OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
   OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src\components
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
 
 build _deps/unengine-build/CMakeFiles/engine.dir/src/components/sprite.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/components/sprite.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\components\sprite.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
   OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
   OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src\components
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
 
 build _deps/unengine-build/CMakeFiles/engine.dir/src/engine.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/engine.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\engine.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
   OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
   OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
 
 build _deps/unengine-build/CMakeFiles/engine.dir/src/gameobject.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/gameobject.cpp || cmake_object_order_depends_target_engine
   DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\gameobject.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
   OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
   OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
+
+build _deps/unengine-build/CMakeFiles/engine.dir/src/transform.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/transform.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\transform.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
+  OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
+
+build _deps/unengine-build/CMakeFiles/engine.dir/src/uiobject.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/uiobject.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\uiobject.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
+  OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
+
+build _deps/unengine-build/CMakeFiles/engine.dir/src/vector2d.cpp.obj: CXX_COMPILER__engine_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/src/vector2d.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = _deps\unengine-build\CMakeFiles\engine.dir\src\vector2d.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -isystem C:/Users/Laero/Programming/cpp/!lib/cmake/../include
+  OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
+  OBJECT_FILE_DIR = _deps\unengine-build\CMakeFiles\engine.dir\src
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
 
 
 # =============================================================================
@@ -194,13 +243,14 @@ build _deps/unengine-build/CMakeFiles/engine.dir/src/gameobject.cpp.obj: CXX_COM
 #############################################
 # Link the static library _deps\unengine-build\libengine.a
 
-build _deps/unengine-build/libengine.a: CXX_STATIC_LIBRARY_LINKER__engine_Debug _deps/unengine-build/CMakeFiles/engine.dir/src/color.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/components/component.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/components/sprite.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/engine.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/gameobject.cpp.obj || _deps/fmt-build/libfmtd.a
+build _deps/unengine-build/libengine.a: CXX_STATIC_LIBRARY_LINKER__engine_Debug _deps/unengine-build/CMakeFiles/engine.dir/src/color.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/components/audiosource.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/components/component.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/components/sprite.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/engine.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/gameobject.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/transform.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/uiobject.cpp.obj _deps/unengine-build/CMakeFiles/engine.dir/src/vector2d.cpp.obj || _deps/box2d-build/bin/libbox2d.a _deps/fmt-build/libfmtd.a
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = _deps\unengine-build\CMakeFiles\engine.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\unengine-build\CMakeFiles\engine.dir\engine.pdb
   TARGET_FILE = _deps\unengine-build\libengine.a
-  TARGET_PDB = engine.a.dbg
+  TARGET_PDB = _deps\unengine-build\libengine.pdb
 
 
 #############################################
@@ -287,6 +337,8 @@ build _deps/fmt-build/CMakeFiles/fmt.dir/src/format.cc.obj: CXX_COMPILER__fmt_De
   INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include
   OBJECT_DIR = _deps\fmt-build\CMakeFiles\fmt.dir
   OBJECT_FILE_DIR = _deps\fmt-build\CMakeFiles\fmt.dir\src
+  TARGET_COMPILE_PDB = _deps\fmt-build\CMakeFiles\fmt.dir\fmt.pdb
+  TARGET_PDB = _deps\fmt-build\libfmtd.pdb
 
 build _deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.obj: CXX_COMPILER__fmt_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/src/os.cc || cmake_object_order_depends_target_fmt
   DEP_FILE = _deps\fmt-build\CMakeFiles\fmt.dir\src\os.cc.obj.d
@@ -294,6 +346,8 @@ build _deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.obj: CXX_COMPILER__fmt_Debug 
   INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/fmt-src/include
   OBJECT_DIR = _deps\fmt-build\CMakeFiles\fmt.dir
   OBJECT_FILE_DIR = _deps\fmt-build\CMakeFiles\fmt.dir\src
+  TARGET_COMPILE_PDB = _deps\fmt-build\CMakeFiles\fmt.dir\fmt.pdb
+  TARGET_PDB = _deps\fmt-build\libfmtd.pdb
 
 
 # =============================================================================
@@ -308,8 +362,9 @@ build _deps/fmt-build/libfmtd.a: CXX_STATIC_LIBRARY_LINKER__fmt_Debug _deps/fmt-
   OBJECT_DIR = _deps\fmt-build\CMakeFiles\fmt.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\fmt-build\CMakeFiles\fmt.dir\fmt.pdb
   TARGET_FILE = _deps\fmt-build\libfmtd.a
-  TARGET_PDB = fmtd.a.dbg
+  TARGET_PDB = _deps\fmt-build\libfmtd.pdb
 
 
 #############################################
@@ -381,6 +436,577 @@ build _deps/fmt-build/install/strip: phony _deps/fmt-build/CMakeFiles/install/st
 # C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/CMakeLists.txt
 # =============================================================================
 
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/box2d-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/box2d-build/edit_cache: phony _deps/box2d-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/box2d-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\Laero\Programming\cpp\spic-prj\game -BC:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/rebuild_cache: phony _deps/box2d-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/box2d-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/box2d-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/box2d-build/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/install: phony _deps/box2d-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/box2d-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/box2d-build/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/install/local: phony _deps/box2d-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/box2d-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/box2d-build/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/install/strip: phony _deps/box2d-build/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target box2d
+
+
+#############################################
+# Order-only phony target for box2d
+
+build cmake_object_order_depends_target_box2d: phony || _deps/box2d-build/src/CMakeFiles/box2d.dir
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_broad_phase.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_broad_phase.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_broad_phase.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_chain_shape.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_chain_shape.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_chain_shape.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_circle_shape.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_circle_shape.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_circle_shape.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_circle.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_collide_circle.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_collide_circle.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_edge.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_collide_edge.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_collide_edge.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_polygon.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_collide_polygon.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_collide_polygon.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collision.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_collision.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_collision.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_distance.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_distance.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_distance.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_dynamic_tree.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_dynamic_tree.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_dynamic_tree.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_edge_shape.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_edge_shape.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_edge_shape.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_polygon_shape.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_polygon_shape.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_polygon_shape.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_time_of_impact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/collision/b2_time_of_impact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision\b2_time_of_impact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\collision
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_block_allocator.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/common/b2_block_allocator.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\common\b2_block_allocator.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\common
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_draw.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/common/b2_draw.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\common\b2_draw.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\common
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_math.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/common/b2_math.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\common\b2_math.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\common
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_settings.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/common/b2_settings.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\common\b2_settings.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\common
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_stack_allocator.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/common/b2_stack_allocator.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\common\b2_stack_allocator.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\common
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_timer.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/common/b2_timer.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\common\b2_timer.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\common
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_body.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_body.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_body.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_chain_circle_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_chain_circle_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_chain_circle_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_chain_polygon_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_chain_polygon_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_chain_polygon_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_circle_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_circle_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_circle_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact_manager.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_contact_manager.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_contact_manager.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact_solver.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_contact_solver.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_contact_solver.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_distance_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_distance_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_distance_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_edge_circle_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_edge_circle_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_edge_circle_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_edge_polygon_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_edge_polygon_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_edge_polygon_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_fixture.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_fixture.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_fixture.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_friction_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_friction_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_friction_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_gear_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_gear_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_gear_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_island.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_island.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_island.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_motor_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_motor_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_motor_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_mouse_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_mouse_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_mouse_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_polygon_circle_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_polygon_circle_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_polygon_circle_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_polygon_contact.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_polygon_contact.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_polygon_contact.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_prismatic_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_prismatic_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_prismatic_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_pulley_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_pulley_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_pulley_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_revolute_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_revolute_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_revolute_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_weld_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_weld_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_weld_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_wheel_joint.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_wheel_joint.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_wheel_joint.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_world.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_world.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_world.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_world_callbacks.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/dynamics/b2_world_callbacks.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics\b2_world_callbacks.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\dynamics
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+build _deps/box2d-build/src/CMakeFiles/box2d.dir/rope/b2_rope.cpp.obj: CXX_COMPILER__box2d_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/rope/b2_rope.cpp || cmake_object_order_depends_target_box2d
+  DEP_FILE = _deps\box2d-build\src\CMakeFiles\box2d.dir\rope\b2_rope.cpp.obj.d
+  FLAGS = -g -fvisibility=hidden -fno-keep-inline-dllexport -std=c++11
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  OBJECT_FILE_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir\rope
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target box2d
+
+
+#############################################
+# Link the static library _deps\box2d-build\bin\libbox2d.a
+
+build _deps/box2d-build/bin/libbox2d.a: CXX_STATIC_LIBRARY_LINKER__box2d_Debug _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_broad_phase.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_chain_shape.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_circle_shape.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_circle.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_edge.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collide_polygon.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_collision.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_distance.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_dynamic_tree.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_edge_shape.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_polygon_shape.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/collision/b2_time_of_impact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_block_allocator.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_draw.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_math.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_settings.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_stack_allocator.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/common/b2_timer.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_body.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_chain_circle_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_chain_polygon_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_circle_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact_manager.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_contact_solver.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_distance_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_edge_circle_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_edge_polygon_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_fixture.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_friction_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_gear_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_island.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_motor_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_mouse_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_polygon_circle_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_polygon_contact.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_prismatic_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_pulley_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_revolute_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_weld_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_wheel_joint.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_world.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/dynamics/b2_world_callbacks.cpp.obj _deps/box2d-build/src/CMakeFiles/box2d.dir/rope/b2_rope.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps\box2d-build\src\CMakeFiles\box2d.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\box2d-build\src\CMakeFiles\box2d.dir\box2d.pdb
+  TARGET_FILE = _deps\box2d-build\bin\libbox2d.a
+  TARGET_PDB = _deps\box2d-build\bin\libbox2d.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/box2d-build/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build\src && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/box2d-build/src/edit_cache: phony _deps/box2d-build/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/box2d-build/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build\src && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\Laero\Programming\cpp\spic-prj\game -BC:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/src/rebuild_cache: phony _deps/box2d-build/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/box2d-build/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/box2d-build/src/CMakeFiles/install.util: CUSTOM_COMMAND _deps/box2d-build/src/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build\src && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/src/install: phony _deps/box2d-build/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/box2d-build/src/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/box2d-build/src/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build\src && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/src/install/local: phony _deps/box2d-build/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/box2d-build/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/box2d-build/src/all
+  COMMAND = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\box2d-build\src && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/box2d-build/src/install/strip: phony _deps/box2d-build/src/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/CMakeLists.txt
+# =============================================================================
+
 # =============================================================================
 # Object build statements for EXECUTABLE target engine-tests
 
@@ -388,35 +1014,70 @@ build _deps/fmt-build/install/strip: phony _deps/fmt-build/CMakeFiles/install/st
 #############################################
 # Order-only phony target for engine-tests
 
-build cmake_object_order_depends_target_engine-tests: phony || cmake_object_order_depends_target_engine cmake_object_order_depends_target_fmt cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_engine-tests: phony || cmake_object_order_depends_target_box2d cmake_object_order_depends_target_engine cmake_object_order_depends_target_fmt cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/audiosource_tests.cpp.obj: CXX_COMPILER__engine-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/tests/components/audiosource_tests.cpp || cmake_object_order_depends_target_engine-tests
+  DEP_FILE = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\components\audiosource_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
+  OBJECT_FILE_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\components
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
 
 build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/component_tests.cpp.obj: CXX_COMPILER__engine-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/tests/components/component_tests.cpp || cmake_object_order_depends_target_engine-tests
   DEP_FILE = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\components\component_tests.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
   OBJECT_FILE_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\components
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
 
 build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/sprite_tests.cpp.obj: CXX_COMPILER__engine-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/tests/components/sprite_tests.cpp || cmake_object_order_depends_target_engine-tests
   DEP_FILE = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\components\sprite_tests.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
   OBJECT_FILE_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\components
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
 
 build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/engine_test.cpp.obj: CXX_COMPILER__engine-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/tests/engine_test.cpp || cmake_object_order_depends_target_engine-tests
   DEP_FILE = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\engine_test.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
   OBJECT_FILE_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
 
 build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/gameobject_tests.cpp.obj: CXX_COMPILER__engine-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/tests/gameobject_tests.cpp || cmake_object_order_depends_target_engine-tests
   DEP_FILE = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\gameobject_tests.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
   OBJECT_FILE_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
+
+build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/uiobject_tests.cpp.obj: CXX_COMPILER__engine-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/tests/uiobject_tests.cpp || cmake_object_order_depends_target_engine-tests
+  DEP_FILE = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\uiobject_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
+  OBJECT_FILE_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
+
+build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/vector2d_tests.cpp.obj: CXX_COMPILER__engine-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/tests/vector2d_tests.cpp || cmake_object_order_depends_target_engine-tests
+  DEP_FILE = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests\vector2d_tests.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
+  OBJECT_FILE_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\tests
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
 
 
 # =============================================================================
@@ -426,16 +1087,17 @@ build _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/gameobject_tes
 #############################################
 # Link the executable _deps\unengine-build\test\engine-tests.exe
 
-build _deps/unengine-build/test/engine-tests.exe _deps/unengine-build/test/engine-tests[1]_tests.cmake | ${cmake_ninja_workdir}_deps/unengine-build/test/engine-tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__engine-tests_Debug _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/component_tests.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/sprite_tests.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/engine_test.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/gameobject_tests.cpp.obj | lib/libgmock.a lib/libgtest_main.a _deps/unengine-build/libengine.a lib/libgtest.a C$:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2main.lib C$:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2.lib C$:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2_image.lib _deps/fmt-build/libfmtd.a || _deps/fmt-build/libfmtd.a _deps/unengine-build/libengine.a lib/libgmock.a lib/libgtest.a lib/libgtest_main.a
+build _deps/unengine-build/test/engine-tests.exe _deps/unengine-build/test/engine-tests[1]_tests.cmake | ${cmake_ninja_workdir}_deps/unengine-build/test/engine-tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__engine-tests_Debug _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/audiosource_tests.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/component_tests.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/components/sprite_tests.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/engine_test.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/gameobject_tests.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/uiobject_tests.cpp.obj _deps/unengine-build/test/CMakeFiles/engine-tests.dir/tests/vector2d_tests.cpp.obj | lib/libgmock.a lib/libgtest_main.a _deps/box2d-build/bin/libbox2d.a _deps/unengine-build/libengine.a lib/libgtest.a _deps/box2d-build/bin/libbox2d.a C$:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2main.lib C$:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2.lib C$:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2_image.lib _deps/fmt-build/libfmtd.a || _deps/box2d-build/bin/libbox2d.a _deps/fmt-build/libfmtd.a _deps/unengine-build/libengine.a lib/libgmock.a lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
-  LINK_LIBRARIES = lib/libgmock.a  lib/libgtest_main.a  _deps/unengine-build/libengine.a  lib/libgtest.a  C:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2main.lib  C:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2.lib  C:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2_image.lib  _deps/fmt-build/libfmtd.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = lib/libgmock.a  lib/libgtest_main.a  _deps/box2d-build/bin/libbox2d.a  _deps/unengine-build/libengine.a  lib/libgtest.a  _deps/box2d-build/bin/libbox2d.a  C:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2main.lib  C:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2.lib  C:/Users/Laero/Programming/cpp/!lib/cmake/../lib/x64/SDL2_image.lib  _deps/fmt-build/libfmtd.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = _deps\unengine-build\test\CMakeFiles\engine-tests.dir
   POST_BUILD = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\unengine-build\test && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -D TEST_TARGET=engine-tests -D TEST_EXECUTABLE=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test/engine-tests.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=engine-tests_TESTS -D CTEST_FILE=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test/engine-tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/JetBrains/CLion 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GoogleTestAddTests.cmake""
-  PRE_LINK = cd .
+  PRE_LINK = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\_deps\unengine-build\test && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E copy_directory C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/assets C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test/assets && cd C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug"
   RESTAT = 1
+  TARGET_COMPILE_PDB = _deps\unengine-build\test\CMakeFiles\engine-tests.dir\
   TARGET_FILE = _deps\unengine-build\test\engine-tests.exe
   TARGET_IMPLIB = _deps\unengine-build\test\libengine-tests.dll.a
-  TARGET_PDB = engine-tests.exe.dbg
+  TARGET_PDB = _deps\unengine-build\test\engine-tests.pdb
 
 
 #############################################
@@ -592,6 +1254,8 @@ build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.ob
   INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
   OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\src
+  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -606,8 +1270,9 @@ build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug _deps/googletest-bu
   OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgmockpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgmock.a
-  TARGET_PDB = gmock.a.dbg
+  TARGET_PDB = bin\libgmockpdb_debug_postfix-NOTFOUND.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gmock_main
@@ -624,6 +1289,8 @@ build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main
   INCLUDES = -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
   OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src
+  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -638,8 +1305,9 @@ build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug _deps/goo
   OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgmock_main.a
-  TARGET_PDB = gmock_main.a.dbg
+  TARGET_PDB = bin\libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 #############################################
@@ -726,6 +1394,8 @@ build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.ob
   INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
   OBJECT_FILE_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir\src
+  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -740,8 +1410,9 @@ build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug _deps/googletest-bu
   OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgtestpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgtest.a
-  TARGET_PDB = gtest.a.dbg
+  TARGET_PDB = bin\libgtestpdb_debug_postfix-NOTFOUND.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gtest_main
@@ -758,6 +1429,8 @@ build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main
   INCLUDES = -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
   OBJECT_FILE_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\src
+  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -772,8 +1445,9 @@ build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug _deps/goo
   OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = lib\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib\libgtest_main.a
-  TARGET_PDB = gtest_main.a.dbg
+  TARGET_PDB = bin\libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 #############################################
@@ -852,14 +1526,16 @@ build _deps/googletest-build/googletest/install/strip: phony _deps/googletest-bu
 #############################################
 # Order-only phony target for game-tests
 
-build cmake_object_order_depends_target_game-tests: phony || cmake_object_order_depends_target_fmt cmake_object_order_depends_target_game cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+build cmake_object_order_depends_target_game-tests: phony || cmake_object_order_depends_target_box2d cmake_object_order_depends_target_fmt cmake_object_order_depends_target_game cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build test/CMakeFiles/game-tests.dir/tests/game_test.cpp.obj: CXX_COMPILER__game-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/test/tests/game_test.cpp || cmake_object_order_depends_target_game-tests
-  DEP_FILE = test\CMakeFiles\game-tests.dir\tests\game_test.cpp.obj.d
+build test/CMakeFiles/game-tests.dir/tests/game-test.cpp.obj: CXX_COMPILER__game-tests_Debug C$:/Users/Laero/Programming/cpp/spic-prj/game/test/tests/game-test.cpp || cmake_object_order_depends_target_game-tests
+  DEP_FILE = test\CMakeFiles\game-tests.dir\tests\game-test.cpp.obj.d
   FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -IC:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-src/src/../include -IC:/Users/Laero/Programming/cpp/spic-prj/game/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googlemock -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = test\CMakeFiles\game-tests.dir
   OBJECT_FILE_DIR = test\CMakeFiles\game-tests.dir\tests
+  TARGET_COMPILE_PDB = test\CMakeFiles\game-tests.dir\
+  TARGET_PDB = test\game-tests.pdb
 
 
 # =============================================================================
@@ -869,16 +1545,17 @@ build test/CMakeFiles/game-tests.dir/tests/game_test.cpp.obj: CXX_COMPILER__game
 #############################################
 # Link the executable test\game-tests.exe
 
-build test/game-tests.exe test/game-tests[1]_tests.cmake | ${cmake_ninja_workdir}test/game-tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__game-tests_Debug test/CMakeFiles/game-tests.dir/tests/game_test.cpp.obj | lib/libgmock.a lib/libgtest_main.a libgame.a lib/libgtest.a _deps/fmt-build/libfmtd.a || _deps/fmt-build/libfmtd.a lib/libgmock.a lib/libgtest.a lib/libgtest_main.a libgame.a
+build test/game-tests.exe test/game-tests[1]_tests.cmake | ${cmake_ninja_workdir}test/game-tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__game-tests_Debug test/CMakeFiles/game-tests.dir/tests/game-test.cpp.obj | lib/libgmock.a lib/libgtest_main.a _deps/box2d-build/bin/libbox2d.a libgame.a lib/libgtest.a _deps/fmt-build/libfmtd.a || _deps/box2d-build/bin/libbox2d.a _deps/fmt-build/libfmtd.a lib/libgmock.a lib/libgtest.a lib/libgtest_main.a libgame.a
   FLAGS = -g
-  LINK_LIBRARIES = lib/libgmock.a  lib/libgtest_main.a  libgame.a  lib/libgtest.a  -lUnEngine  _deps/fmt-build/libfmtd.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = lib/libgmock.a  lib/libgtest_main.a  _deps/box2d-build/bin/libbox2d.a  libgame.a  lib/libgtest.a  -lUnEngine  _deps/fmt-build/libfmtd.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = test\CMakeFiles\game-tests.dir
   POST_BUILD = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -D TEST_TARGET=game-tests -D TEST_EXECUTABLE=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/test/game-tests.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/test -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=game-tests_TESTS -D CTEST_FILE=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/test/game-tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/JetBrains/CLion 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GoogleTestAddTests.cmake""
-  PRE_LINK = cd .
+  PRE_LINK = cmd.exe /C "cd /D C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E copy_directory C:/Users/Laero/Programming/cpp/spic-prj/game/test/assets C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/test/assets && cd C:\Users\Laero\Programming\cpp\spic-prj\game\cmake-build-debug"
   RESTAT = 1
+  TARGET_COMPILE_PDB = test\CMakeFiles\game-tests.dir\
   TARGET_FILE = test\game-tests.exe
   TARGET_IMPLIB = test\libgame-tests.dll.a
-  TARGET_PDB = game-tests.exe.dbg
+  TARGET_PDB = test\game-tests.pdb
 
 
 #############################################
@@ -948,6 +1625,8 @@ build test/install/strip: phony test/CMakeFiles/install/strip.util
 # =============================================================================
 # Target aliases.
 
+build box2d: phony _deps/box2d-build/bin/libbox2d.a
+
 build engine: phony _deps/unengine-build/libengine.a
 
 build engine-tests: phony _deps/unengine-build/test/engine-tests.exe
@@ -970,6 +1649,8 @@ build gtest: phony lib/libgtest.a
 
 build gtest_main: phony lib/libgtest_main.a
 
+build libbox2d.a: phony _deps/box2d-build/bin/libbox2d.a
+
 build libengine.a: phony _deps/unengine-build/libengine.a
 
 build libfmtd.a: phony _deps/fmt-build/libfmtd.a
@@ -991,6 +1672,20 @@ build libgtest_main.a: phony lib/libgtest_main.a
 # Folder: C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug
 
 build all: phony libgame.a _deps/unengine-build/all test/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-build
+
+build _deps/box2d-build/all: phony _deps/box2d-build/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/box2d-build/src
+
+build _deps/box2d-build/src/all: phony _deps/box2d-build/bin/libbox2d.a
 
 # =============================================================================
 
@@ -1025,7 +1720,7 @@ build _deps/googletest-build/googletest/all: phony lib/libgtest.a lib/libgtest_m
 #############################################
 # Folder: C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build
 
-build _deps/unengine-build/all: phony _deps/unengine-build/libengine.a _deps/fmt-build/all _deps/unengine-build/test/all
+build _deps/unengine-build/all: phony _deps/unengine-build/libengine.a _deps/fmt-build/all _deps/box2d-build/all _deps/unengine-build/test/all
 
 # =============================================================================
 
@@ -1062,14 +1757,14 @@ build C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/cmake.verify_globs | ../CMakeLists.txt ../test/CMakeLists.txt C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseArguments.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FeatureSummary.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindGit.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython/Support.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GoogleTest.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/fmt-src/CMakeLists.txt _deps/fmt-src/support/cmake/JoinPaths.cmake _deps/fmt-src/support/cmake/cxx14.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake _deps/unengine-src/CMakeLists.txt _deps/unengine-src/test/CMakeLists.txt
+build build.ninja: RERUN_CMAKE C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/cmake.verify_globs | ../CMakeLists.txt ../test/CMakeLists.txt C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseArguments.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FeatureSummary.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindGit.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython/Support.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GoogleTest.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/box2d-src/CMakeLists.txt _deps/box2d-src/src/CMakeLists.txt _deps/fmt-src/CMakeLists.txt _deps/fmt-src/support/cmake/JoinPaths.cmake _deps/fmt-src/support/cmake/cxx14.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake _deps/unengine-src/CMakeLists.txt _deps/unengine-src/test/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../test/CMakeLists.txt C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseArguments.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FeatureSummary.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindGit.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython/Support.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GoogleTest.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/fmt-src/CMakeLists.txt _deps/fmt-src/support/cmake/JoinPaths.cmake _deps/fmt-src/support/cmake/cxx14.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake _deps/unengine-src/CMakeLists.txt _deps/unengine-src/test/CMakeLists.txt: phony
+build ../CMakeLists.txt ../test/CMakeLists.txt C$:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/VerifyGlobs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDependentOption.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseArguments.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FeatureSummary.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindGit.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPackageMessage.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/FindPython/Support.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GNUInstallDirs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/GoogleTest.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.1/bin/cmake/win/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2-config.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config-version.cmake C$:/Users/Laero/Programming/cpp/!lib/cmake/sdl2_image-config.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/box2d-src/CMakeLists.txt _deps/box2d-src/src/CMakeLists.txt _deps/fmt-src/CMakeLists.txt _deps/fmt-src/support/cmake/JoinPaths.cmake _deps/fmt-src/support/cmake/cxx14.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake _deps/unengine-src/CMakeLists.txt _deps/unengine-src/test/CMakeLists.txt: phony
 
 
 #############################################

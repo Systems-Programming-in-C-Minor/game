@@ -22,10 +22,11 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/cmake.verify_globs")
 endif()
 
-# HEADER_FILES at cmake-build-debug/_deps/unengine-src/CMakeLists.txt:27 (file)
+# HEADER_FILES at cmake-build-debug/_deps/unengine-src/CMakeLists.txt:36 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/*.hpp")
 set(OLD_GLOB
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/color.hpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/components/audiosource.hpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/components/component.hpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/components/sprite.hpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/engine.hpp"
@@ -39,20 +40,27 @@ set(OLD_GLOB
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/render/irenderer.hpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/render/itexture.hpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/storage/iproperties.hpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/transform.hpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/uiobject.hpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./include/vector2d.hpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
   file(TOUCH_NOCREATE "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/CMakeFiles/cmake.verify_globs")
 endif()
 
-# SOURCE_FILES at cmake-build-debug/_deps/unengine-src/CMakeLists.txt:26 (file)
+# SOURCE_FILES at cmake-build-debug/_deps/unengine-src/CMakeLists.txt:35 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/*.cpp")
 set(OLD_GLOB
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/color.cpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/components/audiosource.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/components/component.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/components/sprite.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/engine.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/gameobject.cpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/transform.cpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/uiobject.cpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/./src/vector2d.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -62,10 +70,13 @@ endif()
 # TEST_SOURCE_FILES at cmake-build-debug/_deps/unengine-src/test/CMakeLists.txt:18 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./*.cpp")
 set(OLD_GLOB
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./tests/components/audiosource_tests.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./tests/components/component_tests.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./tests/components/sprite_tests.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./tests/engine_test.cpp"
   "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./tests/gameobject_tests.cpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./tests/uiobject_tests.cpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src/test/./tests/vector2d_tests.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -88,7 +99,7 @@ endif()
 # TEST_SOURCE_FILES at test/CMakeLists.txt:18 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/Laero/Programming/cpp/spic-prj/game/test/./*.cpp")
 set(OLD_GLOB
-  "C:/Users/Laero/Programming/cpp/spic-prj/game/test/./tests/game_test.cpp"
+  "C:/Users/Laero/Programming/cpp/spic-prj/game/test/./tests/game-test.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
