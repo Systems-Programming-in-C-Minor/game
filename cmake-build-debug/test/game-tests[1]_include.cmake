@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/test/game-tests[1]_tests.cmake")
-  include("C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/test/game-tests[1]_tests.cmake")
-else()
-  add_test(game-tests_NOT_BUILT game-tests_NOT_BUILT)
-endif()
