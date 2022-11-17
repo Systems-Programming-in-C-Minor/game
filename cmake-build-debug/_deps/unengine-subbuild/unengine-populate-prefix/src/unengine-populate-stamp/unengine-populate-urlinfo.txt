@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=C:/Program Files/JetBrains/CLion 2022.2.1/bin/cmake/win/bin/cmake.exe;-P;C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-subbuild/unengine-populate-prefix/src/unengine-populate-stamp/download-unengine-populate.cmake;COMMAND;C:/Program Files/JetBrains/CLion 2022.2.1/bin/cmake/win/bin/cmake.exe;-P;C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-subbuild/unengine-populate-prefix/src/unengine-populate-stamp/verify-unengine-populate.cmake;COMMAND;C:/Program Files/JetBrains/CLion 2022.2.1/bin/cmake/win/bin/cmake.exe;-P;C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-subbuild/unengine-populate-prefix/src/unengine-populate-stamp/extract-unengine-populate.cmake
+source_dir=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-src
+work_dir=C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps
+url(s)=https://github.com/Systems-Programming-in-C-Minor/engine.git
+hash=
+no_extract=
+

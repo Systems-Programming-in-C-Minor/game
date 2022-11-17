@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test/engine-tests[1]_tests.cmake")
+  include("C:/Users/Laero/Programming/cpp/spic-prj/game/cmake-build-debug/_deps/unengine-build/test/engine-tests[1]_tests.cmake")
+else()
+  add_test(engine-tests_NOT_BUILT engine-tests_NOT_BUILT)
+endif()
