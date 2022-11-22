@@ -16,7 +16,7 @@ set(FETCHCONTENT_QUIET FALSE)
 FetchContent_Declare(
         UnEngine
         GIT_REPOSITORY git@github.com:Systems-Programming-in-C-Minor/engine.git
-        GIT_TAG master
+        GIT_TAG origin/master
 )
 
 FetchContent_Declare(
