@@ -43,7 +43,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.7.0
         with:
             ssh-private-key: ${{ secrets.ENGINE_CLONE_KEY }}
-            run: cmake -S . -B build -Werror=dev
+      - run: cmake -S . -B build -Werror=dev
       - name: Build
         run: cmake --build build -j
       - name: Tests
