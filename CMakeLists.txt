@@ -13,11 +13,22 @@ endif ()
 include(FetchContent)
 set(FETCHCONTENT_QUIET FALSE)
 
-FetchContent_Declare(
+if(UNIX)
+    FetchContent_Declare(
+            UnEngine
+            GIT_REPOSITORY git@github.com:Systems-Programming-in-C-Minor/engine.git
+            GIT_TAG origin/master
+    )
+
+else()
+    FetchContent_Declare(
         UnEngine
-        GIT_REPOSITORY git@github.com:Systems-Programming-in-C-Minor/engine.git
+        GIT_REPOSITORY https://github.com/Systems-Programming-in-C-Minor/engine.git
         GIT_TAG origin/master
-)
+    )
+endif()
+
+
 
 FetchContent_Declare(
         fmt
