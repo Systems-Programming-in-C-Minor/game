@@ -1,5 +1,13 @@
 #pragma once
 
+#include "scene.hpp"
 #include <string>
 
-std::string hello();
+class Game {
+public:
+
+    std::string hello();
+    Scene scene();
+
+};
+
