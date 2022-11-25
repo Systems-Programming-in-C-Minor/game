@@ -2,12 +2,13 @@
 
 #include "scene.hpp"
 #include <string>
+#include <vector>
 
 class Game {
 public:
 
     std::string hello();
-    Scene scene();
+    std::vector<Scene> scenes;
 
 };
 
