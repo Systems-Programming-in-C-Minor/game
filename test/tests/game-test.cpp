@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "game.hpp"
 
-TEST(EngineTest, ReturnsHelloWorld) {
-EXPECT_EQ(hello(), "Hello, World!");
+TEST(GameTest, ReturnsHelloWorld) {
+    Game game {};
+    EXPECT_EQ(game.hello(), "Hello, World!");
 }
