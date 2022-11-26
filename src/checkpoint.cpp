@@ -1,6 +1,6 @@
 #include "checkpoint.hpp"
 
-Checkpoint::Checkpoint(bool is_finish_line, Checkpoint *previous_checkpoint) :
+Checkpoint::Checkpoint(const std::string& name, const std::string& tag, const bool is_finish_line, Checkpoint *previous_checkpoint) : GameObject(name, tag),
     _is_finish_line(is_finish_line),
     _previous_checkpoint(previous_checkpoint) {}
 

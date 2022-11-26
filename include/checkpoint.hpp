@@ -1,9 +1,11 @@
 #ifndef GAME_CHECKPOINT_HPP
 #define GAME_CHECKPOINT_HPP
 
-class Checkpoint {
+#include "gameobject.hpp"
+
+class Checkpoint : public GameObject {
 public:
-    Checkpoint(bool is_finish_line, Checkpoint *previous_checkpoint);
+    Checkpoint(const std::string& name, const std::string& tag, const bool is_finish_line, Checkpoint *previous_checkpoint);
     [[nodiscard]] bool get_is_finish_line() const;
     [[nodiscard]] Checkpoint* get_previous_checkpoint() const;
     void set_is_finish_line(bool is_finish_line);
