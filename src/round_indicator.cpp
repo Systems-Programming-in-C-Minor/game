@@ -1,7 +1,6 @@
 #include "round_indicator.hpp"
 
 #include "uiobjects/text.hpp"
-#include "enums/alignment.hpp"
 #include "color.hpp"
 
 GameObject RoundIndicator::get(const std::string& name, const std::string& tag, Car& playerCar) {
