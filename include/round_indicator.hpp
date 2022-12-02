@@ -2,16 +2,11 @@
 #define GAME_ROUND_INDICATOR_HPP
 
 #include "uiobjects/text.hpp"
-#include "gameobject.hpp"
+#include "car.hpp"
 
 class RoundIndicator {
 public:
-    RoundIndicator(const Text& text);
-    [[nodiscard]] Text get_text() const;
-    void set_text(const Text& text);
-//    GameObject get(GameObject& playerCar);
-private:
-    Text _text;
+    GameObject get(const std::string& name, const std::string& tag, Car& playerCar);
 };
 
 #endif //GAME_ROUND_INDICATOR_HPP

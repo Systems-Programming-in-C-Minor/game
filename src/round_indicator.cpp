@@ -1,16 +1,14 @@
 #include "round_indicator.hpp"
 
-RoundIndicator::RoundIndicator(const Text& text) :
-        _text(text) {}
+#include "uiobjects/text.hpp"
+#include "enums/alignment.hpp"
+#include "color.hpp"
 
-Text RoundIndicator::get_text() const {
-    return _text;
+GameObject RoundIndicator::get(const std::string& name, const std::string& tag, Car& playerCar) {
+    GameObject obj(name, tag);
+
+    std::shared_ptr<Text> text = std::make_shared<Text>(name, tag, 10, 10, std::to_string(playerCar.get_current_round()), "Calibri", 10, Alignment::CENTER, Color(0,0,0,0));
+    obj.add_child(text);
+
+    return obj;
 }
-
-void RoundIndicator::set_text(const Text& text) {
-    _text = text;
-}
-
-//GameObject RoundIndicator::get(GameObject &playerCar) {
-//    //TODO
-//}
