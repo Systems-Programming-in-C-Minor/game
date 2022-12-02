@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.23)
 project(game)
 
 option(GAME_TEST "Generate the test target." ON)
-option(GAME_SAMPLE "Generate a sample UnEngine project." ON)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
