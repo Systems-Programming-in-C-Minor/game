@@ -6,7 +6,7 @@
 
 class TrackFactory {
 public:
-    GameObject get(const std::string& name, const std::string& tag, const std::string& sprite_path);
+    static GameObject get(const std::string& name, const std::string& tag, std::string sprite_path);
 };
 
 #endif //GAME_TRACK_FACTORY_HPP
