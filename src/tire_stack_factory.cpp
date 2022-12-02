@@ -1,6 +1,11 @@
 #include "tire_stack_factory.hpp"
 
+#include "transform.hpp"
+
 GameObject TireStackFactory::get(const std::string &name, const std::string &tag, Vector2d &pos, double scale) {
-    return GameObject(name, tag);
-    // TODO: Add transform
+    GameObject obj (name, tag);
+    Transform transform(pos, 0, scale);
+    // TODO: Add transform to GameObject
+
+    return obj;
 }
