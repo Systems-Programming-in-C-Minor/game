@@ -3,6 +3,9 @@
 #include "transform.hpp"
 
 GameObject GuardrailFactory::get(const std::string &name, const std::string &tag, Vector2d& pos, double rotation, double scale) {
-    return GameObject(name, tag);
-    // TODO: Add Transform in gameobject
+    GameObject obj (name, tag);
+    Transform transform(pos, rotation, scale);
+    // TODO: Add transform to GameObject
+
+    return obj;
 }
