@@ -17,6 +17,7 @@ float Car::get_current_speed() const {
 
 void Car::set_current_speed(float speed) {
     _current_speed = speed;
+}
     
 int Car::get_current_round() const {
     return _current_round;
