@@ -11,6 +11,14 @@ void Car::set_sprite_path(std::string sprite_path) {
     _sprite_path = sprite_path;
 }
 
+float Car::get_current_speed() const {
+    return _current_speed;
+}
+
+void Car::set_current_speed(float speed) {
+    _current_speed = speed;
+}
+    
 int Car::get_current_round() const {
     return _current_round;
 }
