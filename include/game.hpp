@@ -1,5 +1,15 @@
 #pragma once
 
+#include "engine.hpp"
 #include <string>
 
-std::string hello();
+class Game {
+public:
+    Engine _engine;
+
+    std::shared_ptr<Scene> _current_scene;
+
+    void start_game();
+    void exit_game();
+};
+
