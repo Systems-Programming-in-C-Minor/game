@@ -1,7 +1,5 @@
 #include <cstdlib>
 #include "game.hpp"
-#include <thread>
-#include <chrono>
 
 int main(int argc, char **argv){
     Game game;
