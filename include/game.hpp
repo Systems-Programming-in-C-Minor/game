@@ -1,14 +1,15 @@
 #pragma once
 
-#include "scene.hpp"
+#include "engine.hpp"
 #include <string>
-#include <vector>
 
 class Game {
 public:
+    Engine _engine;
 
-    std::string hello();
-    std::vector<Scene> scenes;
+    std::shared_ptr<Scene> _current_scene;
 
+    void start_game();
+    void exit_game();
 };
 
