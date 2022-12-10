@@ -8,7 +8,7 @@ std::shared_ptr<Scene> Level1Factory::get() {
     scene->gameobjects
             .push_back(TrackFactory::get("level1-track", "level1", "../assets/tracks/track1.png"));
 
-    scene->gameobjects.push_back(CarFactory::playerCar("player-car", "car", "../assets/cars/red_car.png", scene->get_event_manager()));
+    scene->gameobjects.push_back(CarFactory::playerCar("player-car", "car", "../assets/cars/red_car.png", scene));
 
     return scene;
 }

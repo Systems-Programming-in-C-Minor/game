@@ -10,7 +10,7 @@ public:
     static std::shared_ptr<Car> aiCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
 
     static std::shared_ptr<Car>
-    playerCar(const std::string &name, const std::string &tag, const std::string &sprite_path, EventManager &event_manager);
+    playerCar(const std::string &name, const std::string &tag, const std::string &sprite_path, const std::shared_ptr<Scene>& scene);
 
     static std::shared_ptr<Car>
     clientCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
