@@ -6,11 +6,17 @@
 
 class CarFactory {
 public:
-    Car aiCar(const std::string& name, const std::string& tag, const std::string sprite_path);
-    Car playerCar(const std::string& name, const std::string& tag, const std::string sprite_path);
-    Car clientCar(const std::string& name, const std::string& tag, const std::string sprite_path);
+    static std::shared_ptr<Car> aiCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
+
+    static std::shared_ptr<Car>
+    playerCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
+
+    static std::shared_ptr<Car>
+    clientCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
+
 protected:
-    Car baseCar(const std::string& name, const std::string& tag, const std::string sprite_path);
+    static std::shared_ptr<Car>
+    baseCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
 };
 
 #endif //GAME_CAR_FACTORY_HPP
