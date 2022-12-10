@@ -1,6 +1,6 @@
 #include "levels/level1_factory.hpp"
 #include "track_factory.hpp"
-#include "car_factory.hpp"
+#include "car/car_factory.hpp"
 
 std::shared_ptr<Scene> Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>();

@@ -2,7 +2,7 @@
 #define GAME_ROUND_INDICATOR_HPP
 
 #include "uiobjects/text.hpp"
-#include "car.hpp"
+#include "car/car.hpp"
 
 class RoundIndicator {
 public:
