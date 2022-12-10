@@ -3,13 +3,14 @@
 
 #include "car.hpp"
 #include "string"
+#include "managers/event_manager.hpp"
 
 class CarFactory {
 public:
     static std::shared_ptr<Car> aiCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
 
     static std::shared_ptr<Car>
-    playerCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
+    playerCar(const std::string &name, const std::string &tag, const std::string &sprite_path, EventManager &event_manager);
 
     static std::shared_ptr<Car>
     clientCar(const std::string &name, const std::string &tag, const std::string &sprite_path);
