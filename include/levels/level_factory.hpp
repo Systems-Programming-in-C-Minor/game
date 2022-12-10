@@ -1,12 +1,13 @@
-#ifndef GAME_LEVELFACTORY_HPP
-#define GAME_LEVELFACTORY_HPP
 
-#include "scene.hpp"
+#ifndef GAME_LEVEL_FACTORY_HPP
+#define GAME_LEVEL_FACTORY_HPP
+
+#include <scene.hpp>
 
 class LevelFactory {
-    Scene get_level1();
+public:
+    virtual std::shared_ptr<Scene> get() = 0;
 
-    Scene get_level2();
 };
 
-#endif //GAME_LEVELFACTORY_HPP
+#endif //GAME_LEVEL_FACTORY_HPP
