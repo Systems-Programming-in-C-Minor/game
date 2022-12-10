@@ -21,7 +21,10 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(engine)
 
-add_executable(${PROJECT_NAME} ./src/game.cpp)
+file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS ./src/*.cpp)
+file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS ./include/*.hpp)
+
+add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})
 target_include_directories(game PUBLIC include)
 
 target_link_libraries(game PRIVATE
