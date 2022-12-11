@@ -22,25 +22,18 @@ enum SteerState {
 class PlayerCarBehaviour : public Component, public KeyListener, public ITickable {
 
 private:
-    const float max_speed_forward = 1.f;
-    const float max_speed_backwards = -1.f;
-    const float max_drive_force = 1.f;
+    const float max_speed_forward = 4.f;
+    const float max_speed_backwards = -2.f;
+    const float max_drive_force = 3.8f;
     const float current_traction = 1.f;
-    const float steer_torque = 5.f;
-    const float steer_torque_offset = 2.f;
     const float max_lateral_impulse = 1.f;
     const float drift_friction = 1.f;
     const float angular_friction = 1.f;
-    const float drag_modifier = 1.f;
-
-    DriveState drive_state = NeutralDrive;
-    SteerState steer_state = NeutralSteer;
+    const float drag_modifier = 8.f;
 
     void friction();
 
-    void drive();
-
-    void turn();
+    void drive(float desired_speed);
 
 public:
     explicit PlayerCarBehaviour(EventManager &event_manager);

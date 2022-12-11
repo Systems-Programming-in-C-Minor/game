@@ -7,13 +7,10 @@ PlayerCarBehaviour::PlayerCarBehaviour(EventManager &event_manager) : KeyListene
 
 void PlayerCarBehaviour::tick(GameObject &object) {
     friction();
-    drive();
-    turn();
 }
 
 void PlayerCarBehaviour::friction() {
     auto &body = *game_object->get_component<RigidBody>();
-
 
     //calculate the counter lateral impulse based on drift parameters
     Vector2d impulse = Vector2d{body.get_mass() * -body.get_lateral_velocity().x,
@@ -38,17 +35,11 @@ void PlayerCarBehaviour::friction() {
                               currentForwardNormal.y * current_traction * dragForceMagnitude}, body.get_world_center());
 }
 
-void PlayerCarBehaviour::drive() {
+void PlayerCarBehaviour::drive(float desired_speed) {
     auto &body = *game_object->get_component<RigidBody>();
 
     //find current speed in forward direction
     float current_speed = body.get_current_speed();
-
-    float desired_speed = 0.f;
-    if (drive_state == Forward)
-        desired_speed = max_speed_forward;
-    if (drive_state == Backward)
-        desired_speed = max_speed_backwards;
 
     //apply necessary force
     float force = (desired_speed > current_speed) ? max_drive_force : -max_drive_force;
@@ -59,40 +50,8 @@ void PlayerCarBehaviour::drive() {
     }
 }
 
-void PlayerCarBehaviour::turn() {
-    float desiredTorque = 0;
-    // set our torque
-    float torque = steer_torque + steer_torque_offset;
-    if (steer_state == Left)
-        desiredTorque = torque;
-    if (steer_state == Right)
-        desiredTorque = -torque;
-
-    // reverse the torque if we are going backwards
-    if (drive_state == Backward)
-        desiredTorque = -desiredTorque;
-
-    game_object->get_component<RigidBody>()->apply_torque(desiredTorque);
-}
-
 void PlayerCarBehaviour::on_key_pressed(const KeyPressedEvent &event) {
     switch (event.key) {
-        case W: {
-            drive_state = Forward;
-            break;
-        }
-        case S: {
-            drive_state = Backward;
-            break;
-        }
-        case A: {
-            steer_state = Left;
-            break;
-        }
-        case D: {
-            steer_state = Right;
-            break;
-        }
         case EQUAL:
             game_object->transform.set_scale(game_object->transform.get_scale() + 0.01f);
             break;
@@ -103,7 +62,24 @@ void PlayerCarBehaviour::on_key_pressed(const KeyPressedEvent &event) {
 }
 
 void PlayerCarBehaviour::on_key_hold(const KeyHoldEvent &event) {
+    auto current_speed = game_object->get_component<RigidBody>()->get_current_speed();
+    auto turn_rate = current_speed / max_speed_forward * 0.08f;
+
     switch (event.key) {
+        case W: {
+            drive(max_speed_forward);
+            break;
+        }
+        case S: {
+            drive(max_speed_backwards);
+            break;
+        }
+        case A:
+            game_object->transform.set_angle(game_object->transform.get_angle() + turn_rate);
+            break;
+        case D:
+            game_object->transform.set_angle(game_object->transform.get_angle() - turn_rate);
+            break;
         case UP: {
             Vector2d pos_up{game_object->transform.get_position().x,
                             game_object->transform.get_position().y + 0.01f};
@@ -128,36 +104,7 @@ void PlayerCarBehaviour::on_key_hold(const KeyHoldEvent &event) {
             game_object->transform.set_position(pos_right);
             break;
         }
-        case Z:
-            game_object->transform.set_angle(game_object->transform.get_angle() + 0.01f);
-            break;
-        case X:
-            game_object->transform.set_angle(game_object->transform.get_angle() - 0.01f);
-            break;
     }
 }
 
-void PlayerCarBehaviour::on_key_released(const KeyReleasedEvent &event) {
-    switch (event.key) {
-        case W: {
-            if (drive_state == Forward)
-                drive_state = NeutralDrive;
-            break;
-        }
-        case S: {
-            if (drive_state == Backward)
-                drive_state = NeutralDrive;
-            break;
-        }
-        case A: {
-            if (steer_state == Left)
-                steer_state = NeutralSteer;
-            break;
-        }
-        case D: {
-            if (steer_state == Right)
-                steer_state = NeutralSteer;
-            break;
-        }
-    }
-}
+void PlayerCarBehaviour::on_key_released(const KeyReleasedEvent &event) {}
