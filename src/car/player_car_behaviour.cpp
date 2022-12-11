@@ -62,8 +62,7 @@ void PlayerCarBehaviour::on_key_pressed(const KeyPressedEvent &event) {
 }
 
 void PlayerCarBehaviour::on_key_hold(const KeyHoldEvent &event) {
-    auto current_speed = game_object->get_component<RigidBody>()->get_current_speed();
-    auto turn_rate = current_speed / max_speed_forward * 0.08f;
+    auto &body = *game_object->get_component<RigidBody>();
 
     switch (event.key) {
         case W: {
@@ -74,12 +73,14 @@ void PlayerCarBehaviour::on_key_hold(const KeyHoldEvent &event) {
             drive(max_speed_backwards);
             break;
         }
-        case A:
-            game_object->transform.set_angle(game_object->transform.get_angle() + turn_rate);
+        case A: {
+            body.apply_angular_impulse(steering_impulse);
             break;
-        case D:
-            game_object->transform.set_angle(game_object->transform.get_angle() - turn_rate);
+        }
+        case D: {
+            body.apply_angular_impulse(-steering_impulse);
             break;
+        }
         case UP: {
             Vector2d pos_up{game_object->transform.get_position().x,
                             game_object->transform.get_position().y + 0.01f};

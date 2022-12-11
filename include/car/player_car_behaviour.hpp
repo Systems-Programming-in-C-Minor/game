@@ -30,6 +30,7 @@ private:
     const float drift_friction = 1.f;
     const float angular_friction = 1.f;
     const float drag_modifier = 8.f;
+    const float steering_impulse = 20.f;
 
     void friction();
 
