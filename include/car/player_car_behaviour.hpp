@@ -4,10 +4,13 @@
 
 #include <components/component.hpp>
 #include <listeners/key_listener.hpp>
+#include "interfaces/itickable.hpp"
 
-class PlayerCarBehaviour : public Component, public KeyListener {
+class PlayerCarBehaviour : public Component, public KeyListener, public ITickable {
 public:
     explicit PlayerCarBehaviour(EventManager &event_manager);
+
+    void tick(GameObject &object) override;
 
     void on_key_pressed(const KeyPressedEvent &event) override;
 
