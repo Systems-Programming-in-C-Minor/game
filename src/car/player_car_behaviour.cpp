@@ -13,15 +13,12 @@ void PlayerCarBehaviour::friction() {
     auto &body = *game_object->get_component<RigidBody>();
 
     //calculate the counter lateral impulse based on drift parameters
-    Vector2d impulse = Vector2d{body.get_mass() * -body.get_lateral_velocity().x,
-                                body.get_mass() * -body.get_lateral_velocity().y};
+    Vector2d impulse = body.get_lateral_velocity() * -body.get_mass();
     if (impulse.length() > max_lateral_impulse)
-        impulse = Vector2d{impulse.x * max_lateral_impulse / impulse.length(),
-                           impulse.y * max_lateral_impulse / impulse.length()};
+        impulse = impulse * (max_lateral_impulse / impulse.length());
 
     // apply the impulse
-    body.apply_linear_impulse(Vector2d{impulse.x * drift_friction, impulse.y * drift_friction},
-                              body.get_world_center());
+    body.apply_linear_impulse(impulse * drift_friction, body.get_world_center());
 
     //angular velocity
     body.apply_angular_impulse(angular_friction * body.get_inertia() * -body.get_angular_velocity());
@@ -31,8 +28,7 @@ void PlayerCarBehaviour::friction() {
     float currentForwardSpeed = currentForwardNormal.normalize();
     float dragForceMagnitude = -2 * currentForwardSpeed * drag_modifier;
 
-    body.apply_force(Vector2d{currentForwardNormal.x * current_traction * dragForceMagnitude,
-                              currentForwardNormal.y * current_traction * dragForceMagnitude}, body.get_world_center());
+    body.apply_force(currentForwardNormal * current_traction * dragForceMagnitude, body.get_world_center());
 }
 
 void PlayerCarBehaviour::drive(float desired_speed) {
@@ -44,8 +40,7 @@ void PlayerCarBehaviour::drive(float desired_speed) {
     //apply necessary force
     float force = (desired_speed > current_speed) ? max_drive_force : -max_drive_force;
     if (desired_speed != current_speed) {
-        auto force_vec = Vector2d{body.get_world_vector(Vector2d{0, 1}).x * current_traction * force,
-                                  body.get_world_vector(Vector2d{0, 1}).y * current_traction * force};
+        auto force_vec = body.get_world_vector(Vector2d{0, 1}) * current_traction * force;
         body.apply_force(force_vec, body.get_world_center());
     }
 }
