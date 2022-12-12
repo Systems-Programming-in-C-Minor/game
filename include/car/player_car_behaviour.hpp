@@ -6,19 +6,6 @@
 #include <listeners/key_listener.hpp>
 #include "interfaces/itickable.hpp"
 
-enum DriveState {
-    NeutralDrive,
-    Forward,
-    Backward,
-};
-
-
-enum SteerState {
-    NeutralSteer,
-    Right,
-    Left
-};
-
 class PlayerCarBehaviour : public Component, public KeyListener, public ITickable {
 
 private:

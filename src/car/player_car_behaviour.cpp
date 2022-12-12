@@ -1,7 +1,5 @@
 #include "car/player_car_behaviour.hpp"
-#include "../../cmake-build-debug/_deps/fmt-src/include/fmt/core.h"
 #include <gameobject.hpp>
-#include <cmath>
 
 PlayerCarBehaviour::PlayerCarBehaviour(EventManager &event_manager) : KeyListener(event_manager) {}
 
