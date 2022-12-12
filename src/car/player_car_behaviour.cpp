@@ -15,8 +15,6 @@ void PlayerCarBehaviour::on_key_pressed(const KeyPressedEvent &event) {
 }
 
 void PlayerCarBehaviour::on_key_hold(const KeyHoldEvent &event) {
-    auto &body = *game_object->get_component<RigidBody>();
-
     switch (event.key) {
         case W: {
             drive_forwards();
@@ -32,6 +30,10 @@ void PlayerCarBehaviour::on_key_hold(const KeyHoldEvent &event) {
         }
         case D: {
             turn_right();
+            break;
+        }
+        case SPACE: {
+            brake();
             break;
         }
         case UP: {
