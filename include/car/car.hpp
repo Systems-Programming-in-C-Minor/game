@@ -6,7 +6,7 @@
 
 class Car : public GameObject {
 public:
-    Car(const std::string &name, const std::string &tag, std::string sprite_path, const std::shared_ptr<Scene>& scene);
+    Car(const std::string &name, const std::string &tag, std::string sprite_path, const std::shared_ptr<Scene>& scene, const int order_in_layer = 10);
 
     [[nodiscard]] float get_current_speed() const;
 
