@@ -11,6 +11,6 @@ public:
     std::shared_ptr<Scene> _current_scene;
 
     void start_game();
-    void exit_game();
+    void exit_game() const;
 };
 

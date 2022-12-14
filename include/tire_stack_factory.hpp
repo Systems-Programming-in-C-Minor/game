@@ -7,7 +7,7 @@
 
 class TireStackFactory {
 public:
-    GameObject get(const std::string& name, const std::string& tag, Vector2d& pos, float scale);
+    static std::shared_ptr<GameObject> get(const std::string& name, const std::string& tag, Vector2d& pos, float scale);
 };
 
 #endif //GAME_TIRE_STACK_FACTORY_HPP
