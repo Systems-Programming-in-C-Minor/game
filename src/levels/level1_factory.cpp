@@ -14,33 +14,78 @@ std::shared_ptr<Scene> Level1Factory::get() {
     scene->gameobjects.push_back(CarFactory::playerCar("player-car", "car", "../assets/cars/red_car.png", scene));
 
 
-    std::vector<Vector2d> checkpoint_positions;
-    {
-        checkpoint_positions.emplace_back(-13.f, 32.f);
-        checkpoint_positions.emplace_back(-65.f, 38.f);
-        checkpoint_positions.emplace_back(-72.f, 62.f);
-        checkpoint_positions.emplace_back(-52.f, 73.f);
-        checkpoint_positions.emplace_back(64.f, 73.f);
-        checkpoint_positions.emplace_back(77.f, 57.f);
-        checkpoint_positions.emplace_back(22.f, 37.f);
-        checkpoint_positions.emplace_back(16.f, -34.f);
-        checkpoint_positions.emplace_back(49.f, -39.f);
-        checkpoint_positions.emplace_back(34.f, 18.f);
-        checkpoint_positions.emplace_back(72.f, 20.f);
-        checkpoint_positions.emplace_back(73.f, -66.f);
-        checkpoint_positions.emplace_back(-60.f, -72.f);
-        checkpoint_positions.emplace_back(-74.f, -53.f);
-        checkpoint_positions.emplace_back(-60.f, -34.f);
-        checkpoint_positions.emplace_back(-10.f, -6.f);
-    }
+    const std::vector<CheckpointDef> check_pos{
+            CheckpointDef{Vector2d{9.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{0.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{-10.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{-20.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{-30.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{-40.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{-52.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{-70.f, -56.f}, 30.f, 0.f},
+            CheckpointDef{Vector2d{-55.f, -26.f}, 40.f, -45.f},
+            CheckpointDef{Vector2d{-18.f, -8.f}, 30.f, -45.f},
+            CheckpointDef{Vector2d{-7.f, 10.f}, 22.f, 0.f},
+            CheckpointDef{Vector2d{-7.f, 16.f}, 22.f, 0.f},
+            CheckpointDef{Vector2d{-18.f, 36.f}, 35.f, 60.f},
+            CheckpointDef{Vector2d{-52.f, 36.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{-65.f, 38.f}, 40.f, 45.f},
+            CheckpointDef{Vector2d{-69.f, 50.f}, 32.f, 0.f},
+            CheckpointDef{Vector2d{-69.f, 62.f}, 32.f, 0.f},
+            CheckpointDef{Vector2d{-52.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{-40.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{-30.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{-20.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{-10.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{0.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{10.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{20.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{30.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{40.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{50.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{58.f, 73.f}, 23.f, 90.f},
+            CheckpointDef{Vector2d{74.f, 62.f}, 30.f, 0.f},
+            CheckpointDef{Vector2d{58.f, 48.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{48.f, 48.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{38.f, 48.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{20.f, 34.f}, 30.f, 0.f},
+            CheckpointDef{Vector2d{16.f, 28.f}, 20.f, 0.f},
+            CheckpointDef{Vector2d{14.f, 24.f}, 18.f, 0.f},
+            CheckpointDef{Vector2d{14.f, 16.f}, 18.f, 0.f},
+            CheckpointDef{Vector2d{14.f, 8.f}, 18.f, 0.f},
+            CheckpointDef{Vector2d{14.f, 0.f}, 18.f, 0.f},
+            CheckpointDef{Vector2d{15.f, -12.f}, 20.f, 0.f},
+            CheckpointDef{Vector2d{16.f, -30.f}, 24.f, 0.f},
+            CheckpointDef{Vector2d{28.f, -46.f}, 30.f, 90.f},
+            CheckpointDef{Vector2d{36.f, -46.f}, 30.f, 90.f},
+            CheckpointDef{Vector2d{51.f, -30.f}, 30.f, 0.f},
+            CheckpointDef{Vector2d{44.f, -12.f}, 32.f, 45.f},
+            CheckpointDef{Vector2d{36.f, 10.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{52.f, 25.f}, 22.f, 90.f},
+            CheckpointDef{Vector2d{72.f, 20.f}, 30.f, 45.f},
+            CheckpointDef{Vector2d{74.f, 6.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{74.f, 0.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{74.f, -20.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{74.f, -20.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{74.f, -30.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{74.f, -40.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{74.f, -50.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{74.f, -60.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{62.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{50.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{40.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{30.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{20.f, -74.f}, 25.f, 90.f},
+            CheckpointDef{Vector2d{10.5f, -74.f}, 25.f, 90.f}
+    };
 
     std::vector<std::shared_ptr<Checkpoint>> checkpoints;
 
-    for (int index = 0; index < checkpoint_positions.size(); index++) {
-        const bool is_finish = index >= checkpoint_positions.size() - 1;
+    for (int index = 0; index < check_pos.size(); index++) {
+        const bool is_finish = index >= check_pos.size() - 1;
         auto previous_checkpoint = checkpoints.empty() ? std::nullopt :
                                    std::make_optional<std::shared_ptr<Checkpoint>>(checkpoints[checkpoints.size() - 1]);
-        auto checkpoint = CheckpointFactory::get(is_finish, previous_checkpoint, checkpoint_positions[index], scene);
+        auto checkpoint = CheckpointFactory::get(is_finish, previous_checkpoint, scene, check_pos[index]);
         checkpoints.emplace_back(checkpoint);
         scene->gameobjects.push_back(checkpoint);
     }
