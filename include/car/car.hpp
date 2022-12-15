@@ -3,18 +3,12 @@
 
 #include "string"
 #include "gameobject.hpp"
+#include "checkpoint/checkpoint_behaviour.hpp"
 
-class Car : public GameObject {
+class Car : public GameObject, public CheckpointBehaviour {
 public:
-    Car(const std::string &name, const std::string &tag, std::string sprite_path, const std::shared_ptr<Scene>& scene, const int order_in_layer = 10);
-
-    [[nodiscard]] float get_current_speed() const;
-
-    [[nodiscard]] int get_current_round() const;
-
-private:
-    float _current_speed = 0;
-    int _current_round = 0;
+    Car(const std::string &name, const std::string &tag, std::string sprite_path, const std::shared_ptr<Scene> &scene,
+        int order_in_layer = 10);
 };
 
 #endif //GAME_CAR_HPP

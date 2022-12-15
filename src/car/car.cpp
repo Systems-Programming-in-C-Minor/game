@@ -7,10 +7,10 @@
 #include <scene.hpp>
 
 Car::Car(const std::string &name, const std::string &tag, std::string sprite_path, const std::shared_ptr<Scene> &scene, const int order_in_layer)
-        : GameObject(name, tag) {
+        : GameObject(name, tag), CheckpointBehaviour(scene->get_event_manager()) {
 
-    auto checkpoint_behaviour = std::make_shared<CheckpointBehaviour>(scene->get_event_manager());
-    add_component(checkpoint_behaviour);
+//    auto checkpoint_behaviour = std::make_shared<CheckpointBehaviour>(scene->get_event_manager());
+//    add_component(checkpoint_behaviour);
 
     auto sprite =
             std::make_shared<Sprite>(std::move(sprite_path), Color(0, 0, 0, 0), false, false, 1, 1);
@@ -23,12 +23,4 @@ Car::Car(const std::string &name, const std::string &tag, std::string sprite_pat
     add_component(rigid_body);
     transform.set_scale(.5f);
     transform.set_angle(degrees_to_radians(90));
-}
-
-int Car::get_current_round() const {
-    return _current_round;
-}
-
-float Car::get_current_speed() const {
-    return _current_speed;
 }
