@@ -1,4 +1,3 @@
-#include <iostream>
 #include "checkpoint/checkpoint_behaviour.hpp"
 #include "global.hpp"
 
@@ -15,7 +14,7 @@ void CheckpointBehaviour::check_and_set_checkpoint(GameObject *game_object) {
     if (game_object->get_tag() == "checkpoint") {
         auto checkpoint = reinterpret_cast<Checkpoint *>(game_object);
 
-        auto first_checkpoint = !checkpoint->previous_checkpoint.has_value() &&                                !_reached.has_value();
+        auto first_checkpoint = !checkpoint->previous_checkpoint.has_value() && !_reached.has_value();
         auto new_checkpoint = checkpoint->previous_checkpoint.has_value() && _reached.has_value() &&
                               checkpoint->previous_checkpoint.value()->get_name() == _reached.value()->get_name();
 

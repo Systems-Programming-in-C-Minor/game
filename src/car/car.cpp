@@ -14,7 +14,7 @@ Car::Car(const std::string &name, const std::string &tag, std::string sprite_pat
     add_component(sprite);
 
     auto collider = std::make_shared<BoxCollider>(1.65f, 4.f);
-    auto rigid_body = std::make_shared<RigidBody>(*scene, order_in_layer, BodyType::dynamic_body, Vector2d{0.86f, -4.64f}, 1.f);
+    auto rigid_body = std::make_shared<RigidBody>(*scene, order_in_layer, BodyType::dynamic_body, Vector2d{16.f, -74.f}, 1.f);
     rigid_body->set_mass(1600.f);
     rigid_body->set_collider(collider);
     add_component(rigid_body);
