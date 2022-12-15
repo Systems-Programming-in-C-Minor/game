@@ -8,7 +8,7 @@ public:
     Checkpoint(const std::string &name, const std::string &tag, bool is_finish_line,
                std::optional<std::shared_ptr<Checkpoint>> previous_checkpoint);
 
-    const std::optional<std::shared_ptr<Checkpoint>> _previous_checkpoint;
+    const std::optional<std::shared_ptr<Checkpoint>> previous_checkpoint;
     const bool _is_finish_line;
 };
 

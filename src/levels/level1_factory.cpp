@@ -1,7 +1,7 @@
 #include "levels/level1_factory.hpp"
 #include "track_factory.hpp"
 #include "car/car_factory.hpp"
-#include "checkpoint_factory.hpp"
+#include "checkpoint/checkpoint_factory.hpp"
 
 std::shared_ptr<Scene> Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>();
@@ -39,11 +39,9 @@ std::shared_ptr<Scene> Level1Factory::get() {
     for (int index = 0; index < checkpoint_positions.size(); index++) {
         const bool is_finish = index >= checkpoint_positions.size() - 1;
         auto previous_checkpoint = checkpoints.empty() ? std::nullopt :
-                                   std::make_optional<std::shared_ptr<Checkpoint>>(checkpoints[checkpoints.size()]);
+                                   std::make_optional<std::shared_ptr<Checkpoint>>(checkpoints[checkpoints.size() - 1]);
         auto checkpoint = CheckpointFactory::get(is_finish, previous_checkpoint, checkpoint_positions[index], scene);
-    }
-
-    for (const auto& checkpoint : checkpoints) {
+        checkpoints.emplace_back(checkpoint);
         scene->gameobjects.push_back(checkpoint);
     }
 
