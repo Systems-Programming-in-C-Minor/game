@@ -26,19 +26,19 @@ TreeFactory::get(TreeType tree_type, Vector2d position) {
 
 std::vector<std::vector<std::string>> TreeFactory::animation_paths = {
         {
-                {"../assets/trees/tree1/tree1_center.png"},
-                {"../assets/trees/tree1/tree1_right_1.png"},
-                {"../assets/trees/tree1/tree1_right_2.png"},
-                {"../assets/trees/tree1/tree1_right_1.png"},
-                {"../assets/trees/tree1/tree1_center.png"},
-                {"../assets/trees/tree1/tree1_left.png"},
+                {"./assets/trees/tree1/tree1_center.png"},
+                {"./assets/trees/tree1/tree1_right_1.png"},
+                {"./assets/trees/tree1/tree1_right_2.png"},
+                {"./assets/trees/tree1/tree1_right_1.png"},
+                {"./assets/trees/tree1/tree1_center.png"},
+                {"./assets/trees/tree1/tree1_left.png"},
         },
         {
-                {"../assets/trees/tree2/tree2_center.png"},
-                {"../assets/trees/tree2/tree2_right.png"},
-                {"../assets/trees/tree2/tree2_center.png"},
-                {"../assets/trees/tree2/tree2_left_1.png"},
-                {"../assets/trees/tree2/tree2_left_2.png"},
-                {"../assets/trees/tree2/tree2_left_1.png"},
+                {"./assets/trees/tree2/tree2_center.png"},
+                {"./assets/trees/tree2/tree2_right.png"},
+                {"./assets/trees/tree2/tree2_center.png"},
+                {"./assets/trees/tree2/tree2_left_1.png"},
+                {"./assets/trees/tree2/tree2_left_2.png"},
+                {"./assets/trees/tree2/tree2_left_1.png"},
         },
 };
