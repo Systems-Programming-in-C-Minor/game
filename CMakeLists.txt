@@ -35,3 +35,11 @@ if (GAME_TEST)
     add_subdirectory(test)
     enable_testing()
 endif ()
+
+
+add_custom_command(
+        TARGET game PRE_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/assets
+        ${CMAKE_CURRENT_BINARY_DIR}/assets
+)
