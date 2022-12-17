@@ -6,7 +6,7 @@
 #include "checkpoint/checkpoint_behaviour.hpp"
 #include <scene.hpp>
 
-Car::Car(const std::string &name, CarColor color, const std::shared_ptr<Scene> &scene)
+Car::Car(const std::string &name, CarColor color, const Vector2d position, const std::shared_ptr<Scene> &scene)
         : GameObject(name, "car"), CheckpointBehaviour(scene->get_event_manager()) {
 
     const std::map<CarColor, std::string> sprites{
@@ -22,7 +22,7 @@ Car::Car(const std::string &name, CarColor color, const std::shared_ptr<Scene> &
     add_component(sprite);
 
     auto collider = std::make_shared<BoxCollider>(1.65f, 4.f);
-    auto rigid_body = std::make_shared<RigidBody>(*scene, 1000, BodyType::dynamic_body, Vector2d{16.f, -74.f}, 1.f);
+    auto rigid_body = std::make_shared<RigidBody>(*scene, 1000, BodyType::dynamic_body, position, 1.f);
     rigid_body->set_mass(1600.f);
     rigid_body->set_collider(collider);
     add_component(rigid_body);

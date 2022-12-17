@@ -3,7 +3,7 @@
 #include "car/car_factory.hpp"
 #include "checkpoint/checkpoint_factory.hpp"
 
-std::shared_ptr<Scene> Level1Factory::get() {
+Level Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>();
 
     scene->gameobjects
@@ -11,8 +11,21 @@ std::shared_ptr<Scene> Level1Factory::get() {
                                          "../assets/colliders/track1/track1_inner.xml",
                                          "../assets/colliders/track1/track1_outer.xml", scene));
 
-    auto car = CarFactory::base_car("player-car", Car::CarColor::Red, scene);
-    scene->gameobjects.push_back(CarFactory::add_input_behaviour(car, scene));
+    const std::vector<std::pair<Vector2d, Car::CarColor>> car_positions{
+            {Vector2d{14, -76}, Car::CarColor::Red},
+            {Vector2d{20, -72}, Car::CarColor::Blue},
+            {Vector2d{26, -76}, Car::CarColor::Yellow},
+            {Vector2d{31, -72}, Car::CarColor::Orange},
+            {Vector2d{38, -76}, Car::CarColor::Pink},
+            {Vector2d{43, -72}, Car::CarColor::Green},
+    };
+
+    std::vector<std::shared_ptr<Car>> cars;
+    for (const auto car_position: car_positions) {
+        auto car = CarFactory::base_car("player-car", car_position.second, car_position.first, scene);
+        cars.push_back(car);
+        scene->gameobjects.push_back(car);
+    }
 
     const std::vector<CheckpointDef> check_pos{
             CheckpointDef{Vector2d{9.f, -74.f}, 25.f, 90.f},
@@ -90,5 +103,5 @@ std::shared_ptr<Scene> Level1Factory::get() {
         scene->gameobjects.push_back(checkpoint);
     }
 
-    return scene;
+    return Level { cars, scene };
 }

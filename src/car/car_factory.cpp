@@ -1,11 +1,11 @@
 #include "car/car_factory.hpp"
-#include "car/player_car_behaviour.hpp"
+#include "car/car_input_behaviour.hpp"
 #include <memory>
 #include <scene.hpp>
 
 std::shared_ptr<Car>
-CarFactory::base_car(const std::string &name, Car::CarColor color, const std::shared_ptr<Scene> &scene) {
-    return std::make_shared<Car>(name, color, scene);
+CarFactory::base_car(const std::string &name, Car::CarColor color, const Vector2d position, const std::shared_ptr<Scene> &scene) {
+    return std::make_shared<Car>(name, color, position, scene);
 }
 
 std::shared_ptr<Car> CarFactory::add_ai_behaviour(std::shared_ptr<Car> car, const std::shared_ptr<Scene> &scene) {

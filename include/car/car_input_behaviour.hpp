@@ -1,6 +1,6 @@
 
-#ifndef GAME_PLAYER_CAR_BEHAVIOUR_HPP
-#define GAME_PLAYER_CAR_BEHAVIOUR_HPP
+#ifndef GAME_CAR_INPUT_BEHAVIOUR_HPP
+#define GAME_CAR_INPUT_BEHAVIOUR_HPP
 
 #include <components/component.hpp>
 #include <listeners/key_listener.hpp>
@@ -32,4 +32,4 @@ private:
     const CarKeybinds _keybinds;
 };
 
-#endif //GAME_PLAYER_CAR_BEHAVIOUR_HPP
+#endif //GAME_CAR_INPUT_BEHAVIOUR_HPP

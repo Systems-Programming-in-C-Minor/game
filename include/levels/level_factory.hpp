@@ -3,10 +3,11 @@
 #define GAME_LEVEL_FACTORY_HPP
 
 #include <scene.hpp>
+#include "level.hpp"
 
 class LevelFactory {
 public:
-    virtual std::shared_ptr<Scene> get() = 0;
+    virtual Level get() = 0;
 
 };
 

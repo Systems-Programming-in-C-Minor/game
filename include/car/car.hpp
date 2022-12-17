@@ -18,7 +18,7 @@ public:
         Pink,
     };
 
-    Car(const std::string &name, CarColor color, const std::shared_ptr<Scene> &scene);
+    Car(const std::string &name, CarColor color, Vector2d position, const std::shared_ptr<Scene> &scene);
 };
 
 #endif //GAME_CAR_HPP

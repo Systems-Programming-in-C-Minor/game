@@ -1,4 +1,4 @@
-#include "car/player_car_behaviour.hpp"
+#include "car/car_input_behaviour.hpp"
 #include <gameobject.hpp>
 
 CarInputBehaviour::CarInputBehaviour(EventManager &event_manager, const CarKeybinds keybinds) : KeyListener(
