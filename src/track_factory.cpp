@@ -10,7 +10,7 @@ TrackFactory::get(const std::string &name, const std::string &tag, std::string s
                   const std::shared_ptr<Scene> &scene) {
     std::shared_ptr<GameObject> obj = std::make_shared<GameObject>(name, tag);
     std::shared_ptr<Sprite> sprite =
-            std::make_shared<Sprite>(std::move(sprite_path), Color(0, 0, 0, 0), false, true, 1, 1, 6.f);
+            std::make_shared<Sprite>(std::move(sprite_path), Color(0, 0, 0, 0), false, true, 1, 1, 12.f);
     obj->add_component(sprite);
 
     auto inner_collider = std::make_shared<ChainCollider>(track_inner_path, false);
