@@ -5,10 +5,20 @@
 #include "gameobject.hpp"
 #include "checkpoint/checkpoint_behaviour.hpp"
 
+
 class Car : public GameObject, public CheckpointBehaviour {
 public:
-    Car(const std::string &name, const std::string &tag, std::string sprite_path, const std::shared_ptr<Scene> &scene,
-        int order_in_layer = 10);
+
+    enum CarColor {
+        Blue,
+        Red,
+        Yellow,
+        Green,
+        Orange,
+        Pink,
+    };
+
+    Car(const std::string &name, CarColor color, Vector2d position, const std::shared_ptr<Scene> &scene);
 };
 
 #endif //GAME_CAR_HPP

@@ -6,7 +6,7 @@
 
 class Level1Factory : public LevelFactory {
 public:
-    std::shared_ptr<Scene> get() override;
+    Level get() override;
 
 };
 

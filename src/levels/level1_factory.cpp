@@ -5,7 +5,7 @@
 #include "tree_factory.hpp"
 #include <utils/random.hpp>
 
-std::shared_ptr<Scene> Level1Factory::get() {
+Level Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>();
 
     scene->gameobjects
@@ -13,8 +13,40 @@ std::shared_ptr<Scene> Level1Factory::get() {
                                          "./assets/colliders/track1/track1_inner.xml",
                                          "./assets/colliders/track1/track1_outer.xml", scene));
 
-    scene->gameobjects.push_back(CarFactory::playerCar("player-car", "car", "./assets/cars/red_car.png", scene));
+    const std::vector<std::pair<Vector2d, Car::CarColor>> car_positions{
+            {Vector2d{14, -76}, Car::CarColor::Red},
+            {Vector2d{20, -72}, Car::CarColor::Blue},
+            {Vector2d{26, -76}, Car::CarColor::Yellow},
+            {Vector2d{31, -72}, Car::CarColor::Orange},
+            {Vector2d{38, -76}, Car::CarColor::Pink},
+            {Vector2d{43, -72}, Car::CarColor::Green},
+    };
 
+    std::vector<std::shared_ptr<Car>> cars;
+    for (const auto car_position: car_positions) {
+        auto car = CarFactory::base_car("player-car", car_position.second, car_position.first, scene);
+        cars.push_back(car);
+        scene->gameobjects.push_back(car);
+    }
+
+    const std::vector<Vector2d> targets{
+            Vector2d{-60.f, -72.f},
+            Vector2d{-74.f, -53.f},
+            Vector2d{-60.f, -34.f},
+            Vector2d{-10.f, -6.f},
+            Vector2d{-13.f, 32.f},
+            Vector2d{-65.f, 38.f},
+            Vector2d{-72.f, 62.f},
+            Vector2d{-52.f, 73.f},
+            Vector2d{64.f, 73.f},
+            Vector2d{77.f, 57.f},
+            Vector2d{22.f, 37.f},
+            Vector2d{16.f, -34.f},
+            Vector2d{49.f, -39.f},
+            Vector2d{34.f, 18.f},
+            Vector2d{72.f, 20.f},
+            Vector2d{73.f, -66.f}
+    };
 
     const std::vector<CheckpointDef> check_pos{
             CheckpointDef{Vector2d{9.f, -74.f}, 25.f, 90.f},
@@ -108,5 +140,5 @@ std::shared_ptr<Scene> Level1Factory::get() {
         }
     }
 
-    return scene;
+    return Level { cars, targets, scene };
 }

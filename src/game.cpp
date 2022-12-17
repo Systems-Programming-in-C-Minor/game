@@ -1,10 +1,11 @@
 #include <cstdlib>
 #include "game.hpp"
 #include "global.hpp"
-#include "gameobject.hpp"
 #include "components/sprite.hpp"
 #include "levels/levels_factory.hpp"
 #include "events.hpp"
+#include "modes/singleplayer_mode.hpp"
+#include "modes/coop_mode.hpp"
 
 int main() {
     Game game;
@@ -20,7 +21,9 @@ void Game::start_game() {
     _global->set_engine(std::move(p_engine));
     Engine &engine = _global->get_engine();
 
-    _current_scene = LevelsFactory::get_level1();
+    // TODO implement switch scene between modes
+//    _current_scene = SingleplayerMode::get(LevelsFactory::get_level1());
+    _current_scene = CoopMode::get(LevelsFactory::get_level1());
 
     engine.load_scene(_current_scene);
 
