@@ -27,6 +27,25 @@ Level Level1Factory::get() {
         scene->gameobjects.push_back(car);
     }
 
+    const std::vector<Vector2d> targets{
+            Vector2d{-60.f, -72.f},
+            Vector2d{-74.f, -53.f},
+            Vector2d{-60.f, -34.f},
+            Vector2d{-10.f, -6.f},
+            Vector2d{-13.f, 32.f},
+            Vector2d{-65.f, 38.f},
+            Vector2d{-72.f, 62.f},
+            Vector2d{-52.f, 73.f},
+            Vector2d{64.f, 73.f},
+            Vector2d{77.f, 57.f},
+            Vector2d{22.f, 37.f},
+            Vector2d{16.f, -34.f},
+            Vector2d{49.f, -39.f},
+            Vector2d{34.f, 18.f},
+            Vector2d{72.f, 20.f},
+            Vector2d{73.f, -66.f}
+    };
+
     const std::vector<CheckpointDef> check_pos{
             CheckpointDef{Vector2d{9.f, -74.f}, 25.f, 90.f},
             CheckpointDef{Vector2d{0.f, -74.f}, 25.f, 90.f},
@@ -103,5 +122,5 @@ Level Level1Factory::get() {
         scene->gameobjects.push_back(checkpoint);
     }
 
-    return Level { cars, scene };
+    return Level { cars, targets, scene };
 }

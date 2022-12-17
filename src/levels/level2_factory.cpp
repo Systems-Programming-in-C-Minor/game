@@ -2,5 +2,5 @@
 
 Level Level2Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>();
-    return Level{{}, scene};
+    return Level{{}, {}, scene};
 }

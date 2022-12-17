@@ -1,7 +1,6 @@
 #include <cstdlib>
 #include "game.hpp"
 #include "global.hpp"
-#include "gameobject.hpp"
 #include "components/sprite.hpp"
 #include "levels/levels_factory.hpp"
 #include "events.hpp"
@@ -22,6 +21,7 @@ void Game::start_game() {
     _global->set_engine(std::move(p_engine));
     Engine &engine = _global->get_engine();
 
+    // TODO implement switch scene between modes
 //    _current_scene = SingleplayerMode::get(LevelsFactory::get_level1());
     _current_scene = CoopMode::get(LevelsFactory::get_level1());
 

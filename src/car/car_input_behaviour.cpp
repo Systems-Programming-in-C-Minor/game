@@ -31,8 +31,6 @@ void CarInputBehaviour::on_key_hold(const KeyHoldEvent &event) {
 
 void CarInputBehaviour::on_key_released(const KeyReleasedEvent &event) {}
 
-CarKeybinds::CarKeybinds(const Key forward, const Key backwards, const Key left, const Key right,
-                         const Key brake) : forward(forward), backwards(backwards), left(left),
-                                                              right(right), brake(brake) {
-
+CarKeybinds::CarKeybinds(const Key forward, const Key backwards, const Key left, const Key right, const Key brake)
+        : forward(forward), backwards(backwards), left(left), right(right), brake(brake) {
 }
