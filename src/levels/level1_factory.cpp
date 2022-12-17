@@ -11,8 +11,8 @@ std::shared_ptr<Scene> Level1Factory::get() {
                                          "../assets/colliders/track1/track1_inner.xml",
                                          "../assets/colliders/track1/track1_outer.xml", scene));
 
-    scene->gameobjects.push_back(CarFactory::playerCar("player-car", "car", "../assets/cars/red_car.png", scene));
-
+    auto car = CarFactory::base_car("player-car", Car::CarColor::Red, scene);
+    scene->gameobjects.push_back(CarFactory::add_input_behaviour(car, scene));
 
     const std::vector<CheckpointDef> check_pos{
             CheckpointDef{Vector2d{9.f, -74.f}, 25.f, 90.f},

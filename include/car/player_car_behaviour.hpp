@@ -7,9 +7,20 @@
 #include <race/behaviours/car_behaviour.hpp>
 #include "interfaces/itickable.hpp"
 
-class PlayerCarBehaviour : public CarBehaviour, public KeyListener {
+class CarKeybinds {
 public:
-    explicit PlayerCarBehaviour(EventManager &event_manager);
+    explicit CarKeybinds(Key forward = W, Key backwards = S, Key left = A, Key right = D, Key brake = SPACE);
+
+    const Key forward;
+    const Key backwards;
+    const Key left;
+    const Key right;
+    const Key brake;
+};
+
+class CarInputBehaviour : public CarBehaviour, public KeyListener {
+public:
+    explicit CarInputBehaviour(EventManager &event_manager, CarKeybinds keybinds = CarKeybinds());
 
     void on_key_pressed(const KeyPressedEvent &event) override;
 
@@ -17,6 +28,8 @@ public:
 
     void on_key_released(const KeyReleasedEvent &event) override;
 
+private:
+    const CarKeybinds _keybinds;
 };
 
 #endif //GAME_PLAYER_CAR_BEHAVIOUR_HPP
