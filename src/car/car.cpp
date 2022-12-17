@@ -19,5 +19,5 @@ Car::Car(const std::string &name, const std::string &tag, std::string sprite_pat
     rigid_body->set_collider(collider);
     add_component(rigid_body);
     transform.set_scale(.5f);
-    transform.set_angle(degrees_to_radians(90));
+    transform.set_angle(degrees_to_radians(90.f));
 }
