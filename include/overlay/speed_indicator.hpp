@@ -5,7 +5,7 @@
 
 class SpeedIndicator {
 public:
-    GameObject get(const std::string& name, const std::string& tag, Car& playerCar);
+    std::shared_ptr<GameObject> get(const std::string& name, const std::string& tag, Car& playerCar);
 };
 
 #endif //GAME_SPEED_INDICATOR_HPP

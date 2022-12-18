@@ -1,9 +1,8 @@
 #include "levels/track_factory.hpp"
-
 #include <utility>
-#include <components/colliders/chaincollider.hpp>
-#include <components/sprite.hpp>
-#include <color.hpp>
+#include "components/colliders/chaincollider.hpp"
+#include "components/sprite.hpp"
+#include "color.hpp"
 
 std::shared_ptr<GameObject>
 TrackFactory::get(const std::string &name, const std::string &tag, std::string sprite_path, std::string bg_sprite_path,

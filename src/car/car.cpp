@@ -16,6 +16,8 @@ Car::Car(const std::string &name, CarColor color, const Vector2d position, const
             {Green, "./assets/cars/green_car.png"},
             {Orange, "./assets/cars/orange_car.png"},
             {Pink, "./assets/cars/pink_car.png"},
+            {Purple, "./assets/cars/purple_car.png"},
+            {Black, "./assets/cars/black_car.png"},
     };
 
     auto sprite = std::make_shared<Sprite>(sprites.at(color), Color(0, 0, 0, 0), false, false, 1, 1);
