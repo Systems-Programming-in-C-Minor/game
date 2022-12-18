@@ -1,5 +1,5 @@
 #include "levels/level1_factory.hpp"
-#include "track_factory.hpp"
+#include "levels/track_factory.hpp"
 #include "car/car_factory.hpp"
 #include "checkpoint/checkpoint_factory.hpp"
 #include "tree_factory.hpp"
@@ -10,6 +10,7 @@ Level Level1Factory::get() {
 
     scene->gameobjects
             .push_back(TrackFactory::get("level1-track", "level1", "./assets/tracks/track1.png",
+                                         "./assets/tracks/track1_bg.png",
                                          "./assets/colliders/track1/track1_inner.xml",
                                          "./assets/colliders/track1/track1_outer.xml", scene));
 
