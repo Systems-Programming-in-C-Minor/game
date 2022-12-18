@@ -31,11 +31,6 @@ target_link_libraries(game PRIVATE
         engine
         )
 
-if (GAME_TEST)
-    add_subdirectory(test)
-    enable_testing()
-endif ()
-
 
 add_custom_command(
         TARGET game PRE_BUILD

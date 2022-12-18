@@ -2,7 +2,7 @@
 #ifndef GAME_TREE_FACTORY_HPP
 #define GAME_TREE_FACTORY_HPP
 
-#include <gameobject.hpp>
+#include "gameobject.hpp"
 
 class TreeFactory {
 

@@ -7,7 +7,7 @@
 
 class GuardrailFactory {
 public:
-    GameObject get(const std::string& name, const std::string& tag, Vector2d& pos, float rotation, float scale);
+    static std::shared_ptr<GameObject> get(Vector2d pos, float rotation, const std::shared_ptr<Scene> &scene);
 };
 
 #endif //GAME_GUARDRAIL_FACTORY_HPP

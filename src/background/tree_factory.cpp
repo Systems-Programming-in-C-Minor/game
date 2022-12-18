@@ -1,7 +1,7 @@
-#include "tree_factory.hpp"
-#include <color.hpp>
-#include <components/sprite.hpp>
-#include <components/animator.hpp>
+#include "background/tree_factory.hpp"
+#include "color.hpp"
+#include "components/sprite.hpp"
+#include "components/animator.hpp"
 
 std::shared_ptr<GameObject>
 TreeFactory::get(TreeType tree_type, Vector2d position) {

@@ -16,6 +16,8 @@ public:
         Green,
         Orange,
         Pink,
+        Purple,
+        Black
     };
 
     Car(const std::string &name, CarColor color, Vector2d position, const std::shared_ptr<Scene> &scene);
