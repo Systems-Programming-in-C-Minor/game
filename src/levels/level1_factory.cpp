@@ -2,14 +2,16 @@
 #include "track_factory.hpp"
 #include "car/car_factory.hpp"
 #include "checkpoint/checkpoint_factory.hpp"
+#include "tree_factory.hpp"
+#include <utils/random.hpp>
 
 Level Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>();
 
     scene->gameobjects
-            .push_back(TrackFactory::get("level1-track", "level1", "../assets/tracks/track1.png",
-                                         "../assets/colliders/track1/track1_inner.xml",
-                                         "../assets/colliders/track1/track1_outer.xml", scene));
+            .push_back(TrackFactory::get("level1-track", "level1", "./assets/tracks/track1.png",
+                                         "./assets/colliders/track1/track1_inner.xml",
+                                         "./assets/colliders/track1/track1_outer.xml", scene));
 
     const std::vector<std::pair<Vector2d, Car::CarColor>> car_positions{
             {Vector2d{14, -76}, Car::CarColor::Red},
@@ -120,6 +122,22 @@ Level Level1Factory::get() {
         auto checkpoint = CheckpointFactory::get(is_finish, previous_checkpoint, scene, check_pos[index]);
         checkpoints.emplace_back(checkpoint);
         scene->gameobjects.push_back(checkpoint);
+    }
+
+    const std::vector<std::pair<std::pair<Vector2d, Vector2d>, std::pair<TreeFactory::TreeType, int>>> tree_boxes{
+            std::pair{std::pair{Vector2d{-80.f, 0.f}, Vector2d{-30.f, 20.f}}, std::pair{TreeFactory::Tree1, 200}},
+            std::pair{std::pair{Vector2d{-80.f, -10.f}, Vector2d{-50.f, 0.f}}, std::pair{TreeFactory::Tree1, 60}},
+            std::pair{std::pair{Vector2d{-45.f, -60.f}, Vector2d{0.f, -40.f}}, std::pair{TreeFactory::Tree2, 80}},
+            std::pair{std::pair{Vector2d{-20.f, -40.f}, Vector2d{0.f, -35.f}}, std::pair{TreeFactory::Tree2, 10}},
+            std::pair{std::pair{Vector2d{-52.f, 52.f}, Vector2d{8.f, 62.f}}, std::pair{TreeFactory::Tree1, 140}},
+    };
+
+    for (const auto tree_box: tree_boxes) {
+        for (int index = 0; index < tree_box.second.second; index++) {
+            scene->gameobjects.push_back(TreeFactory::get(tree_box.second.first, Vector2d{
+                    static_cast<float>(Random::random(tree_box.first.second.x, tree_box.first.first.x)),
+                    static_cast<float>(Random::random(tree_box.first.second.y, tree_box.first.first.y))}));
+        }
     }
 
     return Level { cars, targets, scene };
