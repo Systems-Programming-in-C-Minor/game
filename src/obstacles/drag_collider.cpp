@@ -48,16 +48,19 @@ void DragCollider::on_collider_exit(const ColliderExitEvent &event) {
 }
 
 void DragCollider::toggle_drag_on_car(RigidBody *body, Car *car, bool collider_entry) {
+    auto drag_ite = _car_drags.find(car);
+    if (drag_ite == _car_drags.end()) {
+        _car_drags.emplace(car, std::make_shared<DragObject>());
+        drag_ite = _car_drags.find(car);
+    }
+    auto drag = drag_ite->second;
+
 
     if (body == _outer_body) {
-        _collided_outer = collider_entry;
-        std::cout << "inner " << _collided_inner << " outer " << _collided_outer << " appllied " << _drag_applied
-                  << std::endl;
+        drag->_collided_outer = collider_entry;
 
-        if (!_collided_inner && !collider_entry) {
-            remove_drag(car);
-            std::cout << "inner " << _collided_inner << " outer " << _collided_outer << " appllied " << _drag_applied
-                      << std::endl;
+        if (!drag->_collided_inner && !collider_entry) {
+            remove_drag(car, drag);
             return;
         }
         return;
@@ -65,40 +68,35 @@ void DragCollider::toggle_drag_on_car(RigidBody *body, Car *car, bool collider_e
     if (body != _inner_body)
         return;
 
-    _collided_inner = collider_entry;
+    drag->_collided_inner = collider_entry;
 
-    if (_collided_inner && _collided_outer) {
-        apply_drag(car);
+    if (drag->_collided_inner && drag->_collided_outer) {
+        apply_drag(car, drag);
     }
 
-    if (_collided_outer && !collider_entry) {
-        remove_drag(car);
-        std::cout << "inner " << _collided_inner << " outer " << _collided_outer << " appllied " << _drag_applied
-                  << std::endl;
+    if (drag->_collided_outer && !collider_entry) {
+        remove_drag(car, drag);
         return;
     }
-
-    std::cout << "inner " << _collided_inner << " outer " << _collided_outer << " appllied " << _drag_applied
-              << std::endl;
 }
 
-void DragCollider::apply_drag(Car *car) {
-    if (_drag_applied)
+void DragCollider::apply_drag(Car *car, const std::shared_ptr<DragObject>& drag) const {
+    if (drag->_drag_applied)
         return;
 
     auto friction = car->get_component<FrictionBehaviour>();
-    _drag_applied = true;
+    drag->_drag_applied = true;
     friction->drag_modifier += _drag_modifier;
     friction->traction += _traction_modifier;
     car->max_drive_force += _drive_force;
 }
 
-void DragCollider::remove_drag(Car *car) {
-    if (!_drag_applied)
+void DragCollider::remove_drag(Car *car, const std::shared_ptr<DragObject>& drag) const {
+    if (!drag->_drag_applied)
         return;
 
     auto friction = car->get_component<FrictionBehaviour>();
-    _drag_applied = false;
+    drag->_drag_applied = false;
     friction->drag_modifier -= _drag_modifier;
     friction->traction -= _traction_modifier;
     car->max_drive_force -= _drive_force;

@@ -21,19 +21,23 @@ public:
     void on_collider_exit(const ColliderExitEvent &event) override;
 
 private:
+    class DragObject {
+    public:
+        bool _collided_outer = false;
+        bool _collided_inner = false;
+        bool _drag_applied = false;
+    };
+
     void toggle_drag_on_car(RigidBody *body, Car *car, bool collider_entry);
 
-    void apply_drag(Car *car);
+    void apply_drag(Car *car, const std::shared_ptr<DragObject>& drag) const;
 
-    void remove_drag(Car *car);
+    void remove_drag(Car *car, const std::shared_ptr<DragObject>& drag) const;
 
     RigidBody *_outer_body;
     RigidBody *_inner_body;
 
-    bool _collided_outer = false;
-    bool _collided_inner = false;
-
-    bool _drag_applied = false;
+    std::map<Car *, std::shared_ptr<DragObject>> _car_drags;
 
     const float _drag_modifier;
     const float _traction_modifier;
