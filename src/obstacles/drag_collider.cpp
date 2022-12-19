@@ -2,11 +2,13 @@
 #include "car/car.hpp"
 #include <components/colliders/chaincollider.hpp>
 #include <scene.hpp>
+#include <iostream>
 
-DragCollider::DragCollider(const std::string &name, const std::shared_ptr<Scene> &scene,
-                           float drag_modifier, const std::vector<std::string> &drag_collider_paths)
-        : GameObject(name, "drag-collider"), ColliderListener(scene->get_event_manager()),
-          _drag_modifier(drag_modifier) {
+DragCollider::DragCollider(const std::string &name, const std::shared_ptr<Scene> &scene, EventManager &event_manager,
+                           float drag_modifier, float traction_modifier, float drive_force,
+                           const std::vector<std::string> &drag_collider_paths)
+        : GameObject(name, "drag-collider"), ColliderListener(event_manager), _drag_modifier(drag_modifier),
+          _traction_modifier(traction_modifier), _drive_force(drive_force) {
 
     for (const auto &drag_collider_path: drag_collider_paths) {
         auto drag_collider = std::make_shared<ChainCollider>(drag_collider_path, true);
@@ -38,10 +40,30 @@ void DragCollider::on_collider_exit(const ColliderExitEvent &event) {
     }
 }
 
-void DragCollider::check_for_car(GameObject *game_object, bool enter_collider) const {
+void DragCollider::check_for_car(GameObject *game_object, bool collider_entry) {
     if (game_object->get_tag() != "car")
         return;
+    auto car = reinterpret_cast<Car *>(game_object);
     auto friction = game_object->get_component<FrictionBehaviour>();
 
-    enter_collider ? friction->drag_modifier += _drag_modifier : friction->drag_modifier -= _drag_modifier;
+    if (collider_entry && std::find(applied_on.begin(), applied_on.end(), car) == applied_on.end()) {
+        applied_on.emplace_back(car);
+
+        friction->drag_modifier += _drag_modifier;
+        friction->traction += _traction_modifier;
+        car->max_drive_force -= _drive_force;
+        std::cout << "applied on " << game_object->get_name() << std::endl;
+
+        return;
+    }
+    if (collider_entry)
+        return;
+
+    friction->drag_modifier -= _drag_modifier;
+    friction->traction -= _traction_modifier;
+    car->max_drive_force += _drive_force;
+
+    std::erase(applied_on, car);
+
+    std::cout << "removed from " << game_object->get_name() << std::endl;
 }

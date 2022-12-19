@@ -23,27 +23,26 @@ Level Level1Factory::get() {
                                          "./assets/colliders/track1/track1_outer.xml"
             ));
 
-//    scene->gameobjects.push_back(std::make_shared<DragCollider>(
-//            DragCollider{
-//                    "grass-collider",
-//                    scene,
-//                    1.f,
-//                    {
-//                            "./assets/colliders/track1/track1_grass_inner.xml",
-//                            "./assets/colliders/track1/track1_grass_outer.xml",
-//                    }
-//            }
-//    ));
+    scene->gameobjects.push_back(std::make_shared<DragCollider>("grass-collider",
+                                                                scene,
+                                                                scene->get_event_manager(),
+                                                                .3f,
+                                                                3.f,
+                                                                -400.f,
+                                                                std::vector<std::string>{
+                                                                        "./assets/colliders/track1/track1_grass_inner.xml",
+                                                                        "./assets/colliders/track1/track1_grass_outer.xml",
+                                                                }));
 
     const std::vector<std::pair<Vector2d, Car::CarColor>> car_positions{
             {Vector2d{14, -76}, Car::CarColor::Red},
-            {Vector2d{20, -72}, Car::CarColor::Blue},
-            {Vector2d{26, -76}, Car::CarColor::Yellow},
-            {Vector2d{31, -72}, Car::CarColor::Green},
-            {Vector2d{38, -76}, Car::CarColor::Orange},
-            {Vector2d{43, -72}, Car::CarColor::Pink},
-            {Vector2d{50, -76}, Car::CarColor::Purple},
-            {Vector2d{55, -72}, Car::CarColor::Black},
+//            {Vector2d{20, -72}, Car::CarColor::Blue},
+//            {Vector2d{26, -76}, Car::CarColor::Yellow},
+//            {Vector2d{31, -72}, Car::CarColor::Green},
+//            {Vector2d{38, -76}, Car::CarColor::Orange},
+//            {Vector2d{43, -72}, Car::CarColor::Pink},
+//            {Vector2d{50, -76}, Car::CarColor::Purple},
+//            {Vector2d{55, -72}, Car::CarColor::Black},
     };
 
     std::vector<std::shared_ptr<Car>> cars;
