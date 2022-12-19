@@ -4,9 +4,9 @@
 
 #include <listeners/key_listener.hpp>
 #include <gameobject.hpp>
+#include "listeners/checkpoint_listener.hpp"
 
-class GameBehaviour : public GameObject, public KeyListener {
-
+class GameBehaviour : public GameObject, public KeyListener, public CheckpointListener {
 public:
     explicit GameBehaviour(EventManager &event_manager);
 
@@ -14,8 +14,10 @@ public:
 
     void on_key_released(const KeyReleasedEvent &event) override;
 
+    void on_checkpoint_lapped(const CheckpointLappedEvent &event) override;
+
 private:
-    bool _ALT = false;
+    bool alt_pressed = false;
 };
 
 #endif //GAME_GAME_BEHAVIOUR_HPP
