@@ -1,7 +1,7 @@
 #ifndef GAME_CHECKPOINT_HPP
 #define GAME_CHECKPOINT_HPP
 
-#include "gameobject.hpp"
+#include <gameobject.hpp>
 
 class Checkpoint : public GameObject {
 public:

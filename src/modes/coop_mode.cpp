@@ -1,8 +1,9 @@
 #include "modes/coop_mode.hpp"
 #include "car/car_input_behaviour.hpp"
 #include "ai/target_listener.hpp"
+#include "car/car.hpp"
 
-std::shared_ptr<Scene> CoopMode::get(Level level) {
+std::shared_ptr<Scene> CoopMode::get(const Level& level) {
     const auto behaviour = std::make_shared<CarInputBehaviour>(level.scene->get_event_manager());
     level.cars[0]->add_component(behaviour);
 
@@ -14,7 +15,7 @@ std::shared_ptr<Scene> CoopMode::get(Level level) {
         auto ai_listener_component =
                 std::make_shared<TargetListenerComponent>(level.scene->get_event_manager(), level.targets);
         level.cars[index]->add_component(ai_listener_component);
-        const auto ai_behaviour = std::make_shared<AIBehaviour>(ai_listener_component->get_target());
+        const auto ai_behaviour = std::make_shared<AIBehaviour>(level.cars[index]->get_component<RigidBody>(), ai_listener_component->get_target());
         level.cars[index]->add_component(ai_behaviour);
     }
 

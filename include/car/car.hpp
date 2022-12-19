@@ -3,15 +3,13 @@
 
 #include "string"
 #include "gameobject.hpp"
-#include "checkpoint/checkpoint_behaviour.hpp"
+#include "race/behaviours/drive_behaviour.hpp"
 
-
-class Car : public GameObject, public CheckpointBehaviour {
+class Car : public GameObject, public DriveBehaviour {
 public:
-
     enum CarColor {
-        Blue,
         Red,
+        Blue,
         Yellow,
         Green,
         Orange,

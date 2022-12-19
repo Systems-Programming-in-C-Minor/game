@@ -4,12 +4,12 @@
 
 #include <components/component.hpp>
 #include <listeners/joystick_listener.hpp>
-#include <race/behaviours/car_behaviour.hpp>
 #include "interfaces/itickable.hpp"
+#include "car.hpp"
 
-class CarInputControllerBehaviour : public CarBehaviour, public JoystickListener {
+class CarInputControllerBehaviour : public Component, public JoystickListener {
 public:
-    explicit CarInputControllerBehaviour(EventManager &event_manager, const int joystick_id);
+    explicit CarInputControllerBehaviour(EventManager &event_manager, int joystick_id);
 
     void on_axis_current(const JoystickAxisCurrentEvent &event) override;
 

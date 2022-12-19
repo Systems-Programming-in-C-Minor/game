@@ -1,10 +1,11 @@
 #include "levels/level1_factory.hpp"
 #include "levels/track_factory.hpp"
-#include "car/car_factory.hpp"
 #include "checkpoint/checkpoint_factory.hpp"
+#include "car/car.hpp"
 #include "background/tree_factory.hpp"
 #include "obstacles/guardrail_factory.hpp"
 #include "obstacles/tire_stack_factory.hpp"
+#include "obstacles/drag_collider.hpp"
 #include "behaviours/game_behaviour.hpp"
 #include <utils/random.hpp>
 
@@ -14,25 +15,41 @@ Level Level1Factory::get() {
     scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager()));
 
     scene->gameobjects
-            .push_back(TrackFactory::get("level1-track", "level1", "./assets/tracks/track1.png",
+            .push_back(TrackFactory::get("level1-track",
+                                         scene,
+                                         "./assets/tracks/track1.png",
                                          "./assets/tracks/track1_bg.png",
                                          "./assets/colliders/track1/track1_inner.xml",
-                                         "./assets/colliders/track1/track1_outer.xml", scene));
+                                         "./assets/colliders/track1/track1_outer.xml"
+            ));
+
+//    scene->gameobjects.push_back(std::make_shared<DragCollider>(
+//            DragCollider{
+//                    "grass-collider",
+//                    scene,
+//                    1.f,
+//                    {
+//                            "./assets/colliders/track1/track1_grass_inner.xml",
+//                            "./assets/colliders/track1/track1_grass_outer.xml",
+//                    }
+//            }
+//    ));
 
     const std::vector<std::pair<Vector2d, Car::CarColor>> car_positions{
             {Vector2d{14, -76}, Car::CarColor::Red},
             {Vector2d{20, -72}, Car::CarColor::Blue},
             {Vector2d{26, -76}, Car::CarColor::Yellow},
-            {Vector2d{31, -72}, Car::CarColor::Orange},
-            {Vector2d{38, -76}, Car::CarColor::Pink},
-            {Vector2d{43, -72}, Car::CarColor::Green},
+            {Vector2d{31, -72}, Car::CarColor::Green},
+            {Vector2d{38, -76}, Car::CarColor::Orange},
+            {Vector2d{43, -72}, Car::CarColor::Pink},
             {Vector2d{50, -76}, Car::CarColor::Purple},
             {Vector2d{55, -72}, Car::CarColor::Black},
     };
 
     std::vector<std::shared_ptr<Car>> cars;
     for (const auto car_position: car_positions) {
-        auto car = CarFactory::base_car("player-car", car_position.second, car_position.first, scene);
+        auto car = std::make_shared<Car>("car-" + std::to_string(car_position.second),
+                                         car_position.second, car_position.first, scene);
         cars.push_back(car);
         scene->gameobjects.push_back(car);
     }

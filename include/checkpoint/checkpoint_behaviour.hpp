@@ -3,15 +3,14 @@
 
 #include <components/component.hpp>
 #include <listeners/collider_listener.hpp>
-#include <gameobject.hpp>
 #include <optional>
-#include "checkpoint.hpp"
 
-class CheckpointBehaviour : public ColliderListener {
-protected:
+class Checkpoint;
+
+class CheckpointBehaviour : public Component, public ColliderListener {
+public:
     explicit CheckpointBehaviour(EventManager &event_manager);
 
-public:
     void on_collider_entry(const ColliderEntryEvent &event) override;
 
     void on_collider_exit(const ColliderExitEvent &event) override;

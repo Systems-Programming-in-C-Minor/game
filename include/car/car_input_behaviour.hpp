@@ -4,8 +4,9 @@
 
 #include <components/component.hpp>
 #include <listeners/key_listener.hpp>
-#include <race/behaviours/car_behaviour.hpp>
 #include "interfaces/itickable.hpp"
+
+class Car;
 
 class CarKeybinds {
 public:
@@ -18,7 +19,7 @@ public:
     const Key brake;
 };
 
-class CarInputBehaviour : public CarBehaviour, public KeyListener {
+class CarInputBehaviour : public Component, public KeyListener {
 public:
     explicit CarInputBehaviour(EventManager &event_manager, CarKeybinds keybinds = CarKeybinds());
 

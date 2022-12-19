@@ -8,7 +8,7 @@
 
 class CoopMode {
 public:
-    static std::shared_ptr<Scene> get(Level level);
+    static std::shared_ptr<Scene> get(const Level& level);
 };
 
 #endif //GAME_COOP_HPP

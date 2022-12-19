@@ -5,17 +5,18 @@
 #include "color.hpp"
 
 std::shared_ptr<GameObject>
-TrackFactory::get(const std::string &name, const std::string &tag, std::string sprite_path, std::string bg_sprite_path,
-                  const std::string &track_inner_path, const std::string &track_outer_path,
-                  const std::shared_ptr<Scene> &scene) {
-    std::shared_ptr<GameObject> obj = std::make_shared<GameObject>(name, tag);
+TrackFactory::get(const std::string &name, const std::shared_ptr<Scene> &scene, std::string sprite_path,
+                  std::string bg_sprite_path, const std::string &track_inner_path,
+                  const std::string &track_outer_path) {
+    std::shared_ptr<GameObject> obj = std::make_shared<GameObject>(name, "track");
     std::shared_ptr<Sprite> sprite =
             std::make_shared<Sprite>(std::move(sprite_path), Color(0, 0, 0, 0), false, true, 1, 1, 12.f);
     obj->add_component(sprite);
 
-    std::shared_ptr<GameObject> obj_child = std::make_shared<GameObject>(name + "_bg", tag, true, Transform{ Vector2d{}, Vector2d{}, 0, 2.f});
+    std::shared_ptr<GameObject> obj_child = std::make_shared<GameObject>(name + "_bg", "track", true,
+                                                                         Transform{Vector2d{}, Vector2d{}, 0, 2.f});
     std::shared_ptr<Sprite> sprite_bg =
-        std::make_shared<Sprite>(std::move(bg_sprite_path), Color(0, 0, 0, 0),false, true, 1, 0, 6.f);
+            std::make_shared<Sprite>(std::move(bg_sprite_path), Color(0, 0, 0, 0), false, true, 1, 0, 6.f);
     obj_child->add_component(sprite_bg);
     obj->add_child(obj_child);
 
