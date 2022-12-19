@@ -2,7 +2,7 @@
 #define GAME_LEVELSFACTORY_HPP
 
 #include "scene.hpp"
-#include "../../../engine/include/race/models/level.hpp"
+#include "race/models/level.hpp"
 
 class LevelsFactory {
 public:
