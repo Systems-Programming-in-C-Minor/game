@@ -19,22 +19,28 @@ DragCollider::DragCollider(const std::string &name, const std::shared_ptr<Scene>
 }
 
 void DragCollider::on_collider_entry(const ColliderEntryEvent &event) {
+    return;
     if (event.collider_a->game_object == this) {
+        std::cout << event.is_touching << " try collide on " << event.collider_a->game_object->get_name() << std::endl;
         check_for_car(event.collider_b->game_object, true);
         return;
     }
     if (event.collider_b->game_object == this) {
+        std::cout << event.is_touching << " try collide on " << event.collider_b->game_object->get_name() << std::endl;
         check_for_car(event.collider_a->game_object, true);
         return;
     }
 }
 
 void DragCollider::on_collider_exit(const ColliderExitEvent &event) {
+    return;
     if (event.collider_a->game_object == this) {
+        std::cout << event.is_touching << " try collide on " << event.collider_a->game_object->get_name() << std::endl;
         check_for_car(event.collider_b->game_object, false);
         return;
     }
     if (event.collider_b->game_object == this) {
+        std::cout << event.is_touching << " try collide on " << event.collider_b->game_object->get_name() << std::endl;
         check_for_car(event.collider_a->game_object, false);
         return;
     }
@@ -52,11 +58,10 @@ void DragCollider::check_for_car(GameObject *game_object, bool collider_entry) {
         friction->drag_modifier += _drag_modifier;
         friction->traction += _traction_modifier;
         car->max_drive_force -= _drive_force;
-        std::cout << "applied on " << game_object->get_name() << std::endl;
 
         return;
     }
-    if (collider_entry)
+    if (collider_entry || std::find(applied_on.begin(), applied_on.end(), car) == applied_on.end())
         return;
 
     friction->drag_modifier -= _drag_modifier;
@@ -64,6 +69,4 @@ void DragCollider::check_for_car(GameObject *game_object, bool collider_entry) {
     car->max_drive_force += _drive_force;
 
     std::erase(applied_on, car);
-
-    std::cout << "removed from " << game_object->get_name() << std::endl;
 }

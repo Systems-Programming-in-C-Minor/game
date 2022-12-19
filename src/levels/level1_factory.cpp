@@ -36,13 +36,13 @@ Level Level1Factory::get() {
 
     const std::vector<std::pair<Vector2d, Car::CarColor>> car_positions{
             {Vector2d{14, -76}, Car::CarColor::Red},
-//            {Vector2d{20, -72}, Car::CarColor::Blue},
-//            {Vector2d{26, -76}, Car::CarColor::Yellow},
-//            {Vector2d{31, -72}, Car::CarColor::Green},
-//            {Vector2d{38, -76}, Car::CarColor::Orange},
-//            {Vector2d{43, -72}, Car::CarColor::Pink},
-//            {Vector2d{50, -76}, Car::CarColor::Purple},
-//            {Vector2d{55, -72}, Car::CarColor::Black},
+            {Vector2d{20, -72}, Car::CarColor::Blue},
+            {Vector2d{26, -76}, Car::CarColor::Yellow},
+            {Vector2d{31, -72}, Car::CarColor::Green},
+            {Vector2d{38, -76}, Car::CarColor::Orange},
+            {Vector2d{43, -72}, Car::CarColor::Pink},
+            {Vector2d{50, -76}, Car::CarColor::Purple},
+            {Vector2d{55, -72}, Car::CarColor::Black},
     };
 
     std::vector<std::shared_ptr<Car>> cars;
