@@ -4,11 +4,11 @@
 
 #include <memory>
 #include "scene.hpp"
-#include "levels/level.hpp"
+#include "race/models/level.hpp"
 
 class CoopMode {
 public:
-    static std::shared_ptr<Scene> get(const Level& level);
+    static std::shared_ptr<Scene> get(const RaceLevel& level);
 };
 
 #endif //GAME_COOP_HPP

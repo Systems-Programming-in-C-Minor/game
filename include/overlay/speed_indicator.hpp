@@ -1,7 +1,7 @@
 #ifndef GAME_SPEED_INDICATOR_HPP
 #define GAME_SPEED_INDICATOR_HPP
 
-#include "car/car.hpp"
+#include "race/objects/car.hpp"
 
 class SpeedIndicator {
 public:

@@ -1,5 +1,5 @@
 #include "obstacles/drag_collider.hpp"
-#include "car/car.hpp"
+#include "race/objects/car.hpp"
 #include <components/colliders/chaincollider.hpp>
 #include <scene.hpp>
 #include <iostream>

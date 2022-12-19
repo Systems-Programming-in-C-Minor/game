@@ -1,14 +1,14 @@
 #include "modes/coop_mode.hpp"
-#include "car/car_input_behaviour.hpp"
 #include "ai/target_listener.hpp"
-#include "car/car.hpp"
+#include "race/objects/car.hpp"
+#include "race/behaviours/drive_input_behaviour.hpp"
 
-std::shared_ptr<Scene> CoopMode::get(const Level& level) {
-    const auto behaviour = std::make_shared<CarInputBehaviour>(level.scene->get_event_manager());
+std::shared_ptr<Scene> CoopMode::get(const RaceLevel& level) {
+    const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
     level.cars[0]->add_component(behaviour);
 
-    const auto co_op = std::make_shared<CarInputBehaviour>(
-            level.scene->get_event_manager(), CarKeybinds{I, K, J, L, U});
+    const auto co_op = std::make_shared<DriveInputBehaviour>(
+            level.scene->get_event_manager(), DriveKeybinds{I, K, J, L, U});
     level.cars[1]->add_component(co_op);
 
     for (int index = 2; index < level.cars.size(); index++) {
