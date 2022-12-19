@@ -16,7 +16,7 @@ set(FETCHCONTENT_QUIET FALSE)
 FetchContent_Declare(
         engine
         GIT_REPOSITORY git@github.com:Systems-Programming-in-C-Minor/engine.git
-        GIT_TAG origin/implement-race-behaviours
+        GIT_TAG origin/master
 )
 
 FetchContent_MakeAvailable(engine)

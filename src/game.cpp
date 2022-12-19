@@ -26,11 +26,11 @@ void Game::start_game() {
     // TODO implement switch scene between modes
     const auto controllers = Global::get_instance()->get_engine().get_number_of_controllers();
 
-    if (controllers > 0)
-        _current_scene = ControllerMode::get(LevelsFactory::get_level1());
-    else
-        _current_scene = CoopMode::get(LevelsFactory::get_level1());
-//     _current_scene = SingleplayerMode::get(LevelsFactory::get_level1());
+//    if (controllers > 0)
+//        _current_scene = ControllerMode::get(LevelsFactory::get_level1());
+//    else
+//        _current_scene = CoopMode::get(LevelsFactory::get_level1());
+     _current_scene = SingleplayerMode::get(LevelsFactory::get_level1());
 
     engine.load_scene(_current_scene);
 
