@@ -26,11 +26,11 @@ CarAudioListenerComponent::CarAudioListenerComponent(EventManager &event_manager
 
 void CarAudioListenerComponent::on_collider_entry(const ColliderEntryEvent& event)
 {
+    if (event.collider_a->game_object != this->game_object && event.collider_b->game_object != this->game_object)
+        return;
     if (event.collider_a->game_object->get_tag() == "drag-collider" || event.collider_b->game_object->get_tag() == "drag-collider")
         return;
     if (event.collider_a->game_object->get_tag() == "checkpoint" || event.collider_b->game_object->get_tag() == "checkpoint")
-        return;
-    if (event.collider_a->game_object != this->game_object && event.collider_b->game_object != this->game_object)
         return;
 
     const auto sources = game_object->get_components<AudioSource>();
@@ -41,15 +41,15 @@ void CarAudioListenerComponent::on_collider_entry(const ColliderEntryEvent& even
     }
 }
 
-void CarAudioListenerComponent::tick(GameObject &game_object)
+void CarAudioListenerComponent::tick(GameObject &no)
 {
-    const auto sources = game_object.get_components<AudioSource>();
-    const float lateral_velocity = game_object.get_component<RigidBody>()->get_lateral_velocity().length();
+    const auto sources = game_object->get_components<AudioSource>();
+    const float lateral_velocity = game_object->get_component<RigidBody>()->get_lateral_velocity().length();
     bool is_moving = false;
 
     std::cout << "lateral velocity: " << lateral_velocity << std::endl;
-    
-    if (game_object.get_component<RigidBody>()->get_current_speed() > 1)
+
+    if (game_object->get_component<RigidBody>()->get_current_speed() > 1)
         is_moving = true;
 
     for (const auto sound : sources) {
@@ -82,4 +82,9 @@ void CarAudioListenerComponent::tick(GameObject &game_object)
             }
         }
     }
+}
+
+std::vector<std::shared_ptr<AudioSource>> CarAudioListenerComponent::get_sounds()
+{
+    return _sounds;
 }
