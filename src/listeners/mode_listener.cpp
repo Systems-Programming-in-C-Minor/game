@@ -5,6 +5,7 @@
 #include "modes/singleplayer_mode.hpp"
 #include "modes/coop_mode.hpp"
 #include "modes/controller_mode.hpp"
+#include "modes/multiplayer_mode.hpp"
 
 ModeListener::ModeListener(EventManager &event_manager) : GameObject("mode-listener", "mode-listener"),
                                                           UiObjectListener(event_manager) {}
@@ -29,7 +30,7 @@ void ModeListener::on_uiobject_released(const UiObjectReleasedEvent &event) {
         return;
     }
     if (name == "multiplayer") {
-        // TODO implement multiplayer mode
+        Global::get_instance()->get_engine().load_scene(MultiplayerMode::get(level));
         return;
     }
 }
