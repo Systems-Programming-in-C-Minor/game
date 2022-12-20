@@ -9,6 +9,7 @@
 #include "behaviours/game_behaviour.hpp"
 #include "car/car_factory.hpp"
 #include "overlay/fps_indicator_factory.hpp"
+#include "objects/speed_boost_object.hpp"
 #include <utils/random.hpp>
 #include <camera.hpp>
 #include <components/text.hpp>
@@ -70,6 +71,11 @@ RaceLevel Level1Factory::get() {
         cars.push_back(car);
         scene->gameobjects.push_back(car);
     }
+
+    scene->gameobjects.push_back(
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-50.f, 73.f}, 270.f,1000));
+    scene->gameobjects.push_back(
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{50.f, 76.f}, 270.f,1000));
 
     const std::vector<Vector2d> targets{
             Vector2d{-60.f, -72.f},
