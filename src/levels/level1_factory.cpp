@@ -66,8 +66,7 @@ RaceLevel Level1Factory::get() {
 
     std::vector<std::shared_ptr<Car>> cars;
     for (const auto car_position: car_positions) {
-        auto car = CarFactory::get("car-" + std::to_string(car_position.second),
-                                   car_position.second, car_position.first, scene);
+        auto car = CarFactory::get(car_position.second, car_position.first, scene);
         cars.push_back(car);
         scene->gameobjects.push_back(car);
     }
