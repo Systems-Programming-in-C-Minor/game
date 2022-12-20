@@ -2,9 +2,6 @@
 #include "game.hpp"
 #include "global.hpp"
 #include "components/sprite.hpp"
-#include "modes/coop_mode.hpp"
-#include "modes/controller_mode.hpp"
-#include "levels/level1_factory.hpp"
 #include "scenes/mode_selecotor_factory.hpp"
 
 int main() {
@@ -29,6 +26,4 @@ void Game::start_game() {
 
 void Game::exit_game() const {
     _global->get_engine().stop();
-
-
 }
