@@ -1,25 +1,20 @@
+
+#include <map>
 #include "car/car_factory.hpp"
-#include "car/car_input_behaviour.hpp"
-#include <memory>
-#include <scene.hpp>
 
 std::shared_ptr<Car>
-CarFactory::base_car(const std::string &name, Car::CarColor color, const Vector2d position, const std::shared_ptr<Scene> &scene) {
-    return std::make_shared<Car>(name, color, position, scene);
+CarFactory::get(const std::string &name, CarColor color, Vector2d position, const std::shared_ptr<Scene> &scene) {
+    const std::map<CarColor, std::string> sprites{
+            {Blue,   "./assets/cars/blue_car.png"},
+            {Red,    "./assets/cars/red_car.png"},
+            {Yellow, "./assets/cars/yellow_car.png"},
+            {Green,  "./assets/cars/green_car.png"},
+            {Orange, "./assets/cars/orange_car.png"},
+            {Pink,   "./assets/cars/pink_car.png"},
+            {Purple, "./assets/cars/purple_car.png"},
+            {Black,  "./assets/cars/black_car.png"},
+    };
+
+    return std::make_shared<Car>(name, sprites.at(color), position, scene);
 }
 
-std::shared_ptr<Car> CarFactory::add_ai_behaviour(std::shared_ptr<Car> car, const std::shared_ptr<Scene> &scene) {
-    return car;
-}
-
-std::shared_ptr<Car> CarFactory::add_input_behaviour(std::shared_ptr<Car> car, const std::shared_ptr<Scene> &scene,
-                                                     CarKeybinds keybinds) {
-    auto behaviour = std::make_shared<CarInputBehaviour>(scene->get_event_manager(), keybinds);
-    car->add_component(behaviour);
-
-    return car;
-}
-
-std::shared_ptr<Car> CarFactory::add_client_behaviour(std::shared_ptr<Car> car, const std::shared_ptr<Scene> &scene) {
-    return car;
-}

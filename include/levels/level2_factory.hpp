@@ -2,11 +2,11 @@
 #define GAME_LEVEL2_HPP
 
 #include <scene.hpp>
-#include "level_factory.hpp"
+#include "race/models/level.hpp"
 
-class Level2Factory : public LevelFactory {
+class Level2Factory {
 public:
-    Level get() override;
+    static RaceLevel get();
 
 };
 
