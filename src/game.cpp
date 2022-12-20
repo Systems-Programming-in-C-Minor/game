@@ -2,7 +2,7 @@
 #include "game.hpp"
 #include "global.hpp"
 #include "components/sprite.hpp"
-#include "scenes/mode_selecotor_factory.hpp"
+#include "scenes/mode_selector_factory.hpp"
 
 int main() {
     Game game;

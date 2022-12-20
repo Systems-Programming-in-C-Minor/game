@@ -1,4 +1,4 @@
-#include "scenes/mode_selecotor_factory.hpp"
+#include "scenes/mode_selector_factory.hpp"
 #include "uiobject.hpp"
 #include "components/text.hpp"
 #include "components/sprite.hpp"
