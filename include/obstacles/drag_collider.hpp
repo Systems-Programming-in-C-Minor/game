@@ -13,7 +13,7 @@ class Car;
 class DragCollider : public GameObject, public ColliderListener {
 public:
     DragCollider(const std::string &name, const std::shared_ptr<Scene> &scene, EventManager &event_manager,
-                 float drag_modifier, float traction_modifier, float drive_force,
+                 float traction_modifier, float drive_force,
                  const std::pair<std::string, std::string> &drag_collider_paths = {});
 
     void on_collider_entry(const ColliderEntryEvent &event) override;
@@ -30,16 +30,15 @@ private:
 
     void toggle_drag_on_car(RigidBody *body, Car *car, bool collider_entry);
 
-    void apply_drag(Car *car, const std::shared_ptr<DragObject>& drag) const;
+    void apply_drag(Car *car, const std::shared_ptr<DragObject> &drag) const;
 
-    void remove_drag(Car *car, const std::shared_ptr<DragObject>& drag) const;
+    void remove_drag(Car *car, const std::shared_ptr<DragObject> &drag) const;
 
     RigidBody *_outer_body;
     RigidBody *_inner_body;
 
     std::map<Car *, std::shared_ptr<DragObject>> _car_drags;
 
-    const float _drag_modifier;
     const float _traction_modifier;
     const float _drive_force;
 

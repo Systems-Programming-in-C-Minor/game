@@ -8,7 +8,6 @@ std::shared_ptr<Scene> CoopMode::get(const RaceLevel &level) {
     const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
     level.cars[0]->add_component(behaviour);
     level.cars[0]->add_child(level.scene->get_camera());
-    level.scene->gameobjects.push_back(level.scene->get_camera());
 
     const auto co_op = std::make_shared<DriveInputBehaviour>(
             level.scene->get_event_manager(), DriveKeybinds{I, K, J, L, U});
