@@ -21,16 +21,9 @@ void Game::start_game() {
     _global->set_engine(std::move(p_engine));
     Engine &engine = _global->get_engine();
 
-    // TODO implement switch scene between modes
-//    if (Global::get_instance()->get_engine().get_number_of_controllers() > 0)
-//        _current_scene = ControllerMode::get(Level1Factory::get());
-//    else
-//        _current_scene = CoopMode::get(Level1Factory::get());
-
     _current_scene = ModeSelectorFactory::get();
 
     engine.load_scene(_current_scene);
-
     engine.start();
 }
 
