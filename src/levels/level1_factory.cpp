@@ -8,8 +8,10 @@
 #include "obstacles/drag_collider.hpp"
 #include "behaviours/game_behaviour.hpp"
 #include "car/car_factory.hpp"
+#include "overlay/fps_indicator_factory.hpp"
 #include <utils/random.hpp>
 #include <camera.hpp>
+#include <components/text.hpp>
 
 RaceLevel Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f));
@@ -22,6 +24,13 @@ RaceLevel Level1Factory::get() {
                                          "./assets/colliders/track1/track1_inner.xml",
                                          "./assets/colliders/track1/track1_outer.xml"
             ));
+
+    const auto un_engine = std::make_shared<GameObject>(
+            "ad_board", "ad", Transform{Vector2d{-50.f, 10.f}, Vector2d{}, 0.2f, 1.f});
+    un_engine->add_component(
+            std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 10,
+                                   Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
+    scene->gameobjects.push_back(un_engine);
 
     scene->gameobjects.push_back(std::make_shared<DragCollider>(
             "grass-collider-inner",
@@ -216,6 +225,8 @@ RaceLevel Level1Factory::get() {
     for (const auto tire_stack: tire_stacks) {
         scene->gameobjects.push_back(TireStackFactory::get(tire_stack, scene));
     }
+
+    scene->gameobjects.push_back(FpsIndicatorFactory::get(scene->get_event_manager()));
 
     scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
 
