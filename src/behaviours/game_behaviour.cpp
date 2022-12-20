@@ -30,6 +30,19 @@ void GameBehaviour::on_key_pressed(const KeyPressedEvent &event) {
                 Global::get_instance()->get_engine().get_renderer()->toggle_debug_mode();
             break;
         }
+        case RIGHT: {
+            if (_alt_pressed) {
+                const int ticks = Global::get_instance()->get_engine().get_ticks_per_second();
+                (ticks < 1000) ? Global::get_instance()->get_engine().set_ticks_per_second(ticks + 10) : void();
+            }
+            break;
+        }
+        case LEFT: {
+            if (_alt_pressed) {
+                const int ticks = Global::get_instance()->get_engine().get_ticks_per_second();
+                (ticks > 10) ? Global::get_instance()->get_engine().set_ticks_per_second(ticks - 10) : void();
+            }
+        }
         default:
             break;
     }
