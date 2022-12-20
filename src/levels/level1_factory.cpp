@@ -9,11 +9,10 @@
 #include "behaviours/game_behaviour.hpp"
 #include "car/car_factory.hpp"
 #include <utils/random.hpp>
+#include <camera.hpp>
 
 RaceLevel Level1Factory::get() {
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>();
-
-    scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager()));
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f));
 
     scene->gameobjects
             .push_back(TrackFactory::get("level1-track",
@@ -28,9 +27,8 @@ RaceLevel Level1Factory::get() {
             "grass-collider-inner",
             scene,
             scene->get_event_manager(),
-            .3f,
             3.f,
-            -300.f,
+            -600.f,
             std::pair<std::string, std::string>
                     {"./assets/colliders/track1/track1_grass_inner_inside.xml",
                      "./assets/colliders/track1/track1_grass_inner.xml"}));
@@ -40,9 +38,8 @@ RaceLevel Level1Factory::get() {
             "grass-collider-outer",
             scene,
             scene->get_event_manager(),
-            .6f,
             3.f,
-            -300.f,
+            -600.f,
             std::pair<std::string, std::string>
                     {"./assets/colliders/track1/track1_grass_outer_inside.xml",
                      "./assets/colliders/track1/track1_grass_outer.xml"}));
@@ -219,6 +216,8 @@ RaceLevel Level1Factory::get() {
     for (const auto tire_stack: tire_stacks) {
         scene->gameobjects.push_back(TireStackFactory::get(tire_stack, scene));
     }
+
+    scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
 
     return RaceLevel{cars, targets, scene};
 }

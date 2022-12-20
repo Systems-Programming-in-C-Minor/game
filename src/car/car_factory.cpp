@@ -15,6 +15,6 @@ CarFactory::get(const std::string &name, CarColor color, Vector2d position, cons
             {Black,  "./assets/cars/black_car.png"},
     };
 
-    return std::make_shared<Car>(name, sprites.at(color), position, scene);
+    return std::make_shared<Car>(name, sprites.at(color), position, scene, false);
 }
 

@@ -2,12 +2,9 @@
 #include "game.hpp"
 #include "global.hpp"
 #include "components/sprite.hpp"
-#include "levels/levels_factory.hpp"
-#include "events.hpp"
-#include <global.hpp>
-#include "modes/singleplayer_mode.hpp"
 #include "modes/coop_mode.hpp"
 #include "modes/controller_mode.hpp"
+#include "levels/level1_factory.hpp"
 
 int main() {
     Game game;
@@ -25,15 +22,11 @@ void Game::start_game() {
 
     // TODO implement switch scene between modes
     if (Global::get_instance()->get_engine().get_number_of_controllers() > 0)
-        _current_scene = ControllerMode::get(LevelsFactory::get_level1());
+        _current_scene = ControllerMode::get(Level1Factory::get());
     else
-        _current_scene = CoopMode::get(LevelsFactory::get_level1());
-//     _current_scene = SingleplayerMode::get(LevelsFactory::get_level1());
+        _current_scene = CoopMode::get(Level1Factory::get());
 
     engine.load_scene(_current_scene);
-
-    auto moved_event = MouseMovedEvent(1.f, 1.f);
-    Global::get_instance()->notify_event_manager(moved_event);
 
     engine.start();
 }
