@@ -2,6 +2,8 @@
 #include "uiobject.hpp"
 #include "components/text.hpp"
 #include "components/sprite.hpp"
+#include "listeners/mode_listener.hpp"
+
 
 std::shared_ptr<Scene> ModeSelectorFactory::get() {
     auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}));
@@ -22,6 +24,8 @@ std::shared_ptr<Scene> ModeSelectorFactory::get() {
     background_object->transform.set_scale(2.f);
     scene->gameobjects.push_back(background_object);
 
+    scene->gameobjects.push_back(std::make_shared<ModeListener>(scene->get_event_manager()));
+
     return scene;
 }
 
@@ -34,7 +38,7 @@ ModeSelectorFactory::text_button(const std::string &name, const std::string &tex
     auto button = std::make_shared<Sprite>("./assets/ui/empty-button.png", 5);
     ui_object->add_component(button);
 
-    auto text_ui_object = std::make_shared<UIObject>(name, "button", 50.f, 8.f, event_manager);
+    auto text_ui_object = std::make_shared<UIObject>(name + "-text", "text", 50.f, 8.f, event_manager);
     auto text_object = std::make_shared<Text>(text, "./assets/fonts/roboto/Roboto-Medium.ttf", 1000, 10,
                                               Color{255, 255, 255, 0}, Color{0, 0, 0, 1});
     text_ui_object->add_component(text_object);
