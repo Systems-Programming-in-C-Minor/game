@@ -2,6 +2,7 @@
 #include "listeners/target_listener.hpp"
 #include "race/behaviours/drive_input_controller_behaviour.hpp"
 #include <global.hpp>
+#include <camera.hpp>
 
 std::shared_ptr<Scene> ControllerMode::get(const RaceLevel &level) {
 

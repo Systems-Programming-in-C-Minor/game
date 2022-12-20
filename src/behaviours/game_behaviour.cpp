@@ -2,7 +2,6 @@
 #include <global.hpp>
 #include "race/behaviours/checkpoint_behaviour.hpp"
 #include <iostream>
-#include <utility>
 
 GameBehaviour::GameBehaviour(EventManager &event_manager, std::vector<std::shared_ptr<Car>> cars, int number_of_laps,
                              int number_to_finish) :

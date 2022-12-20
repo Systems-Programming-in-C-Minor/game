@@ -12,9 +12,7 @@
 #include <camera.hpp>
 
 RaceLevel Level1Factory::get() {
-    auto camera = std::shared_ptr<Camera>();
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>(camera);
-    scene->gameobjects.push_back(camera);
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>());
 
     scene->gameobjects
             .push_back(TrackFactory::get("level1-track",
