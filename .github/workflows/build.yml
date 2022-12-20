@@ -27,7 +27,7 @@ jobs:
       - name: Setup SDL
         run: |
           sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
-          sudo mkdir /usr/lib/x86_64-linux-gnu/cmake/sdl2_ image/
+          sudo mkdir /usr/lib/x86_64-linux-gnu/cmake/sdl2_image/
           echo -e 'set(prefix "/usr")\nset(exec_prefix "${prefix}")\nset(libdir "${prefix}/lib/x86_64-linux-gnu")\nset(SDL2_IMAGE_PREFIX "/usr")\nset(SDL2_IMAGE_EXEC_PREFIX "/usr")\nset(SDL2_IMAGE_INCLUDE_DIRS "${prefix}/include/SDL2_image")\nset(SDL2_IMAGE_LIBRARIES "-lSDL2_image")' > sdl2_image-config.cmake
           sudo mv sdl2_image-config.cmake /usr/lib/x86_64-linux-gnu/cmake/sdl2_image/
           sudo mkdir /usr/lib/x86_64-linux-gnu/cmake/sdl2_ttf/
