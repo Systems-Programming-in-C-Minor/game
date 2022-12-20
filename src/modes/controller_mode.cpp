@@ -1,6 +1,6 @@
 #include "modes/controller_mode.hpp"
-#include "listeners/target_listener.hpp"
 #include "race/behaviours/drive_input_controller_behaviour.hpp"
+#include "race/behaviours/ai_target_behaviour.hpp"
 #include <global.hpp>
 #include <camera.hpp>
 
@@ -14,8 +14,8 @@ std::shared_ptr<Scene> ControllerMode::get(const RaceLevel &level) {
     }
 
     for (auto index = controllers; index < level.cars.size(); index++) {
-        auto ai_listener_component =
-                std::make_shared<TargetListenerComponent>(level.scene->get_event_manager(), level.targets);
+        auto ai_listener_component = std::make_shared<AITargetBehaviour>(level.scene->get_event_manager(),
+                                                                         level.targets);
         level.cars[index]->add_component(ai_listener_component);
         const auto ai_behaviour = std::make_shared<AIBehaviour>(ai_listener_component->get_target());
         level.cars[index]->add_component(ai_behaviour);
