@@ -1,8 +1,7 @@
-#include "obstacles/drag_collider.hpp"
+#include "colliders/drag_collider.hpp"
 #include "race/objects/car.hpp"
 #include <components/colliders/chaincollider.hpp>
 #include <scene.hpp>
-#include <iostream>
 
 DragCollider::DragCollider(const std::string &name, const std::shared_ptr<Scene> &scene, EventManager &event_manager,
                            float traction_modifier, float drive_force,

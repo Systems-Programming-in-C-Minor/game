@@ -5,13 +5,10 @@
 #include <camera.hpp>
 
 std::shared_ptr<Scene> CoopMode::get(const RaceLevel &level) {
-    const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
-    level.cars[0]->add_component(behaviour);
-    level.cars[0]->add_child(level.scene->get_camera());
+    level.cars[0]->add_component(std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager()));
 
-    const auto co_op = std::make_shared<DriveInputBehaviour>(
-            level.scene->get_event_manager(), DriveKeybinds{I, K, J, L, U});
-    level.cars[1]->add_component(co_op);
+    level.cars[1]->add_component(std::make_shared<DriveInputBehaviour>(
+            level.scene->get_event_manager(), DriveKeybinds{I, K, J, L, U}));
 
     for (int index = 2; index < level.cars.size(); index++) {
         auto ai_listener_component =

@@ -1,5 +1,4 @@
-#include "obstacles/guardrail_factory.hpp"
-
+#include "colliders/guardrail_factory.hpp"
 #include "transform.hpp"
 #include "components/sprite.hpp"
 #include "components/colliders/boxcollider.hpp"

@@ -1,4 +1,4 @@
-#include "obstacles/tire_stack_factory.hpp"
+#include "colliders/tire_stack_factory.hpp"
 #include "transform.hpp"
 #include "components/sprite.hpp"
 #include "components/colliders/boxcollider.hpp"

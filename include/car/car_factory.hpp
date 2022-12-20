@@ -18,7 +18,7 @@ enum CarColor {
 class CarFactory {
 public:
     static std::shared_ptr<Car>
-    get(const std::string &name, CarColor color, Vector2d position, const std::shared_ptr<Scene> &scene);
+    get(CarColor color, Vector2d position, const std::shared_ptr<Scene> &scene);
 };
 
 #endif //GAME_CAR_FACTORY_HPP
