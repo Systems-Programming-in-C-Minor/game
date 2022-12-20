@@ -9,11 +9,12 @@
 #include "behaviours/game_behaviour.hpp"
 #include "car/car_factory.hpp"
 #include <utils/random.hpp>
+#include <camera.hpp>
 
 RaceLevel Level1Factory::get() {
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>();
-
-    scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager()));
+    auto camera = std::shared_ptr<Camera>();
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(camera);
+    scene->gameobjects.push_back(camera);
 
     scene->gameobjects
             .push_back(TrackFactory::get("level1-track",
@@ -219,6 +220,8 @@ RaceLevel Level1Factory::get() {
     for (const auto tire_stack: tire_stacks) {
         scene->gameobjects.push_back(TireStackFactory::get(tire_stack, scene));
     }
+
+    scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
 
     return RaceLevel{cars, targets, scene};
 }

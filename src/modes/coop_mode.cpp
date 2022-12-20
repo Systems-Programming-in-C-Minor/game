@@ -1,5 +1,5 @@
 #include "modes/coop_mode.hpp"
-#include "ai/target_listener.hpp"
+#include "listeners/target_listener.hpp"
 #include "race/objects/car.hpp"
 #include "race/behaviours/drive_input_behaviour.hpp"
 

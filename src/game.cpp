@@ -31,10 +31,6 @@ void Game::start_game() {
 //     _current_scene = SingleplayerMode::get(LevelsFactory::get_level1());
 
     engine.load_scene(_current_scene);
-
-    auto moved_event = MouseMovedEvent(1.f, 1.f);
-    Global::get_instance()->notify_event_manager(moved_event);
-
     engine.start();
 }
 

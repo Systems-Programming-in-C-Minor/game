@@ -1,5 +1,5 @@
 #include "modes/controller_mode.hpp"
-#include "ai/target_listener.hpp"
+#include "listeners/target_listener.hpp"
 #include "race/behaviours/drive_input_controller_behaviour.hpp"
 #include <global.hpp>
 

@@ -1,6 +1,6 @@
 #include "modes/singleplayer_mode.hpp"
 #include "race/objects/car.hpp"
-#include "ai/target_listener.hpp"
+#include "listeners/target_listener.hpp"
 #include "race/behaviours/drive_input_behaviour.hpp"
 
 std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {

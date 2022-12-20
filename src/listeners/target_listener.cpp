@@ -1,11 +1,10 @@
-
-#include "ai/target_listener.hpp"
+#include "listeners/target_listener.hpp"
 
 TargetListenerComponent::TargetListenerComponent(EventManager &event_manager, std::vector<Vector2d> targets)
         : AIListener(event_manager) {
     std::vector<std::shared_ptr<GameObject>> target_objects;
     for (const auto target: targets) {
-        target_objects.push_back(std::make_shared<GameObject>("target", "target", true, Transform{target}));
+        target_objects.push_back(std::make_shared<GameObject>("target", "target", Transform{target}));
     }
     _targets = target_objects;
 };

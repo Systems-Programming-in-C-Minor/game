@@ -5,13 +5,13 @@
 
 std::shared_ptr<GameObject>
 TreeFactory::get(TreeType tree_type, Vector2d position) {
-    auto game_object = std::make_shared<GameObject>("tree", "tree", true, Transform{position});
+    auto game_object = std::make_shared<GameObject>("tree", "tree", Transform{position});
 
     Sprites sprites;
 
-    for (const auto& animation_path: animation_paths[tree_type]) {
-        auto sprite = std::make_shared<Sprite>(animation_path, Color(0, 0, 0, 0), false, false, 1,
-                                               200 - (position.y > 0 ? position.y : position.y * -1), 36.f);
+    for (const auto &animation_path: animation_paths[tree_type]) {
+        auto sprite =
+                std::make_shared<Sprite>(animation_path, 200 - (position.y > 0 ? position.y : position.y * -1), 36.f);
         sprites.emplace_back(sprite);
     }
 

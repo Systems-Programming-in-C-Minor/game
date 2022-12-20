@@ -4,12 +4,9 @@
 #include "components/colliders/boxcollider.hpp"
 
 std::shared_ptr<GameObject> TireStackFactory::get(Vector2d pos, const std::shared_ptr<Scene> &scene) {
-    auto obj =
-            std::make_shared<GameObject>("tire-stack", "tire-stack", true);
+    auto obj = std::make_shared<GameObject>("tire-stack", "tire-stack");
 
-    const auto sprite =
-            std::make_shared<Sprite>("./assets/obstacles/tire_stack.png", Color(0, 0, 0, 0), false, false, 1, 20,
-                                     200.f);
+    const auto sprite = std::make_shared<Sprite>("./assets/obstacles/tire_stack.png", 20, 200.f);
     obj->add_component(sprite);
 
     auto collider = std::make_shared<BoxCollider>(1.4f, 1.4f);
