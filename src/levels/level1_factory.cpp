@@ -14,8 +14,8 @@
 #include <camera.hpp>
 #include <components/text.hpp>
 #include "utils/high-score-reader.hpp"
+#include <components/audiosource.hpp>
 
-#include "components/audiosource.hpp"
 
 RaceLevel Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f), "level 1");
@@ -242,8 +242,8 @@ RaceLevel Level1Factory::get() {
 
     scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
 
-    const auto background_music = std::make_shared<AudioSource>("./assets/audio/background1.mp3", false, false, 0.05,
-                                                                "background");
+    const auto background_music = std::make_shared<AudioSource>("./assets/audio/background1.mp3", false, true, 0.05,"background");
+
     background_music->play();
 
     return RaceLevel{cars, targets, scene};

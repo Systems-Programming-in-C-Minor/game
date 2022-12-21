@@ -13,6 +13,8 @@
 #include "utils/trigonometry.hpp"
 #include "storage/json_properties.hpp"
 #include "utils/high-score-reader.hpp"
+#include "colliders/void_collider.hpp"
+
 
 RaceLevel Level2Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f), "level 2");
@@ -47,13 +49,42 @@ RaceLevel Level2Factory::get() {
         scene->gameobjects.push_back(car);
     }
 
+    scene->gameobjects.push_back(std::make_shared<VoidCollider>(
+            "void-inner_small",
+            scene,
+            scene->get_event_manager(),
+            std::pair<std::string, std::string>
+                    {
+                     "./assets/colliders/track2/track2_inner_small_extra.xml",
+                "./assets/colliders/track2/track2_inner_small.xml"
+                    }));
+
+    scene->gameobjects.push_back(std::make_shared<VoidCollider>(
+            "void-inner_large",
+            scene,
+            scene->get_event_manager(),
+            std::pair<std::string, std::string>
+                    {
+                     "./assets/colliders/track2/track2_inner_large_extra.xml",
+                "./assets/colliders/track2/track2_inner_large.xml"
+                    }));
+
+    scene->gameobjects.push_back(std::make_shared<VoidCollider>(
+            "void-collider-outer",
+            scene,
+            scene->get_event_manager(),
+            std::pair<std::string, std::string>
+                    {
+                     "./assets/colliders/track2/track2_outer_extra.xml",
+                "./assets/colliders/track2/track2_outer.xml"
+                    }));
+
     scene->gameobjects.push_back(
             std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-86.f, 122.f}, 270.f, 200));
     scene->gameobjects.push_back(
             std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-20.f, -36.f}, 270.f, 200));
     scene->gameobjects.push_back(
             std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{94.f, -103.f}, 90.f, 200));
-
 
     const std::vector<Vector2d> targets{
             Vector2d{-60.f, -72.f},
@@ -84,27 +115,27 @@ RaceLevel Level2Factory::get() {
             CheckpointDef{Vector2d{-110.f, 80.f}, 25.f, 0.f},
             CheckpointDef{Vector2d{-110.f, 90.f}, 25.f, 0.f},
             CheckpointDef{Vector2d{-110.f, 100.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{-90.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-80.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-70.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-60.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-50.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-40.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-30.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-20.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-10.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{0.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{10.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{20.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{30.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{40.f, 116.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{60.f, 100.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{60.f, 90.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{60.f, 80.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{60.f, 70.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{60.f, 60.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{60.f, 50.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{60.f, 40.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{-90.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-80.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-70.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-60.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-50.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-40.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-30.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-20.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-10.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{0.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{10.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{20.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{30.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{40.f, 116.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{60.f, 100.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{60.f, 90.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{60.f, 80.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{60.f, 70.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{60.f, 60.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{60.f, 50.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{60.f, 40.f}, 25.f, 180.f},
             CheckpointDef{Vector2d{40.f, 24.f}, 25.f, 90.f},
             CheckpointDef{Vector2d{30.f, 24.f}, 25.f, 90.f},
             CheckpointDef{Vector2d{20.f, 24.f}, 25.f, 90.f},
@@ -113,29 +144,29 @@ RaceLevel Level2Factory::get() {
             CheckpointDef{Vector2d{-10.f, 24.f}, 25.f, 90.f},
             CheckpointDef{Vector2d{-20.f, 24.f}, 25.f, 90.f},
             CheckpointDef{Vector2d{-30.f, 24.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-50.f, 10.f}, 35.f, 0.f},
-            CheckpointDef{Vector2d{-50.f, 0.f}, 35.f, 0.f},
-            CheckpointDef{Vector2d{-50.f, -10.f}, 35.f, 0.f},
-            CheckpointDef{Vector2d{-50.f, -20.f}, 35.f, 0.f},
-            CheckpointDef{Vector2d{-30.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-20.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{-10.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{0.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{10.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{20.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{30.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{40.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{50.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{60.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{70.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{80.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{90.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{100.f, -35.f}, 25.f, 90.f},
-            CheckpointDef{Vector2d{110.f, -50.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{110.f, -60.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{110.f, -70.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{110.f, -80.f}, 25.f, 0.f},
-            CheckpointDef{Vector2d{110.f, -90.f}, 25.f, 0.f},
+            CheckpointDef{Vector2d{-50.f, 10.f}, 35.f, 180.f},
+            CheckpointDef{Vector2d{-50.f, 0.f}, 35.f, 180.f},
+            CheckpointDef{Vector2d{-50.f, -10.f}, 35.f, 180.f},
+            CheckpointDef{Vector2d{-50.f, -20.f}, 35.f, 180.f},
+            CheckpointDef{Vector2d{-30.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-20.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{-10.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{0.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{10.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{20.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{30.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{40.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{50.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{60.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{70.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{80.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{90.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{100.f, -35.f}, 25.f, 270.f},
+            CheckpointDef{Vector2d{110.f, -50.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{110.f, -60.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{110.f, -70.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{110.f, -80.f}, 25.f, 180.f},
+            CheckpointDef{Vector2d{110.f, -90.f}, 25.f, 180.f},
             CheckpointDef{Vector2d{100.f, -105.f}, 30.f, 90.f},
             CheckpointDef{Vector2d{90.f, -105.f}, 30.f, 90.f},
             CheckpointDef{Vector2d{80.f, -105.f}, 30.f, 90.f},
@@ -147,13 +178,6 @@ RaceLevel Level2Factory::get() {
             CheckpointDef{Vector2d{20.f, -105.f}, 30.f, 90.f},
             CheckpointDef{Vector2d{10.f, -105.f}, 30.f, 90.f},
             CheckpointDef{Vector2d{0.f, -105.f}, 30.f, 90.f},
-            CheckpointDef{Vector2d{-10.f, -105.f}, 30.f, 90.f},
-            CheckpointDef{Vector2d{-20.f, -105.f}, 30.f, 90.f},
-            CheckpointDef{Vector2d{-30.f, -105.f}, 30.f, 90.f},
-            CheckpointDef{Vector2d{-40.f, -105.f}, 30.f, 90.f},
-            CheckpointDef{Vector2d{-50.f, -105.f}, 30.f, 90.f},
-            CheckpointDef{Vector2d{-60.f, -105.f}, 30.f, 90.f},
-            CheckpointDef{Vector2d{-70.f, -105.f}, 30.f, 90.f},
             CheckpointDef{Vector2d{-80.f, -105.f}, 30.f, 90.f},
             CheckpointDef{Vector2d{-90.f, -105.f}, 30.f, 90.f},
             CheckpointDef{Vector2d{-100.f, -105.f}, 30.f, 90.f},
