@@ -8,7 +8,9 @@
 HighScoreBehaviour::HighScoreBehaviour(EventManager &event_manager) : CheckpointListener(event_manager),
                                                                       _properties("high-scores.json"),
                                                                       _current_time(_set_current_time())
-                                                                      {}
+{
+    _global = Global::get_instance();
+}
 
 void HighScoreBehaviour::on_checkpoint_lapped(const CheckpointLappedEvent &event)
 {
@@ -24,12 +26,13 @@ void HighScoreBehaviour::on_checkpoint_lapped(const CheckpointLappedEvent &event
 void HighScoreBehaviour::check_high_scores(long lap_time)
 {
     long diff = lap_time - _current_time;
+    std::string level_name = _global->get_active_scene().get_name();
 
-    auto current_high_score = _properties.get_property("level 1-milliseconds");
+    auto current_high_score = _properties.get_property(level_name + "-milliseconds");
     if(!current_high_score.has_value() || std::stoll(current_high_score.value()) > diff)
     {
-        _properties.set_property("level 1-milliseconds", std::to_string(diff));
-        _properties.set_property("level 1-highscore", _format_lap_time(diff));
+        _properties.set_property(level_name + "-milliseconds", std::to_string(diff));
+        _properties.set_property(level_name + "-highscore", _format_lap_time(diff));
     }
 }
 

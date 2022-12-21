@@ -17,7 +17,7 @@
 #include "components/audiosource.hpp"
 
 RaceLevel Level1Factory::get() {
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f));
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f), "level 1");
 
     scene->gameobjects
             .push_back(TrackFactory::get("level1-track",
