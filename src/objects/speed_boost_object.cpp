@@ -51,10 +51,8 @@ void SpeedBoostObject::tick() {
     for (auto &car: _car_boosts) {
         car.second--;
 
-        if (car.second == 0) {
+        if (car.second == 0)
             remove_boost(car.first);
-            car.second--;
-        }
     }
 }
 
