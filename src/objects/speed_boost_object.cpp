@@ -29,13 +29,23 @@ SpeedBoostObject::SpeedBoostObject(EventManager &event_manager, const std::share
 void SpeedBoostObject::on_collider_entry(const ColliderEntryEvent &event) {
     if (event.collider_a->game_object == this && event.collider_b->game_object->get_tag() == "car") {
         set_boost(reinterpret_cast<Car *>(event.collider_b->game_object));
-        return;
+    } else if (event.collider_b->game_object == this && event.collider_a->game_object->get_tag() == "car") {
+        set_boost(reinterpret_cast<Car *>(event.collider_a->game_object));
     }
 
-    if (event.collider_b->game_object == this && event.collider_a->game_object->get_tag() == "car") {
-        set_boost(reinterpret_cast<Car *>(event.collider_a->game_object));
-        return;
+    if (event.collider_a->game_object == this || event.collider_b->game_object == this) {
+        this->get_component<Sprite>()->set_color(Color{255, 255, 0, 200});
+        _cars_on_booster++;
     }
+}
+
+void SpeedBoostObject::on_collider_exit(const ColliderExitEvent &event) {
+    if (event.collider_a->game_object != this && event.collider_b->game_object != this)
+        return;
+    std::cout << _cars_on_booster << std::endl;
+    _cars_on_booster--;
+    if (_cars_on_booster <= 0)
+        this->get_component<Sprite>()->set_color(Color{255, 255, 255, 255});
 }
 
 void SpeedBoostObject::tick() {

@@ -13,12 +13,17 @@ public:
 
     void on_collider_entry(const ColliderEntryEvent &event) override;
 
+    void on_collider_exit(const ColliderExitEvent &event) override;
+
     void tick() override;
 
 private:
     const float _boost_force;
     const float _boost_speed;
     const int _tick_duration;
+
+    int _cars_on_booster = 0;
+
     std::map<Car *, int> _car_boosts;
 
     void set_boost(Car *car);
