@@ -35,12 +35,13 @@ void CarAudioListenerComponent::on_collider_entry(const ColliderEntryEvent& even
     if (event.collider_a->game_object->get_tag() == "speed-boost" || event.collider_b->game_object->get_tag() == "speed-boost")
         return;
 
-//    const auto sources = game_object->get_components<AudioSource>();
-//    for (const auto sound : sources) {
-//        if (sound->get_name() == "car_crash") {
-//            sound->play();
-//        }
-//    }
+    const auto sources = game_object->get_components<AudioSource>();
+    for (const auto &sound : sources) {
+        if (sound->get_name() == "car_crash") {
+            if (!sound->is_playing())
+                sound->play();
+        }
+    }
 }
 
 void CarAudioListenerComponent::tick(GameObject &no)
@@ -56,10 +57,11 @@ void CarAudioListenerComponent::tick(GameObject &no)
         is_moving = true;
     }
 
-    for (const auto sound : sources) {
+    for (const auto &sound : sources) {
         if (sound->get_name() == "car_drift") {
             if (lateral_velocity > 6) {
-                sound->play(true);
+                if (!sound->is_playing())
+                    sound->play();
             }
             else {
                 sound->stop();
@@ -68,21 +70,21 @@ void CarAudioListenerComponent::tick(GameObject &no)
     }
     
     if (is_moving) {
-        for (const auto sound : sources) {
-            if (sound->get_name() == "accelerate") {
-                sound->play(true);
+        for (const auto &sound : sources) {
+            if (sound->get_name() == "accelerate" && !sound->is_playing()) {
+                sound->play();
             }
             if (sound->get_name() == "engine_idle") {
                 sound->stop();
             }
         }
     } else {
-        for (const auto sound : sources) {
+        for (const auto &sound : sources) {
             if (sound->get_name() == "accelerate") {
                 sound->stop();
             }
-            if (sound->get_name() == "engine_idle") {
-                sound->play(true);
+            if (sound->get_name() == "engine_idle" && !sound->is_playing()) {
+                sound->play();
             }
         }
     }
