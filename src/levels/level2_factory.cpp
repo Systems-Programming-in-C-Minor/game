@@ -55,8 +55,8 @@ RaceLevel Level2Factory::get() {
             scene->get_event_manager(),
             std::pair<std::string, std::string>
                     {
-                     "./assets/colliders/track2/track2_inner_small_extra.xml",
-                "./assets/colliders/track2/track2_inner_small.xml"
+                            "./assets/colliders/track2/track2_inner_small_extra.xml",
+                            "./assets/colliders/track2/track2_inner_small.xml"
                     }));
 
     scene->gameobjects.push_back(std::make_shared<VoidCollider>(
@@ -65,8 +65,8 @@ RaceLevel Level2Factory::get() {
             scene->get_event_manager(),
             std::pair<std::string, std::string>
                     {
-                     "./assets/colliders/track2/track2_inner_large_extra.xml",
-                "./assets/colliders/track2/track2_inner_large.xml"
+                            "./assets/colliders/track2/track2_inner_large_extra.xml",
+                            "./assets/colliders/track2/track2_inner_large.xml"
                     }));
 
     scene->gameobjects.push_back(std::make_shared<VoidCollider>(
@@ -75,8 +75,8 @@ RaceLevel Level2Factory::get() {
             scene->get_event_manager(),
             std::pair<std::string, std::string>
                     {
-                     "./assets/colliders/track2/track2_outer_extra.xml",
-                "./assets/colliders/track2/track2_outer.xml"
+                            "./assets/colliders/track2/track2_outer_extra.xml",
+                            "./assets/colliders/track2/track2_outer.xml"
                     }));
 
     scene->gameobjects.push_back(
@@ -210,7 +210,7 @@ RaceLevel Level2Factory::get() {
 
     scene->gameobjects.push_back(FpsIndicatorFactory::get(scene->get_event_manager()));
 
-    scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars, 1, 1));
+    scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
 
     const auto background_music = std::make_shared<AudioSource>("./assets/audio/background2.mp3", false, true, 0.01,
                                                                 "background");

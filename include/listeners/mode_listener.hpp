@@ -5,6 +5,13 @@
 #include "listeners/uiobject_listener.hpp"
 #include <gameobject.hpp>
 
+enum Mode {
+    Singleplayer,
+    Coop,
+    Controller,
+    Multiplayer
+};
+
 class ModeListener : public GameObject, public UiObjectListener {
 public:
     explicit ModeListener(EventManager &event_manager);
