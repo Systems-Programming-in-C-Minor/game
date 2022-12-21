@@ -21,13 +21,6 @@ CarFactory::get(CarColor color, Vector2d position, const std::shared_ptr<Scene> 
     };
 
     const auto car = std::make_shared<Car>(sprites.at(color).first, sprites.at(color).second, position, scene, false);
-    const auto car_listener = std::make_shared<CarAudioListenerComponent>(scene->get_event_manager());
-    car->add_component(std::make_shared<CarAudioListenerComponent>(scene->get_event_manager()));
-
-    for(auto comp: car_listener->get_sounds()) {
-        car->add_component(comp);
-    }
-
     return car;
 }
 

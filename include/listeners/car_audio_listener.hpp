@@ -3,10 +3,9 @@
 #include <components/component.hpp>
 #include <interfaces/itickable.hpp>
 #include <listeners/collider_listener.hpp>
+#include <components/audiosource.hpp>
 #include <vector>
 #include <memory>
-
-class AudioSource;
 
 class CarAudioListenerComponent : public Component, public ITickable, public ColliderListener
 {
