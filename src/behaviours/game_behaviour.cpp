@@ -2,12 +2,16 @@
 #include <global.hpp>
 #include "race/behaviours/checkpoint_behaviour.hpp"
 #include <iostream>
-#include <utility>
 #include "race/objects/checkpoint.hpp"
 
-GameBehaviour::GameBehaviour(EventManager &event_manager, std::vector<std::shared_ptr<Car>> cars, int number_of_laps,
+GameBehaviour::GameBehaviour(EventManager &event_manager,
+                             std::vector<std::shared_ptr<Car>> cars,
+                             int number_of_laps,
                              int cars_to_finish) :
-        GameObject("game-behaviour", "behaviour"), KeyListener(event_manager), CheckpointListener(event_manager),
+        GameObject("game-behaviour", "behaviour"),
+        KeyListener(event_manager),
+        JoystickListener(event_manager),
+        CheckpointListener(event_manager),
         MultiplayerListener(event_manager),
         _number_of_laps(number_of_laps),
         _cars_to_finish(cars_to_finish) {
@@ -16,34 +20,21 @@ GameBehaviour::GameBehaviour(EventManager &event_manager, std::vector<std::share
 }
 
 void GameBehaviour::on_key_pressed(const KeyPressedEvent &event) {
+    const auto alt_pressed = Global::get_instance()->input.get_key(ALT_LEFT);
+
     switch (event.key) {
-        case ALT_LEFT: {
-            _alt_pressed = true;
+        case ENTER:
+            if (alt_pressed) toggle_fullscreen();
             break;
-        }
-        case ENTER: {
-            if (_alt_pressed)
-                Global::get_instance()->get_engine().get_renderer()->toggle_fullscreen();
+        case D:
+            if (alt_pressed) toggle_debug();
             break;
-        }
-        case D: {
-            if (_alt_pressed)
-                Global::get_instance()->get_engine().get_renderer()->toggle_debug_mode();
+        case RIGHT:
+            if (alt_pressed) speedup_game();
             break;
-        }
-        case RIGHT: {
-            if (_alt_pressed) {
-                const int ticks = Global::get_instance()->get_engine().get_ticks_per_second();
-                (ticks < 1000) ? Global::get_instance()->get_engine().set_ticks_per_second(ticks + 10) : void();
-            }
+        case LEFT:
+            if (alt_pressed) slowdown_game();
             break;
-        }
-        case LEFT: {
-            if (_alt_pressed) {
-                const int ticks = Global::get_instance()->get_engine().get_ticks_per_second();
-                (ticks > 10) ? Global::get_instance()->get_engine().set_ticks_per_second(ticks - 10) : void();
-            }
-        }
         default:
             break;
     }
@@ -51,23 +42,9 @@ void GameBehaviour::on_key_pressed(const KeyPressedEvent &event) {
 
 void GameBehaviour::on_key_released(const KeyReleasedEvent &event) {
     switch (event.key) {
-        case ALT_LEFT: {
-            _alt_pressed = false;
+        case SPACE:
+            start();
             break;
-        }
-        case SPACE: {
-            if (!_started) {
-                const auto multiplayer_manager = Global::get_instance()->get_engine().multiplayer_manager;
-                if (multiplayer_manager != nullptr) {
-                    if (multiplayer_manager->is_host) {
-                        multiplayer_manager->start_game();
-                    }
-                } else {
-                    start();
-                }
-            }
-            break;
-        }
         default:
             break;
     }
@@ -103,7 +80,7 @@ void GameBehaviour::on_checkpoint_reached(const CheckpointReachedEvent &event) {
     }
 }
 
-void GameBehaviour::start() {
+void GameBehaviour::_start() {
     for (const auto &car: _cars)
         car.first->is_enabled = true;
     _started = true;
@@ -131,9 +108,56 @@ void GameBehaviour::finish() {
 }
 
 void GameBehaviour::on_start_game(const StartGameMultiplayerEvent &event) {
-    start();
+    _start();
 }
 
 void GameBehaviour::on_stop_game(const StopGameMultiplayerEvent &event) {
     finish();
+}
+
+void GameBehaviour::toggle_fullscreen() {
+    Global::get_instance()->get_engine().get_renderer()->toggle_fullscreen();
+}
+
+void GameBehaviour::toggle_debug() {
+    Global::get_instance()->get_engine().get_renderer()->toggle_debug_mode();
+}
+
+void GameBehaviour::start() {
+    if (!_started) {
+        const auto multiplayer_manager = Global::get_instance()->get_engine().multiplayer_manager;
+        if (multiplayer_manager != nullptr) {
+            if (multiplayer_manager->is_host) {
+                multiplayer_manager->start_game();
+            }
+        } else {
+            _start();
+        }
+    }
+}
+
+void GameBehaviour::speedup_game() {
+    const int ticks = Global::get_instance()->get_engine().get_ticks_per_second();
+    (ticks < 1000) ? Global::get_instance()->get_engine().set_ticks_per_second(ticks + 10) : void();
+}
+
+void GameBehaviour::slowdown_game() {
+    const int ticks = Global::get_instance()->get_engine().get_ticks_per_second();
+    (ticks > 10) ? Global::get_instance()->get_engine().set_ticks_per_second(ticks - 10) : void();
+}
+
+void GameBehaviour::on_button_pressed(const JoystickButtonPressedEvent &event) {
+    switch (event.button) {
+        case AButton:
+            start();
+            break;
+        case XButton:
+            toggle_debug();
+            break;
+        case YButton:
+            toggle_fullscreen();
+            break;
+        default:
+            break;
+    }
 }
