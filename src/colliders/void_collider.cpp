@@ -12,13 +12,13 @@ VoidCollider::VoidCollider(const std::string &name, const std::shared_ptr<Scene>
 
     auto drag_collider_inner = std::make_shared<ChainCollider>(drag_collider_paths.first, true);
     auto drag_rigidbody_inner =
-            std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f}, 1.0f);
+            std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f}, Color{ 255, 255, 255, 0 });
     drag_rigidbody_inner->set_collider(drag_collider_inner);
     add_component(drag_rigidbody_inner);
 
     auto drag_collider_outer = std::make_shared<ChainCollider>(drag_collider_paths.second, true);
     auto drag_rigidbody_outer = std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f},
-                                                            1.0f);
+        Color{ 255, 255, 255, 0 });
     drag_rigidbody_outer->set_collider(drag_collider_outer);
     add_component(drag_rigidbody_outer);
     _inner_body = drag_rigidbody_inner.get();
