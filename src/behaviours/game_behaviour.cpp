@@ -3,14 +3,11 @@
 #include "race/behaviours/checkpoint_behaviour.hpp"
 #include <iostream>
 #include "race/objects/checkpoint.hpp"
-#include <string>
-#include <iomanip>
 
 GameBehaviour::GameBehaviour(EventManager &event_manager,
                              std::vector<std::shared_ptr<Car>> cars,
                              int number_of_laps,
                              int cars_to_finish) :
-        properties("highscores.json"),
         GameObject("game-behaviour", "behaviour"),
         KeyListener(event_manager),
         JoystickListener(event_manager),
@@ -70,7 +67,6 @@ void GameBehaviour::on_checkpoint_lapped(const CheckpointLappedEvent &event) {
 
     if (finished > _cars_to_finish || finished >= _cars.size())
     {
-        check_high_scores(event.checkpoint_behaviour->get_lap_times());
         finish();
     }
 }
@@ -166,44 +162,4 @@ void GameBehaviour::on_button_pressed(const JoystickButtonPressedEvent &event) {
         default:
             break;
     }
-}
-
-void GameBehaviour::check_high_scores(std::vector<long> lap_times) {
-    long best_lap_time = *std::min_element(lap_times.begin(), lap_times.end());
-
-    // TODO's:
-    // Save start time.
-    // Every car has a checkpoint behavior, so find the right one. (singleplayer you are 0)
-    // Lap time - start time.
-    // New lap time - previous lap time
-    // ..
-
-    auto yes = true;
-
-    auto current_high_score = properties.get_property("high-score");
-    if(!current_high_score.has_value() || std::stoll(current_high_score.value()) > best_lap_time || yes)
-    {
-        properties.set_property("milliseconds", std::to_string(best_lap_time));
-        properties.set_property("high-score", _format_lap_time(best_lap_time));
-    }
-
-    auto test = properties.get_property("milliseconds");
-    auto tes2t = properties.get_property("high-score");
-
-}
-
-std::string GameBehaviour::_format_lap_time(long lap_time_milliseconds) {
-    std::chrono::milliseconds time(lap_time_milliseconds);
-
-    auto minutes = std::chrono::duration_cast<std::chrono::minutes>(time).count();
-    auto seconds = std::chrono::duration_cast<std::chrono::seconds>(time % std::chrono::minutes(1)).count();
-    auto milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(time % std::chrono::seconds(1)).count();
-
-    std::stringstream ss;
-    ss << std::setfill('0') << std::setw(2) << minutes << ":"
-       << std::setfill('0') << std::setw(2) << seconds << "."
-       << std::setfill('0') << std::setw(3) << milliseconds;
-
-    std::string formatted_time = ss.str();
-    return formatted_time;
 }

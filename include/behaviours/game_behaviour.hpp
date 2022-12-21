@@ -9,7 +9,6 @@
 #include "listeners/multiplayer_listener.hpp"
 #include "listeners/joystick_listener.hpp"
 #include <optional>
-#include "storage/json_properties.hpp"
 
 class GameBehaviour
         : public GameObject,
@@ -34,8 +33,6 @@ protected:
 
     void slowdown_game();
 
-    void check_high_scores(std::vector<long> lap_times);
-
     void on_button_pressed(const JoystickButtonPressedEvent &event) override;
 
     void on_key_pressed(const KeyPressedEvent &event) override;
@@ -55,12 +52,10 @@ private:
     bool _finished = false;
     int _number_of_laps;
     int _cars_to_finish;
-    JsonProperties properties;
 
     std::map<std::shared_ptr<Car>, int> _cars;
 
     void _start();
-    static std::string _format_lap_time(long lap_time_milliseconds);
 };
 
 #endif //GAME_GAME_BEHAVIOUR_HPP
