@@ -8,6 +8,7 @@
 GameBehaviour::GameBehaviour(EventManager &event_manager, std::vector<std::shared_ptr<Car>> cars, int number_of_laps,
                              int cars_to_finish) :
         GameObject("game-behaviour", "behaviour"), KeyListener(event_manager), CheckpointListener(event_manager),
+        MultiplayerListener(event_manager),
         _number_of_laps(number_of_laps),
         _cars_to_finish(cars_to_finish) {
     for (auto &car: cars)
@@ -56,9 +57,14 @@ void GameBehaviour::on_key_released(const KeyReleasedEvent &event) {
         }
         case SPACE: {
             if (!_started) {
-                for (const auto &car: _cars)
-                    car.first->is_enabled = true;
-                _started = true;
+                const auto multiplayer_manager = Global::get_instance()->get_engine().multiplayer_manager;
+                if (multiplayer_manager != nullptr) {
+                    if (multiplayer_manager->is_host) {
+                        multiplayer_manager->start_game();
+                    }
+                } else {
+                    start();
+                }
             }
             break;
         }
@@ -97,6 +103,12 @@ void GameBehaviour::on_checkpoint_reached(const CheckpointReachedEvent &event) {
     }
 }
 
+void GameBehaviour::start() {
+    for (const auto &car: _cars)
+        car.first->is_enabled = true;
+    _started = true;
+}
+
 void GameBehaviour::finish() {
     if (_finished)
         return;
@@ -116,4 +128,12 @@ void GameBehaviour::finish() {
         position++;
         std::cout << position << ' ' << it.second->get_name() << std::endl;
     }
+}
+
+void GameBehaviour::on_start_game(const StartGameMultiplayerEvent &event) {
+    start();
+}
+
+void GameBehaviour::on_stop_game(const StopGameMultiplayerEvent &event) {
+    finish();
 }
