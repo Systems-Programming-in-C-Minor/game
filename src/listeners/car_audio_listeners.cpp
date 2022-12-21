@@ -36,6 +36,8 @@ void CarAudioListenerComponent::on_collider_entry(const ColliderEntryEvent& even
         return;
     if (event.collider_a->game_object->get_tag() == "void-collider" || event.collider_b->game_object->get_tag() == "void-collider")
         return;
+    if (event.collider_a->game_object->get_tag() == "ui-debug" || event.collider_b->game_object->get_tag() == "ui-debug")
+        return;
 
     const auto sources = game_object->get_components<AudioSource>();
     for (const auto &sound : sources) {

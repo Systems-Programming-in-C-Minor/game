@@ -6,6 +6,8 @@
 #include "listeners/car_audio_listener.hpp"
 
 std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {
+    level.scene->get_camera()->mtp = 22.f;
+
     const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
     const auto car_audio_listener = std::make_shared<CarAudioListenerComponent>(level.scene->get_event_manager());
     const auto speed_indicator = SpeedIndicator::get(level.scene->get_event_manager());
