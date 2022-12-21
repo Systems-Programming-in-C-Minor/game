@@ -13,7 +13,6 @@
 #include <utils/random.hpp>
 #include <camera.hpp>
 #include <components/text.hpp>
-
 #include "components/audiosource.hpp"
 
 RaceLevel Level1Factory::get() {
@@ -23,9 +22,10 @@ RaceLevel Level1Factory::get() {
             .push_back(TrackFactory::get("level1-track",
                                          scene,
                                          "./assets/tracks/track1.png",
-                                         "./assets/tracks/track1_bg.png",
-                                         "./assets/colliders/track1/track1_inner.xml",
-                                         "./assets/colliders/track1/track1_outer.xml"
+                                         12.f,
+                                         {"./assets/colliders/track1/track1_inner.xml"},
+                                         "./assets/colliders/track1/track1_outer.xml",
+                                         "./assets/tracks/track1_bg.png"
             ));
 
     const auto un_engine = std::make_shared<GameObject>(
@@ -239,7 +239,8 @@ RaceLevel Level1Factory::get() {
 
     scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
 
-    const auto background_music = std::make_shared<AudioSource>("./assets/audio/background1.mp3", false, false, 0.1, "background");
+    const auto background_music = std::make_shared<AudioSource>("./assets/audio/background1.mp3", false, false, 0.05,
+                                                                "background");
     background_music->play();
 
     return RaceLevel{cars, targets, scene};
