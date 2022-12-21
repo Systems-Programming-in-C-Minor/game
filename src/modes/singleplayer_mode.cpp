@@ -1,12 +1,17 @@
 #include "modes/singleplayer_mode.hpp"
-#include "race/objects/car.hpp"
 #include "race/behaviours/drive_input_behaviour.hpp"
 #include "race/behaviours/ai_target_behaviour.hpp"
+#include "overlay/speed_indicator.hpp"
 #include <camera.hpp>
 
 std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {
     const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
+    const auto speed_indicator = SpeedIndicator::get(level.scene->get_event_manager());
+
+    level.scene->gameobjects.push_back(speed_indicator);
+
     level.cars[0]->add_component(behaviour);
+    level.cars[0]->add_component(speed_indicator->get_component<SpeedIndicator>());
     level.cars[0]->add_child(level.scene->get_camera());
 
     for (int index = 1; index < level.cars.size(); index++) {
