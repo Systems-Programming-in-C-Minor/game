@@ -17,6 +17,7 @@ std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {
     level.cars[0]->add_component(behaviour);
     level.cars[0]->add_component(speed_indicator->get_component<SpeedIndicator>());
     level.cars[0]->add_child(level.scene->get_camera());
+    level.scene->get_camera()->mtp = 10.f;
     level.cars[0]->add_component(car_audio_listener);
 
     for (const auto& sound : car_audio_listener->get_sounds()) {
