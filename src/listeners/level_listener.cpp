@@ -1,4 +1,4 @@
-#include "listeners/mode_listener.hpp"
+#include "listeners/level_listener.hpp"
 #include "uiobject.hpp"
 #include "global.hpp"
 #include "levels/level1_factory.hpp"
@@ -8,29 +8,30 @@
 #include "modes/controller_mode.hpp"
 #include "modes/multiplayer_mode.hpp"
 
-ModeListener::ModeListener(EventManager &event_manager) : GameObject("mode-listener", "mode-listener"),
-                                                          UiObjectListener(event_manager) {}
+LevelListener::LevelListener(EventManager &event_manager, Mode mode) : GameObject("mode-listener", "mode-listener"),
+                                                                       UiObjectListener(event_manager), mode(mode) {}
 
-void ModeListener::on_uiobject_released(const UiObjectReleasedEvent &event) {
+void LevelListener::on_uiobject_released(const UiObjectReleasedEvent &event) {
     if (event.button != BUTTON_LEFT)
         return;
 
     const auto name = event.ui_object.get_name();
-    const auto level = Level2Factory::get();
 
-    if (name == "singleplayer") {
+    RaceLevel level = name == "level-2" ? Level2Factory::get() : Level1Factory::get();
+
+    if (mode == Singleplayer) {
         Global::get_instance()->get_engine().load_scene(SingleplayerMode::get(level));
         return;
     }
-    if (name == "coop") {
+    if (mode == Coop) {
         Global::get_instance()->get_engine().load_scene(CoopMode::get(level));
         return;
     }
-    if (name == "controller") {
+    if (mode == Controller) {
         Global::get_instance()->get_engine().load_scene(ControllerMode::get(level));
         return;
     }
-    if (name == "multiplayer") {
+    if (mode == Multiplayer) {
         Global::get_instance()->get_engine().load_scene(MultiplayerMode::get(level));
         return;
     }

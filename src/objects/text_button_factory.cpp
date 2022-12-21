@@ -1,4 +1,6 @@
 #include "objects/text_button_factory.hpp"
+#include <components/sprite.hpp>
+#include <components/text.hpp>
 
 std::shared_ptr<UIObject>
 TextButtonFactory::get(const std::string &name, const std::string &text, float position_y,

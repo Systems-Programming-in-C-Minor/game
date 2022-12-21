@@ -1,13 +1,14 @@
 
-#ifndef GAME_MODE_SELECTOR_FACTORY_HPP
-#define GAME_MODE_SELECTOR_FACTORY_HPP
+#ifndef GAME_LEVEL_SELECTOR_FACTORY_HPP
+#define GAME_LEVEL_SELECTOR_FACTORY_HPP
 
 #include <scene.hpp>
 #include "uiobject.hpp"
+#include "listeners/level_listener.hpp"
 
-class ModeSelectorFactory {
+class LevelSelectorFactory {
 public:
-    static std::shared_ptr<Scene> get();
+    static std::shared_ptr<Scene> get(Mode mode);
 };
 
-#endif //GAME_MODE_SELECTOR_FACTORY_HPP
+#endif //GAME_LEVEL_SELECTOR_FACTORY_HPP
