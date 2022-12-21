@@ -23,10 +23,17 @@ RaceLevel Level2Factory::get() {
     scene->gameobjects
             .push_back(TrackFactory::get("level2-track", scene, "./assets/tracks/track2.png", 8.f));
 
+    const auto un_engine = std::make_shared<GameObject>(
+            "ad_board", "ad", Transform{Vector2d{-42.f, -104.f}, Vector2d{}, 0.f, 0.8f});
+    un_engine->add_component(
+            std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 10,
+                                   Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
+    scene->gameobjects.push_back(un_engine);
+
     const auto high_score_ui = std::make_shared<GameObject>(
-            "show-high-score", "high-score", Transform{Vector2d{0.f, -10.f}, Vector2d{}, 0.2f, 1.f});
+            "show-high-score", "high-score", Transform{Vector2d{-42.f, -85.f}, Vector2d{}, 0.f, 0.8f});
     high_score_ui->add_component(
-            std::make_shared<Text>(get_high_score("level 2", high_score_properties), "./assets/fonts/roboto/Roboto-Medium.ttf", 250, 10,
+            std::make_shared<Text>(get_high_score("level 2", high_score_properties), "./assets/fonts/roboto/Roboto-Medium.ttf", 450, 10,
                                    Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
     scene->gameobjects.push_back(high_score_ui);
 

@@ -30,9 +30,9 @@ inline static std::string get_high_score(const std::string &level, const std::sh
     if(properties->get_property(level).has_value())
     {
         long high_score = std::stol(properties->get_property(level).value());
-        return "High score: " + format_lap_time(high_score);
+        return "Previous high score: " + format_lap_time(high_score);
     }
-    return "No high score yet";
+    return "No previous high score!";
 }
 
 #endif //GAME_HIGH_SCORE_READER_HPP
