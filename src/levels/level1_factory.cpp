@@ -239,8 +239,7 @@ RaceLevel Level1Factory::get() {
 
     scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
 
-    const auto background_music = std::make_shared<AudioSource>("./assets/audio/background1.mp3", false, true, 0.05,
-                                                                "background");
+    const auto background_music = std::make_shared<AudioSource>("./assets/audio/background1.mp3", false, true, 0.05,"background");
 
     background_music->play();
 
