@@ -39,7 +39,7 @@ ModeSelectorFactory::text_button(const std::string &name, const std::string &tex
     ui_object->add_component(button);
 
     auto text_ui_object = std::make_shared<UIObject>(name + "-text", "text", 50.f, 8.f, event_manager);
-    auto text_object = std::make_shared<Text>(text, "./assets/fonts/roboto/Roboto-Medium.ttf", 1000, 10,
+    auto text_object = std::make_shared<Text>(text, "./assets/fonts/roboto/Roboto-Medium.ttf", 100, 10,
                                               Color{255, 255, 255, 0}, Color{0, 0, 0, 1});
     text_ui_object->add_component(text_object);
     ui_object->add_child(text_ui_object);
