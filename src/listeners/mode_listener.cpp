@@ -1,12 +1,6 @@
 #include "listeners/mode_listener.hpp"
 #include "uiobject.hpp"
 #include "global.hpp"
-#include "levels/level1_factory.hpp"
-#include "levels/level2_factory.hpp"
-#include "modes/singleplayer_mode.hpp"
-#include "modes/coop_mode.hpp"
-#include "modes/controller_mode.hpp"
-#include "modes/multiplayer_mode.hpp"
 #include "scenes/level_selector_factory.hpp"
 
 ModeListener::ModeListener(EventManager &event_manager) : GameObject("mode-listener", "mode-listener"),

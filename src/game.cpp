@@ -17,10 +17,7 @@ void Game::start_game() {
     auto p_engine = std::make_unique<Engine>();
     _global->set_engine(std::move(p_engine));
     Engine &engine = _global->get_engine();
-
-    _current_scene = ModeSelectorFactory::get();
-
-    engine.load_scene(_current_scene);
+    engine.load_scene(ModeSelectorFactory::get());
     engine.start();
 }
 
