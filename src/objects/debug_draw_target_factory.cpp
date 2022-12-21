@@ -13,7 +13,7 @@ void DebugDrawTargetFactory::get(Scene& scene)
     {
         const auto debug_draw_circle = std::make_shared<GameObject>(std::string("ui-debug-draw-target-" + std::to_string(i)), "ui-debug");
         const auto debug_draw_circle_rb = std::make_shared<RigidBody>(scene, 999, BodyType::static_body, _vectors[i], Color{0, 0, 255, 0});
-        debug_draw_circle_rb->set_collider(std::make_shared<CircleCollider>(_radius, true));
+        debug_draw_circle_rb->set_collider(std::make_shared<CircleCollider>(_radius + _randomize_radius, true));
         debug_draw_circle->add_component(debug_draw_circle_rb);
         scene.gameobjects.push_back(debug_draw_circle);
     }
