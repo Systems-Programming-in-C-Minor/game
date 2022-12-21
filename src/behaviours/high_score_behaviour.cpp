@@ -28,8 +28,8 @@ void HighScoreBehaviour::check_high_scores(long lap_time)
     auto current_high_score = _properties.get_property("milliseconds");
     if(!current_high_score.has_value() || std::stoll(current_high_score.value()) > diff)
     {
-        _properties.set_property("milliseconds", std::to_string(diff));
-        _properties.set_property("high-score", _format_lap_time(diff));
+        _properties.set_property("level 1-milliseconds", std::to_string(diff));
+        _properties.set_property("level 1-highscore", _format_lap_time(diff));
     }
 }
 

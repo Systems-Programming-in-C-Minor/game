@@ -7,6 +7,7 @@
 
 std::shared_ptr<Scene> ModeSelectorFactory::get() {
     auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}));
+    auto properties = std::make_shared<JsonProperties>("high-scores.json");
 
     scene->gameobjects.push_back(
             ModeSelectorFactory::text_button("singleplayer", "Singleplayer", 60.f, scene->get_event_manager()));
@@ -17,6 +18,10 @@ std::shared_ptr<Scene> ModeSelectorFactory::get() {
                                              scene->get_event_manager()));
     scene->gameobjects.push_back(
             ModeSelectorFactory::text_button("multiplayer", "Multiplayer", -60.f, scene->get_event_manager()));
+    scene->gameobjects.push_back(
+            ModeSelectorFactory::high_score_text("level-1-highscore", get_high_score("level 1", properties),-75.f, scene->get_event_manager()));
+    scene->gameobjects.push_back(
+            ModeSelectorFactory::high_score_text("level-2-highscore", get_high_score("level 2", properties),-90.f, scene->get_event_manager()));
 
     auto background_object = std::make_shared<GameObject>("background", "background");
     auto background = std::make_shared<Sprite>("./assets/backgrounds/background.png", 0, 100.f);
@@ -50,4 +55,23 @@ ModeSelectorFactory::text_button(const std::string &name, const std::string &tex
     text_ui_object->transform.set_position(new_text_position);
 
     return ui_object;
+}
+
+std::shared_ptr<UIObject> ModeSelectorFactory::high_score_text(const std::string &name, const std::string &text, float position_y,
+                                                               EventManager &event_manager) {
+
+    auto high_score_ui = std::make_shared<UIObject>(name, "high-score", 40.f, 18.f, event_manager);
+    auto high_score_text_object = std::make_shared<Text>(text, "./assets/fonts/roboto/Roboto-Medium.ttf", 1000, 10,
+                                                         Color{255, 255, 255, 0}, Color{0, 0, 0, 1});
+    high_score_ui->add_component(high_score_text_object);
+    high_score_ui->transform.set_position(Vector2d{0, position_y});
+
+    return high_score_ui;
+}
+
+std::string ModeSelectorFactory::get_high_score(const std::string &level, const std::shared_ptr<JsonProperties>& properties) {
+    if(properties->get_property(level + "-highscore").has_value())
+        return "High score for " + level + ":" + properties->get_property(level + "-highscore").value();
+
+    return "No high score yet for " + level;
 }
