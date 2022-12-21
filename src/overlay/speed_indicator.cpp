@@ -48,7 +48,7 @@ void SpeedIndicator::tick(GameObject &_game_object) {
 
     if (_game_object.get_name() == "speed-indicator") {
         const auto speed_to_angle = static_cast<int>(std::round(_velocity * 3.6f));
-        const auto angle = ( static_cast<float>(speed_to_angle) / 80.f ) * 120.f;
+        const auto angle = ( static_cast<float>(speed_to_angle) / 120.f ) * 120.f;
         const auto children = _game_object.get_children();
         for(auto &go : children){
             if(go->get_name() == "speed-indicator-pin"){

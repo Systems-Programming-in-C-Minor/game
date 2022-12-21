@@ -6,12 +6,11 @@
 #include <scene.hpp>
 
 SpeedBoostObject::SpeedBoostObject(EventManager &event_manager, const std::shared_ptr<Scene> &scene, Vector2d position,
-                                   float angle, int tick_duration, float boost_force, float boost_speed)
+                                   float angle, int tick_duration, float boost_force)
         : GameObject("speed-boost", "speed-boost"),
           ColliderListener(event_manager),
           _tick_duration(tick_duration),
-          _boost_force(boost_force),
-          _boost_speed(boost_speed) {
+          _boost_force(boost_force) {
     auto collider = std::make_shared<BoxCollider>(3.4f, 6.5f, true);
     auto body =
             std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, position, Color{ 255, 255, 255, 0 });
@@ -69,12 +68,10 @@ void SpeedBoostObject::set_boost(Car *car) {
 }
 
 void SpeedBoostObject::apply_boost(Car *car) const {
-    car->max_drive_force += _boost_force;
-    car->max_speed_forwards += _boost_speed;
+    car->drive_force_multiplier += _boost_force;
 
 }
 
 void SpeedBoostObject::remove_boost(Car *car) const {
-    car->max_drive_force -= _boost_force;
-    car->max_speed_forwards -= _boost_speed;
+    car->drive_force_multiplier -= _boost_force;
 }

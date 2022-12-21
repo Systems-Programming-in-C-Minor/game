@@ -9,7 +9,7 @@
 class SpeedBoostObject : public GameObject, public ColliderListener {
 public:
     SpeedBoostObject(EventManager &event_manager, const std::shared_ptr<Scene> &scene, Vector2d position,
-                     float angle, int tick_duration = 300, float boost_force = 400.f, float boost_speed = 1000.f);
+                     float angle, int tick_duration = 300, float boost_force = 400.f);
 
     void on_collider_entry(const ColliderEntryEvent &event) override;
 
@@ -19,7 +19,6 @@ public:
 
 private:
     const float _boost_force;
-    const float _boost_speed;
     const int _tick_duration;
 
     int _cars_on_booster = 0;
