@@ -7,7 +7,6 @@
 
 std::shared_ptr<Scene> ModeSelectorFactory::get() {
     auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}));
-    auto properties = std::make_shared<JsonProperties>("high-scores.json");
 
     scene->gameobjects.push_back(
             ModeSelectorFactory::text_button("singleplayer", "Singleplayer", 60.f, scene->get_event_manager()));
