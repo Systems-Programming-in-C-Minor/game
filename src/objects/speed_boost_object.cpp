@@ -4,7 +4,6 @@
 #include <components/colliders/boxcollider.hpp>
 #include <components/sprite.hpp>
 #include <scene.hpp>
-#include <iostream>
 
 SpeedBoostObject::SpeedBoostObject(EventManager &event_manager, const std::shared_ptr<Scene> &scene, Vector2d position,
                                    float angle, int tick_duration, float boost_force, float boost_speed)
@@ -42,7 +41,7 @@ void SpeedBoostObject::on_collider_entry(const ColliderEntryEvent &event) {
 void SpeedBoostObject::on_collider_exit(const ColliderExitEvent &event) {
     if (event.collider_a->game_object != this && event.collider_b->game_object != this)
         return;
-    std::cout << _cars_on_booster << std::endl;
+
     _cars_on_booster--;
     if (_cars_on_booster <= 0)
         this->get_component<Sprite>()->set_color(Color{255, 255, 255, 255});
