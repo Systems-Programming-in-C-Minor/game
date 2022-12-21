@@ -2,6 +2,7 @@
 #include "uiobject.hpp"
 #include "global.hpp"
 #include "levels/level1_factory.hpp"
+#include "levels/level2_factory.hpp"
 #include "modes/singleplayer_mode.hpp"
 #include "modes/coop_mode.hpp"
 #include "modes/controller_mode.hpp"
@@ -15,7 +16,7 @@ void ModeListener::on_uiobject_released(const UiObjectReleasedEvent &event) {
         return;
 
     const auto name = event.ui_object.get_name();
-    const auto level = Level1Factory::get();
+    const auto level = Level2Factory::get();
 
     if (name == "singleplayer") {
         Global::get_instance()->get_engine().load_scene(SingleplayerMode::get(level));

@@ -8,8 +8,9 @@
 class TrackFactory {
 public:
     static std::shared_ptr<GameObject>
-    get(const std::string &name, const std::shared_ptr<Scene> &scene, std::string sprite_path, std::string bg_sprite_path, const std::string& track_inner_path,
-        const std::string& track_outer_path);
+    get(const std::string &name, const std::shared_ptr<Scene> &scene, std::string sprite_path, float pixels_to_meters,
+        const std::vector<std::string> &track_inner_paths = {},
+        std::optional<std::string> track_outer_path = std::nullopt, std::optional<std::string> bg_sprite_path = std::nullopt);
 };
 
 #endif //GAME_TRACK_FACTORY_HPP
