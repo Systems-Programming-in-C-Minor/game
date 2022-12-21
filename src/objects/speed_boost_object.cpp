@@ -14,7 +14,7 @@ SpeedBoostObject::SpeedBoostObject(EventManager &event_manager, const std::share
           _boost_speed(boost_speed) {
     auto collider = std::make_shared<BoxCollider>(3.4f, 6.5f, true);
     auto body =
-            std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, position, 1.0f);
+            std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, position, Color{ 255, 255, 255, 0 });
     body->set_collider(collider);
     add_component(body);
 

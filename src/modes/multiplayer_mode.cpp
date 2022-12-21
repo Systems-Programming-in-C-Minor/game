@@ -6,6 +6,8 @@
 #include <camera.hpp>
 
 std::shared_ptr<Scene> MultiplayerMode::get(const RaceLevel &level) {
+    level.scene->get_camera()->mtp = 22.f;
+
     Global::get_instance()->get_engine().enable_multiplayer("signaling.maik.sh:10000");
     const auto speed_indicator = SpeedIndicator::get(level.scene->get_event_manager());
     level.scene->gameobjects.push_back(speed_indicator);
