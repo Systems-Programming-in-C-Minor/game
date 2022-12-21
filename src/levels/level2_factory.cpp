@@ -13,7 +13,7 @@
 #include "utils/trigonometry.hpp"
 
 RaceLevel Level2Factory::get() {
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f));
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f), "level 2");
 
     scene->gameobjects
             .push_back(TrackFactory::get("level2-track", scene, "./assets/tracks/track2.png", 8.f));
