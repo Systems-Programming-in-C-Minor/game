@@ -82,7 +82,7 @@ void CarAudioListenerComponent::tick(GameObject &no)
                 sound->stop();
             }
             if (sound->get_name() == "engine_idle") {
-                sound->play();
+                sound->play(true);
             }
         }
     }
