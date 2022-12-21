@@ -3,11 +3,18 @@
 #include "race/behaviours/drive_input_behaviour.hpp"
 #include "race/behaviours/ai_target_behaviour.hpp"
 #include <camera.hpp>
+#include "listeners/car_audio_listener.hpp"
 
 std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {
     const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
+    const auto car_audio_listener = std::make_shared<CarAudioListenerComponent>(level.scene->get_event_manager());
     level.cars[0]->add_component(behaviour);
     level.cars[0]->add_child(level.scene->get_camera());
+    level.cars[0]->add_component(car_audio_listener);
+
+    for (const auto& sound : car_audio_listener->get_sounds()) {
+        level.cars[0]->add_component(sound);
+    }
 
     for (int index = 1; index < level.cars.size(); index++) {
         auto ai_listener_component = std::make_shared<AITargetBehaviour>(level.scene->get_event_manager(),
