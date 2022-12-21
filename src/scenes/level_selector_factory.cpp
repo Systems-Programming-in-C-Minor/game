@@ -5,7 +5,6 @@
 #include "listeners/mode_listener.hpp"
 #include "objects/text_button_factory.hpp"
 
-
 std::shared_ptr<Scene> ModeSelectorFactory::get() {
     auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}));
 
@@ -15,7 +14,7 @@ std::shared_ptr<Scene> ModeSelectorFactory::get() {
             TextButtonFactory::get("coop", "Coop (2 players)", 20.f, scene->get_event_manager()));
     scene->gameobjects.push_back(
             TextButtonFactory::get("controller", "Controller (1-8 players)", -20.f,
-                                             scene->get_event_manager()));
+                                   scene->get_event_manager()));
     scene->gameobjects.push_back(
             TextButtonFactory::get("multiplayer", "Multiplayer", -60.f, scene->get_event_manager()));
 
@@ -29,3 +28,4 @@ std::shared_ptr<Scene> ModeSelectorFactory::get() {
 
     return scene;
 }
+
