@@ -86,6 +86,8 @@ void GameBehaviour::on_checkpoint_reached(const CheckpointReachedEvent &event) {
 }
 
 void GameBehaviour::_start() {
+    if (_started) return;
+
     for (const auto &car: _cars)
         car.first->is_enabled = true;
     _started = true;
