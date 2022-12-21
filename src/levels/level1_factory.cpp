@@ -34,7 +34,7 @@ RaceLevel Level1Factory::get() {
     const auto high_score_ui = std::make_shared<GameObject>(
             "show-high-score", "high-score", Transform{Vector2d{-50.f, 10.f}, Vector2d{}, 0.2f, 1.f});
     high_score_ui->add_component(
-            std::make_shared<Text>(get_high_score("level 1", high_score_properties), "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 10,
+            std::make_shared<Text>(get_high_score("level 1", high_score_properties), "./assets/fonts/roboto/Roboto-Medium.ttf", 50, 10,
                                    Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
     scene->gameobjects.push_back(high_score_ui);
 
