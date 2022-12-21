@@ -35,12 +35,12 @@ void CarAudioListenerComponent::on_collider_entry(const ColliderEntryEvent& even
     if (event.collider_a->game_object->get_tag() == "speed-boost" || event.collider_b->game_object->get_tag() == "speed-boost")
         return;
 
-    const auto sources = game_object->get_components<AudioSource>();
-    for (const auto sound : sources) {
-        if (sound->get_name() == "car_crash") {
-            sound->play();
-        }
-    }
+//    const auto sources = game_object->get_components<AudioSource>();
+//    for (const auto sound : sources) {
+//        if (sound->get_name() == "car_crash") {
+//            sound->play();
+//        }
+//    }
 }
 
 void CarAudioListenerComponent::tick(GameObject &no)
