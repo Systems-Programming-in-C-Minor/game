@@ -8,8 +8,8 @@
 std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {
     const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
     const auto car_audio_listener = std::make_shared<CarAudioListenerComponent>(level.scene->get_event_manager());
-
     const auto speed_indicator = SpeedIndicator::get(level.scene->get_event_manager());
+
     level.scene->gameobjects.push_back(speed_indicator);
 
     level.cars[0]->add_component(behaviour);
