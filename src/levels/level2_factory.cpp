@@ -14,6 +14,7 @@
 #include "storage/json_properties.hpp"
 #include "utils/high-score-reader.hpp"
 #include "colliders/void_collider.hpp"
+#include "objects/high_score_ui_factory.hpp"
 
 
 RaceLevel Level2Factory::get() {
@@ -30,12 +31,7 @@ RaceLevel Level2Factory::get() {
                                    Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
     scene->gameobjects.push_back(un_engine);
 
-    const auto high_score_ui = std::make_shared<GameObject>(
-            "show-high-score", "high-score", Transform{Vector2d{-42.f, -85.f}, Vector2d{}, 0.f, 0.8f});
-    high_score_ui->add_component(
-            std::make_shared<Text>(get_high_score("level 2", high_score_properties), "./assets/fonts/roboto/Roboto-Medium.ttf", 450, 10,
-                                   Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
-    scene->gameobjects.push_back(high_score_ui);
+    scene->gameobjects.push_back(HighScoreUIFactory::get(get_high_score("level 2", high_score_properties), "level 2"));
 
     const std::vector<std::pair<Vector2d, CarColor>> car_positions{
             {Vector2d{-116, 14},  CarColor::Red},

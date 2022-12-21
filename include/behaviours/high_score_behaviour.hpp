@@ -14,6 +14,7 @@ public:
     void check_high_scores(long lap_time);
 private:
     static long _set_current_time();
+    void _update_high_score_dynamically(long new_high_score, const std::string& level_name);
     JsonProperties _properties;
     long _current_time;
     Global *_global;

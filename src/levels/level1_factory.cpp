@@ -15,7 +15,7 @@
 #include <components/text.hpp>
 #include "utils/high-score-reader.hpp"
 #include <components/audiosource.hpp>
-
+#include "objects/high_score_ui_factory.hpp"
 
 RaceLevel Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f), "level 1");
@@ -31,12 +31,7 @@ RaceLevel Level1Factory::get() {
                                          "./assets/tracks/track1_bg.png"
             ));
 
-    const auto high_score_ui = std::make_shared<GameObject>(
-            "show-high-score", "high-score", Transform{Vector2d{10.f, -90.f}, Vector2d{}, 0.0f, 1.f});
-    high_score_ui->add_component(
-            std::make_shared<Text>(get_high_score("level 1", high_score_properties), "./assets/fonts/roboto/Roboto-Medium.ttf", 350, 10,
-                                   Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
-    scene->gameobjects.push_back(high_score_ui);
+    scene->gameobjects.push_back(HighScoreUIFactory::get(get_high_score("level 1", high_score_properties), "level 1"));
 
     scene->gameobjects.push_back(std::make_shared<DragCollider>(
             "grass-collider-inner",

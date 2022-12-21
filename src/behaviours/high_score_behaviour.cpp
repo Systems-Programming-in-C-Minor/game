@@ -1,5 +1,7 @@
 #include "behaviours/high_score_behaviour.hpp"
 #include "race/behaviours/checkpoint_behaviour.hpp"
+#include "utils/high-score-reader.hpp"
+#include "objects/high_score_ui_factory.hpp"
 
 #include "chrono"
 #include <string>
@@ -31,6 +33,7 @@ void HighScoreBehaviour::check_high_scores(long lap_time)
     if(!current_high_score.has_value() || std::stoll(current_high_score.value()) > diff)
     {
         _properties.set_property(level_name, std::to_string(diff));
+        _update_high_score_dynamically(diff, level_name);
     }
 }
 
@@ -41,4 +44,22 @@ long HighScoreBehaviour::_set_current_time()
     auto epoch = now_ms.time_since_epoch();
     auto value = std::chrono::duration_cast<std::chrono::milliseconds>(epoch).count();
     return static_cast<long>(value);
+}
+
+void HighScoreBehaviour::_update_high_score_dynamically(long new_high_score, const std::string& level_name)
+{
+    for(auto it = _global->get_active_scene().gameobjects.begin(); it != _global->get_active_scene().gameobjects.end(); )
+    {
+        std::shared_ptr<GameObject>& obj = *it;
+        if(obj->get_name() == "show-high-score")
+        {
+            _global->get_active_scene().gameobjects.erase(it);
+            _global->get_active_scene().gameobjects.push_back(HighScoreUIFactory::get("New high score: " + format_lap_time(new_high_score), level_name));
+            break;
+        }
+        else
+        {
+            it++;
+        }
+    }
 }
