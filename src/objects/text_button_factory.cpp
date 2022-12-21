@@ -5,9 +5,7 @@
 std::shared_ptr<UIObject>
 TextButtonFactory::get(const std::string &name, const std::string &text, float position_y,
                                  EventManager &event_manager) {
-
-
-    auto ui_object = std::make_shared<UIObject>(name, "button", 100.f, 45.f, event_manager);
+    auto ui_object = std::make_shared<UIObject>(name, "button", 70.f, 25.f, event_manager);
     auto button = std::make_shared<Sprite>("./assets/ui/empty-button.png", 5);
     ui_object->add_component(button);
 
@@ -19,8 +17,7 @@ TextButtonFactory::get(const std::string &name, const std::string &text, float p
 
     auto new_position = Vector2d{0, position_y};
     ui_object->transform.set_position(new_position);
-    auto new_text_position = Vector2d{0, position_y + 2};
-    text_ui_object->transform.set_position(new_text_position);
+    text_ui_object->transform.set_position(new_position);
 
     return ui_object;
 }

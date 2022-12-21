@@ -7,6 +7,7 @@
 #include "modes/coop_mode.hpp"
 #include "modes/controller_mode.hpp"
 #include "modes/multiplayer_mode.hpp"
+#include "scenes/mode_selector_factory.hpp"
 
 LevelListener::LevelListener(EventManager &event_manager, Mode mode) : GameObject("mode-listener", "mode-listener"),
                                                                        UiObjectListener(event_manager), mode(mode) {}
@@ -16,6 +17,11 @@ void LevelListener::on_uiobject_released(const UiObjectReleasedEvent &event) {
         return;
 
     const auto name = event.ui_object.get_name();
+
+    if (name == "back") {
+        Global::get_instance()->get_engine().load_scene(ModeSelectorFactory::get());
+        return;
+    }
 
     RaceLevel level = name == "level-2" ? Level2Factory::get() : Level1Factory::get();
 

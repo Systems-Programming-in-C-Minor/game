@@ -3,6 +3,7 @@
 #include "race/behaviours/checkpoint_behaviour.hpp"
 #include <iostream>
 #include "race/objects/checkpoint.hpp"
+#include "scenes/mode_selector_factory.hpp"
 
 GameBehaviour::GameBehaviour(EventManager &event_manager,
                              std::vector<std::shared_ptr<Car>> cars,
@@ -23,6 +24,10 @@ void GameBehaviour::on_key_pressed(const KeyPressedEvent &event) {
     const auto alt_pressed = Global::get_instance()->input.get_key(ALT_LEFT);
 
     switch (event.key) {
+        case ESC: {
+            Global::get_instance()->get_engine().load_scene(ModeSelectorFactory::get());
+            break;
+        }
         case ENTER:
             if (alt_pressed) toggle_fullscreen();
             break;
