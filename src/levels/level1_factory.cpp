@@ -13,11 +13,13 @@
 #include <utils/random.hpp>
 #include <camera.hpp>
 #include <components/text.hpp>
+#include "utils/high-score-reader.hpp"
 
 #include "components/audiosource.hpp"
 
 RaceLevel Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f), "level 1");
+    std::shared_ptr<JsonProperties> high_score_properties = std::make_shared<JsonProperties>("high-scores.json");
 
     scene->gameobjects
             .push_back(TrackFactory::get("level1-track",
@@ -28,12 +30,12 @@ RaceLevel Level1Factory::get() {
                                          "./assets/colliders/track1/track1_outer.xml"
             ));
 
-    const auto un_engine = std::make_shared<GameObject>(
-            "ad_board", "ad", Transform{Vector2d{-50.f, 10.f}, Vector2d{}, 0.2f, 1.f});
-    un_engine->add_component(
-            std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 10,
+    const auto high_score_ui = std::make_shared<GameObject>(
+            "show-high-score", "high-score", Transform{Vector2d{-50.f, 10.f}, Vector2d{}, 0.2f, 1.f});
+    high_score_ui->add_component(
+            std::make_shared<Text>(get_high_score("level 1", high_score_properties), "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 10,
                                    Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
-    scene->gameobjects.push_back(un_engine);
+    scene->gameobjects.push_back(high_score_ui);
 
     scene->gameobjects.push_back(std::make_shared<DragCollider>(
             "grass-collider-inner",
