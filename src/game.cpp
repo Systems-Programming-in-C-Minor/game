@@ -3,8 +3,6 @@
 #include "global.hpp"
 #include "components/sprite.hpp"
 #include "scenes/mode_selector_factory.hpp"
-#include "modes/coop_mode.hpp"
-#include "levels/level1_factory.hpp"
 
 int main() {
     Game game;
@@ -20,8 +18,7 @@ void Game::start_game() {
     _global->set_engine(std::move(p_engine));
     Engine &engine = _global->get_engine();
 
-//    _current_scene = ModeSelectorFactory::get();
-    _current_scene = CoopMode::get(Level1Factory::get());
+    _current_scene = ModeSelectorFactory::get();
 
     engine.load_scene(_current_scene);
     engine.start();
