@@ -65,7 +65,7 @@ void GameBehaviour::on_checkpoint_lapped(const CheckpointLappedEvent &event) {
         }
     }
 
-    if (finished > _cars_to_finish || finished >= _cars.size())
+    if (finished >= _cars_to_finish || finished >= _cars.size())
         finish();
 }
 
