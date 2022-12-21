@@ -16,7 +16,7 @@ void ModeListener::on_uiobject_released(const UiObjectReleasedEvent &event) {
         return;
 
     const auto name = event.ui_object.get_name();
-    const auto level = Level2Factory::get();
+    const auto level = Level1Factory::get();
 
     if (name == "singleplayer") {
         Global::get_instance()->get_engine().load_scene(SingleplayerMode::get(level));

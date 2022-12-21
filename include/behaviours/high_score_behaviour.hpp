@@ -13,7 +13,6 @@ public:
     void on_checkpoint_lapped(const CheckpointLappedEvent &event) override;
     void check_high_scores(long lap_time);
 private:
-    static std::string _format_lap_time(long lap_time_milliseconds);
     static long _set_current_time();
     JsonProperties _properties;
     long _current_time;

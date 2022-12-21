@@ -3,7 +3,6 @@
 
 #include "chrono"
 #include <string>
-#include <iomanip>
 
 HighScoreBehaviour::HighScoreBehaviour(EventManager &event_manager) : CheckpointListener(event_manager),
                                                                       _properties("high-scores.json"),
@@ -28,29 +27,11 @@ void HighScoreBehaviour::check_high_scores(long lap_time)
     long diff = lap_time - _current_time;
     std::string level_name = _global->get_active_scene().get_name();
 
-    auto current_high_score = _properties.get_property(level_name + "-milliseconds");
+    auto current_high_score = _properties.get_property(level_name);
     if(!current_high_score.has_value() || std::stoll(current_high_score.value()) > diff)
     {
-        _properties.set_property(level_name + "-milliseconds", std::to_string(diff));
-        _properties.set_property(level_name + "-highscore", _format_lap_time(diff));
+        _properties.set_property(level_name, std::to_string(diff));
     }
-}
-
-std::string HighScoreBehaviour::_format_lap_time(long lap_time_milliseconds)
-{
-    std::chrono::milliseconds time(lap_time_milliseconds);
-
-    auto minutes = std::chrono::duration_cast<std::chrono::minutes>(time).count();
-    auto seconds = std::chrono::duration_cast<std::chrono::seconds>(time % std::chrono::minutes(1)).count();
-    auto milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(time % std::chrono::seconds(1)).count();
-
-    std::stringstream ss;
-    ss << std::setfill('0') << std::setw(2) << minutes << ":"
-       << std::setfill('0') << std::setw(2) << seconds << "."
-       << std::setfill('0') << std::setw(3) << milliseconds;
-
-    std::string formatted_time = ss.str();
-    return formatted_time;
 }
 
 long HighScoreBehaviour::_set_current_time()
