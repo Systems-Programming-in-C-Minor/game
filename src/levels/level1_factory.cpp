@@ -73,9 +73,11 @@ RaceLevel Level1Factory::get() {
     }
 
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-50.f, 73.f}, 270.f,1000));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-30.f, -74.f}, 90.f));
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{50.f, 76.f}, 270.f,1000));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-50.f, 73.f}, 270.f, 100));
+    scene->gameobjects.push_back(
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{40.f, 76.f}, 270.f));
 
     const std::vector<Vector2d> targets{
             Vector2d{-60.f, -72.f},
