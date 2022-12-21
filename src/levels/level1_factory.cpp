@@ -41,8 +41,7 @@ RaceLevel Level1Factory::get() {
             "grass-collider-inner",
             scene,
             scene->get_event_manager(),
-            3.f,
-            -600.f,
+            1.f,
             std::pair<std::string, std::string>
                     {"./assets/colliders/track1/track1_grass_inner_inside.xml",
                      "./assets/colliders/track1/track1_grass_inner.xml"}));
@@ -52,8 +51,7 @@ RaceLevel Level1Factory::get() {
             "grass-collider-outer",
             scene,
             scene->get_event_manager(),
-            3.f,
-            -600.f,
+            1.f,
             std::pair<std::string, std::string>
                     {"./assets/colliders/track1/track1_grass_outer_inside.xml",
                      "./assets/colliders/track1/track1_grass_outer.xml"}));

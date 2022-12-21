@@ -4,10 +4,8 @@
 #include <scene.hpp>
 
 DragCollider::DragCollider(const std::string &name, const std::shared_ptr<Scene> &scene, EventManager &event_manager,
-                           float traction_modifier, float drive_force,
-                           const std::pair<std::string, std::string> &drag_collider_paths)
-        : GameObject(name, "drag-collider"), ColliderListener(event_manager), _traction_modifier(traction_modifier),
-          _drive_force(drive_force) {
+                           float drag_modifier, const std::pair<std::string, std::string> &drag_collider_paths)
+        : GameObject(name, "drag-collider"), ColliderListener(event_manager), _drag_modifier(drag_modifier) {
 
     auto drag_collider_inner = std::make_shared<ChainCollider>(drag_collider_paths.first, true);
     auto drag_rigidbody_inner =
@@ -85,8 +83,7 @@ void DragCollider::apply_drag(Car *car, const std::shared_ptr<DragObject> &drag)
 
     auto friction = car->get_component<FrictionBehaviour>();
     drag->_drag_applied = true;
-    friction->traction += _traction_modifier;
-    car->max_drive_force += _drive_force;
+    friction->drag_modifier += _drag_modifier;
 }
 
 void DragCollider::remove_drag(Car *car, const std::shared_ptr<DragObject> &drag) const {
@@ -95,6 +92,5 @@ void DragCollider::remove_drag(Car *car, const std::shared_ptr<DragObject> &drag
 
     auto friction = car->get_component<FrictionBehaviour>();
     drag->_drag_applied = false;
-    friction->traction -= _traction_modifier;
-    car->max_drive_force -= _drive_force;
+    friction->drag_modifier -= _drag_modifier;
 }
