@@ -10,8 +10,8 @@ DragCollider::DragCollider(const std::string &name, const std::shared_ptr<Scene>
           _drive_force(drive_force) {
 
     auto drag_collider_inner = std::make_shared<ChainCollider>(drag_collider_paths.first, true);
-    auto drag_rigidbody_inner = std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f},
-                                                            1.0f);
+    auto drag_rigidbody_inner =
+            std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f}, 1.0f);
     drag_rigidbody_inner->set_collider(drag_collider_inner);
     add_component(drag_rigidbody_inner);
 
