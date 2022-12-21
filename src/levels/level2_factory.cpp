@@ -13,6 +13,7 @@
 #include "objects/debug_screen.hpp"
 #include "utils/trigonometry.hpp"
 #include "colliders/void_collider.hpp"
+#include "objects/debug_draw_target_factory.hpp"
 
 RaceLevel Level2Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f));
@@ -203,7 +204,9 @@ RaceLevel Level2Factory::get() {
         scene->gameobjects.push_back(checkpoint);
     }
 
-    const auto ui_debug_draw_ai_path = std::make_shared<DebugDrawLines>(targets);
+    DebugDrawTargetFactory(targets).get(*scene);
+
+	const auto ui_debug_draw_ai_path = std::make_shared<DebugDrawLines>(targets);
 
     scene->gameobjects.push_back(ui_debug_draw_ai_path);
 

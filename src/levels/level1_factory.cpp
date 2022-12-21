@@ -15,6 +15,7 @@
 #include <components/text.hpp>
 #include "components/audiosource.hpp"
 #include "objects/debug_draw_lines.hpp"
+#include "objects/debug_draw_target_factory.hpp"
 
 RaceLevel Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f));
@@ -235,6 +236,8 @@ RaceLevel Level1Factory::get() {
     for (const auto tire_stack: tire_stacks) {
         scene->gameobjects.push_back(TireStackFactory::get(tire_stack, scene));
     }
+
+    DebugDrawTargetFactory(targets).get(*scene);
 
     const auto ui_debug_draw_ai_path = std::make_shared<DebugDrawLines>(targets);
 
