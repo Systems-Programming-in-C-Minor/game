@@ -51,8 +51,6 @@ void CarAudioListenerComponent::tick(GameObject &no)
     const auto speed = game_object->get_component<RigidBody>()->get_current_speed();
     bool is_moving = false;
 
-    //std::cout << "lateral velocity: " << lateral_velocity << std::endl;
-
     if (speed > 3) {
         is_moving = true;
     }
