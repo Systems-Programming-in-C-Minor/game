@@ -22,14 +22,14 @@ TrackFactory::get(const std::string &name, const std::shared_ptr<Scene> &scene, 
 
     for (const auto &track_inner_path: track_inner_paths) {
         auto inner_collider = std::make_shared<ChainCollider>(track_inner_path, false);
-        auto inner_rigidbody = std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f}, Color{ 255, 255, 255, 0 });
+        auto inner_rigidbody = std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f});
         inner_rigidbody->set_collider(inner_collider);
         obj->add_component(inner_rigidbody);
     }
 
     if (track_outer_path.has_value()) {
         auto outer_collider = std::make_shared<ChainCollider>(track_outer_path.value(), false, ColliderNormal::inwards);
-        auto outer_rigidbody = std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f}, Color{ 255, 255, 255, 0 });
+        auto outer_rigidbody = std::make_shared<RigidBody>(*scene, 6, BodyType::static_body, Vector2d{0.f, 0.f});
         outer_rigidbody->set_collider(outer_collider);
         obj->add_component(outer_rigidbody);
     }
