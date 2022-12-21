@@ -11,9 +11,10 @@
 #include "components/audiosource.hpp"
 #include "objects/debug_screen.hpp"
 #include "utils/trigonometry.hpp"
+#include "colliders/void_collider.hpp"
 
 RaceLevel Level2Factory::get() {
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f));
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f, Transform {}, Color {255, 255, 255, 255}));
 
     scene->gameobjects
             .push_back(TrackFactory::get("level2-track", scene, "./assets/tracks/track2.png", 8.f));
@@ -28,12 +29,12 @@ RaceLevel Level2Factory::get() {
     const std::vector<std::pair<Vector2d, CarColor>> car_positions{
             {Vector2d{-116, 14},  CarColor::Red},
             {Vector2d{-108, 10},  CarColor::Blue},
-            {Vector2d{-116, 6},   CarColor::Yellow},
-            {Vector2d{-108, 2},   CarColor::Green},
-            {Vector2d{-116, -2},  CarColor::Orange},
-            {Vector2d{-108, -6},  CarColor::Pink},
-            {Vector2d{-116, -10}, CarColor::Purple},
-            {Vector2d{-108, -14}, CarColor::Black},
+//            {Vector2d{-116, 6},   CarColor::Yellow},
+//            {Vector2d{-108, 2},   CarColor::Green},
+//            {Vector2d{-116, -2},  CarColor::Orange},
+//            {Vector2d{-108, -6},  CarColor::Pink},
+//            {Vector2d{-116, -10}, CarColor::Purple},
+//            {Vector2d{-108, -14}, CarColor::Black},
     };
 
     std::vector<std::shared_ptr<Car>> cars;
@@ -44,13 +45,42 @@ RaceLevel Level2Factory::get() {
         scene->gameobjects.push_back(car);
     }
 
+    scene->gameobjects.push_back(std::make_shared<VoidCollider>(
+            "void-inner_small",
+            scene,
+            scene->get_event_manager(),
+            std::pair<std::string, std::string>
+                    {
+                     "./assets/colliders/track2/track2_inner_small_extra.xml",
+                "./assets/colliders/track2/track2_inner_small.xml"
+                    }));
+
+    scene->gameobjects.push_back(std::make_shared<VoidCollider>(
+            "void-inner_large",
+            scene,
+            scene->get_event_manager(),
+            std::pair<std::string, std::string>
+                    {
+                     "./assets/colliders/track2/track2_inner_large_extra.xml",
+                "./assets/colliders/track2/track2_inner_large.xml"
+                    }));
+
+    scene->gameobjects.push_back(std::make_shared<VoidCollider>(
+            "void-collider-outer",
+            scene,
+            scene->get_event_manager(),
+            std::pair<std::string, std::string>
+                    {
+                     "./assets/colliders/track2/track2_outer_extra.xml",
+                "./assets/colliders/track2/track2_outer.xml"
+                    }));
+
     scene->gameobjects.push_back(
             std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-86.f, 122.f}, 270.f, 200));
     scene->gameobjects.push_back(
             std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-20.f, -36.f}, 270.f, 200));
     scene->gameobjects.push_back(
             std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{94.f, -103.f}, 90.f, 200));
-
 
     const std::vector<Vector2d> targets{
             Vector2d{-60.f, -72.f},
