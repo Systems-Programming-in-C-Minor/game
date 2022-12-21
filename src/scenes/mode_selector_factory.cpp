@@ -71,7 +71,7 @@ std::shared_ptr<UIObject> ModeSelectorFactory::high_score_text(const std::string
 
 std::string ModeSelectorFactory::get_high_score(const std::string &level, const std::shared_ptr<JsonProperties>& properties) {
     if(properties->get_property(level + "-highscore").has_value())
-        return "High score for " + level + ":" + properties->get_property(level + "-highscore").value();
+        return "High score for " + level + ": " + properties->get_property(level + "-highscore").value();
 
     return "No high score yet for " + level;
 }
