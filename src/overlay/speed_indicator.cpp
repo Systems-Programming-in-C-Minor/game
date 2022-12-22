@@ -18,7 +18,7 @@ std::shared_ptr<GameObject> SpeedIndicator::get(EventManager &event_manager) {
                                                                   event_manager,
                                                                   Transform{Vector2d{-80.f, -75}, Vector2d{}, 0.f});
 
-    const auto speedometer_outer = std::make_shared<Sprite>("./assets/other/speedometer-outer.png", 9, 6.f);
+    const auto speedometer_outer = std::make_shared<Sprite>("./assets/other/speedometer-outer.png", 1000, 6.f);
     const auto speedometer_pin =
             std::make_shared<UIObject>(
                 "speed-indicator-pin",
@@ -31,7 +31,7 @@ std::shared_ptr<GameObject> SpeedIndicator::get(EventManager &event_manager) {
                         Vector2d{},
                         0));
 
-    const auto speedometer_pin_sprite = std::make_shared<Sprite>("./assets/other/speedometer-pin.png", 10);
+    const auto speedometer_pin_sprite = std::make_shared<Sprite>("./assets/other/speedometer-pin.png", 1000);
 
     speedometer_pin->add_component(speedometer_pin_sprite);
     ui_object_speed_indicator->add_component(speed_indicator_behaviour);
