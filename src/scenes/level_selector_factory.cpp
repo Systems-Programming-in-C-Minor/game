@@ -4,9 +4,10 @@
 #include "components/sprite.hpp"
 #include "listeners/level_listener.hpp"
 #include "objects/text_button_factory.hpp"
+#include "listeners/back_listener.hpp"
 
 std::shared_ptr<Scene> LevelSelectorFactory::get(Mode mode) {
-    auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}, Color{255, 0, 0, 255}));
+    auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}, Color{255, 0, 0, 255}), "Level Selector");
 
     scene->gameobjects.push_back(
             TextButtonFactory::get("level-1", "Race track", 40.f, scene->get_event_manager()));
@@ -21,7 +22,9 @@ std::shared_ptr<Scene> LevelSelectorFactory::get(Mode mode) {
     background_object->add_component(background);
     scene->gameobjects.push_back(background_object);
 
-    scene->gameobjects.push_back(std::make_shared<LevelListener>(scene->get_event_manager(), mode));
+    auto listener = std::make_shared<LevelListener>(scene->get_event_manager(), mode);
+    listener->add_component(std::make_shared<BackListener>(scene->get_event_manager()));
+    scene->gameobjects.push_back(listener);
 
     return scene;
 }

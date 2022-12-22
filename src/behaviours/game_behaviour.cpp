@@ -4,6 +4,7 @@
 #include <iostream>
 #include "race/objects/checkpoint.hpp"
 #include "scenes/mode_selector_factory.hpp"
+#include "scenes/winning_factory.hpp"
 
 GameBehaviour::GameBehaviour(EventManager &event_manager,
                              std::vector<std::shared_ptr<Car>> cars,
@@ -97,21 +98,7 @@ void GameBehaviour::finish() {
     if (_finished)
         return;
 
-    // TODO implement finish with text
     _finished = true;
-
-    // Sort cars
-    std::multimap<int, std::shared_ptr<Car>> car_multimap;
-    for (auto &it: _cars) {
-        it.first->is_enabled = false;
-        car_multimap.insert({it.second * -1, it.first});
-    }
-
-    int position = 0;
-    for (auto &it: car_multimap) {
-        position++;
-        std::cout << position << ' ' << it.second->get_name() << std::endl;
-    }
 }
 
 void GameBehaviour::on_start_game(const StartGameMultiplayerEvent &event) {
@@ -167,4 +154,26 @@ void GameBehaviour::on_button_pressed(const JoystickButtonPressedEvent &event) {
         default:
             break;
     }
+}
+
+void GameBehaviour::tick() {
+
+    if (!_finished) {
+        GameObject::tick();
+        return;
+    }
+
+    // Sort cars
+    std::multimap<int, std::shared_ptr<Car>> car_multimap;
+    for (auto &it: _cars) {
+        it.first->is_enabled = false;
+        car_multimap.insert({it.second * -1, it.first});
+    }
+
+    std::vector<std::shared_ptr<Car>> car_position;
+    for (auto &it: car_multimap) {
+        car_position.emplace_back(it.second);
+    }
+
+    Global::get_instance()->get_engine().load_scene(WinningFactory::get(car_position));
 }

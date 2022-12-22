@@ -20,6 +20,8 @@ public:
     explicit GameBehaviour(EventManager &event_manager, std::vector<std::shared_ptr<Car>> cars,
                            int number_of_laps = 3, int cars_to_finish = 3);
 
+    void tick() override;
+
 protected:
     void finish();
 

@@ -4,8 +4,6 @@
 #include "race/behaviours/ai_target_behaviour.hpp"
 #include <camera.hpp>
 
-#include "listeners/car_audio_listener.hpp"
-
 std::shared_ptr<Scene> CoopMode::get(const RaceLevel &level) {
 
     level.cars[0]->add_component(std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager()));
