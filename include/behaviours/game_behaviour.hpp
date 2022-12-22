@@ -23,8 +23,6 @@ public:
     void tick() override;
 
 protected:
-    void finish();
-
     void start();
 
     void toggle_fullscreen();
