@@ -29,7 +29,7 @@ RaceLevel Level2Factory::get() {
     const auto un_engine = std::make_shared<GameObject>(
             "ad_board", "ad", Transform{Vector2d{-42.f, -104.f}, Vector2d{}, 0.f, 0.8f});
     un_engine->add_component(
-            std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 10,
+            std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 0,
                                    Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
     scene->gameobjects.push_back(un_engine);
 
