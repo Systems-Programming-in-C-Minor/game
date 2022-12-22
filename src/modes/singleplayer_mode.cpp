@@ -5,11 +5,13 @@
 #include <camera.hpp>
 #include "listeners/car_audio_listener.hpp"
 #include "behaviours/high_score_behaviour.hpp"
+#include "race/behaviours/drive_input_controller_behaviour.hpp"
 
 std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {
     level.scene->get_camera()->mtp = 22.f;
 
     const auto behaviour = std::make_shared<DriveInputBehaviour>(level.scene->get_event_manager());
+    const auto controller_behaviour = std::make_shared<DriveInputControllerBehaviour>(level.scene->get_event_manager(), 0);
     const auto car_audio_listener = std::make_shared<CarAudioListenerComponent>(level.scene->get_event_manager());
     const auto speed_indicator = SpeedIndicator::get(level.scene->get_event_manager());
     const auto high_score_behaviour = std::make_shared<HighScoreBehaviour>(level.scene->get_event_manager());
@@ -17,6 +19,7 @@ std::shared_ptr<Scene> SingleplayerMode::get(const RaceLevel &level) {
     level.scene->gameobjects.push_back(speed_indicator);
 
     level.cars[0]->add_component(behaviour);
+    level.cars[0]->add_component(controller_behaviour);
     level.cars[0]->add_component(speed_indicator->get_component<SpeedIndicator>());
     level.cars[0]->add_child(level.scene->get_camera());
     level.cars[0]->add_component(car_audio_listener);
