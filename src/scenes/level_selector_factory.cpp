@@ -7,7 +7,7 @@
 #include "listeners/back_listener.hpp"
 
 std::shared_ptr<Scene> LevelSelectorFactory::get(Mode mode) {
-    auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}, Color{255, 0, 0, 255}));
+    auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}, Color{255, 0, 0, 255}), "Level Selector");
 
     scene->gameobjects.push_back(
             TextButtonFactory::get("level-1", "Race track", 40.f, scene->get_event_manager()));

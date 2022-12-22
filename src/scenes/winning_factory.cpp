@@ -6,7 +6,7 @@
 #include "listeners/back_listener.hpp"
 
 std::shared_ptr<Scene> WinningFactory::get(std::vector<std::shared_ptr<Car>> cars) {
-    auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}, Color{255, 0, 0, 255}));
+    auto scene = std::make_shared<Scene>(std::make_shared<Camera>(100.f, Transform{}, Color{255, 0, 0, 255}), "Winning Screen");
 
     int position = 0;
     for (auto &it: cars) {
