@@ -114,25 +114,6 @@
          Vector2d{-112.f, -10.f	}
     };
 
-    const std::vector<Vector2d> targets1{
-            Vector2d{-115.f    ,     99.f},
-            Vector2d{-89.f    ,     117.f},
-            Vector2d{43.f    ,     116.f},
-            Vector2d{60.f    ,     103.f},
-            Vector2d{60.f    ,     30.f},
-            Vector2d{-33.f    ,    23.f},
-            Vector2d{-48.f    ,    11.f},
-            Vector2d{-50.f    ,    -20.f},
-            Vector2d{-29.f    ,    -35.f},
-            Vector2d{100.f    ,    -35.f},
-            Vector2d{111.f    ,    -44.f},
-            Vector2d{111.f    ,    -99.f},
-            Vector2d{13.f    ,    -103.f},
-            Vector2d{-17.f    ,    -111.f},
-            Vector2d{-63.f    ,    -111.f},
-            Vector2d{-100.f    ,    -100.f},
-    };
-
     const std::vector<CheckpointDef> check_pos{
             CheckpointDef{Vector2d{-110.f, 24.f}, 25.f, 0.f},
             CheckpointDef{Vector2d{-110.f, 30.f}, 25.f, 0.f},
