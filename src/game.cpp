@@ -18,6 +18,7 @@ void Game::start_game() {
     _global->set_engine(std::move(p_engine));
     Engine &engine = _global->get_engine();
     engine.load_scene(ModeSelectorFactory::get());
+    engine.get_renderer()->toggle_fullscreen();
     engine.start();
 }
 
