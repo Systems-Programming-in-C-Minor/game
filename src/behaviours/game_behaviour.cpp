@@ -36,10 +36,10 @@ void GameBehaviour::on_key_pressed(const KeyPressedEvent &event) {
             if (alt_pressed) toggle_debug();
             break;
         case RIGHT:
-            if (alt_pressed) speedup_game();
+            if (alt_pressed && Global::get_instance()->get_engine().multiplayer_manager == nullptr) speedup_game();
             break;
         case LEFT:
-            if (alt_pressed) slowdown_game();
+            if (alt_pressed && Global::get_instance()->get_engine().multiplayer_manager == nullptr) slowdown_game();
             break;
         default:
             break;
