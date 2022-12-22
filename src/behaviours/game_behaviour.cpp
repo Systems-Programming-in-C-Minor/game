@@ -26,6 +26,7 @@ void GameBehaviour::on_key_pressed(const KeyPressedEvent &event) {
 
     switch (event.key) {
         case ESC: {
+            Global::get_instance()->get_engine().disable_multiplayer();
             Global::get_instance()->get_engine().load_scene(ModeSelectorFactory::get());
             break;
         }
@@ -175,5 +176,6 @@ void GameBehaviour::tick() {
         car_position.emplace_back(it.second);
     }
 
+    Global::get_instance()->get_engine().disable_multiplayer();
     Global::get_instance()->get_engine().load_scene(WinningFactory::get(car_position));
 }
