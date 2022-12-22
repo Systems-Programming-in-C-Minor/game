@@ -18,6 +18,8 @@
 #include "objects/debug_draw_target_factory.hpp"
 #include "utils/high_score_reader.hpp"
 #include "objects/high_score_ui_factory.hpp"
+#include <objects/debug_screen.hpp>
+
 
 RaceLevel Level1Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f), "level 1");
@@ -73,13 +75,45 @@ RaceLevel Level1Factory::get() {
     }
 
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-30.f, -74.f}, 90.f));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-53.4f, -25.7}, 300.f, 30));
+
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-50.f, 73.f}, 270.f, 100));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-50.f, 73.f}, 270.f, 50));
+
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{40.f, 76.f}, 270.f));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{13.4f, 24.1}, 180.f, 30));
+
+    scene->gameobjects.push_back(
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{76.4f, 12.1f}, 180.f, 50));
 
     const std::vector<Vector2d> targets{
+        Vector2d{-59.f	,	-74.f},
+        Vector2d{-74.f	, 	-53.f},
+        Vector2d{-61.f	, 	-33.f},
+        Vector2d{-9.f	, 	-7.f},
+        Vector2d{-6.f	, 	25.f},
+        Vector2d{-20.f	, 	36.f},
+        Vector2d{-57.f	, 	37.f},
+        Vector2d{-74.f	, 	53.f},
+        Vector2d{-67.f	, 	68.f},
+        Vector2d{-50.f	, 	74.f},
+        Vector2d{63.f	, 	74.f},
+        Vector2d{74.f	, 	58.f},
+        Vector2d{65.f	, 	44.f},
+        Vector2d{31.f	, 	44.f},
+        Vector2d{16.f	, 	27.f},
+        Vector2d{16.f	, 	-29.f},
+        Vector2d{37.f	, 	-49.f},
+        Vector2d{54.f	, 	-30.f},
+        Vector2d{33.f	, 	9.f},
+        Vector2d{41.f	, 	24.f},
+        Vector2d{67.f	, 	25.f},
+        Vector2d{74.f	, 	16.f},
+        Vector2d{74.f	, 	-60.f},
+        Vector2d{63.f	, 	-74.f}
+    };
+
+    const std::vector<Vector2d> targets1{
             Vector2d{-60.f, -72.f},
             Vector2d{-74.f, -53.f},
             Vector2d{-60.f, -34.f},
@@ -233,9 +267,10 @@ RaceLevel Level1Factory::get() {
         scene->gameobjects.push_back(TireStackFactory::get(tire_stack, scene));
     }
 
-    DebugDrawTargetFactory(targets).get(*scene);
+    DebugDrawTargetFactory(targets, 8.f).get(*scene);
 
     const auto ui_debug_draw_ai_path = std::make_shared<DebugDrawLines>(targets);
+    scene->gameobjects.push_back(std::make_shared<DebugScreenToWorld>(scene->get_event_manager()));
 
     scene->gameobjects.push_back(ui_debug_draw_ai_path);
 
