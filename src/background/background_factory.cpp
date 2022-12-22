@@ -5,6 +5,8 @@
 
 #include <memory>
 
+#include "background/tree_factory.hpp"
+
 
 BackgroundFactory::BackgroundFactory(std::vector<std::string> paths, int ptm, int resolution, int min_fps, int max_fps) :
 	_paths(std::move(paths)),
@@ -16,10 +18,10 @@ BackgroundFactory::BackgroundFactory(std::vector<std::string> paths, int ptm, in
 
 void BackgroundFactory::get(Scene& scene, int x, int y, int order_in_layer)
 {
-	for(int i = -x; i < x; ++i) {
-		for(int j = -y; j < y; ++j) {
+	for(int i = -x+1; i < x; ++i) {
+		for(int j = -y+1; j < y; ++j) {
 			const auto gameobject = std::make_shared<GameObject>(
-			"bg_"+std::to_string(i)+"_"+std::to_string(j), 
+			"bg_image", 
 			"bg", Transform{Vector2d{static_cast<float>(_resolution/_ptm*i), static_cast<float>(_resolution/_ptm*j)}, Vector2d{}});
 			gameobject->add_component(std::make_shared<Sprite>(_paths[0], -1, _ptm));
 			gameobject->add_component(get_tile(order_in_layer));
@@ -28,10 +30,24 @@ void BackgroundFactory::get(Scene& scene, int x, int y, int order_in_layer)
 	}
 }
 
-void BackgroundFactory::get(Scene& scene, int x, int y, int order_in_layer, int origin_x, int origin_y)
+void BackgroundFactory::get_static(Scene& scene, int x, int y, int order_in_layer)
 {
-	for(int i = origin_x; i < origin_x+x; ++i) {
-		for(int j = origin_y; j < origin_y+y; ++j) {
+	for(int i = -x+1; i < x; ++i) {
+		for(int j = -y+1; j < y; ++j) {
+			const auto gameobject = std::make_shared<GameObject>(
+			"bg_image", 
+			"bg", Transform{Vector2d{static_cast<float>(_resolution/_ptm*i), static_cast<float>(_resolution/_ptm*j)}, Vector2d{}});
+			int random = Random::random(static_cast<int>(_paths.size()-1), 0);
+			gameobject->add_component(std::make_shared<Sprite>(_paths[random], -1, _ptm));
+			scene.gameobjects.push_back(gameobject);
+		}
+	}
+}
+
+void BackgroundFactory::get(Scene& scene, int x, int y, int origin_x, int origin_y, int order_in_layer)
+{
+	for(int i = origin_x+1; i < origin_x+x; ++i) {
+		for(int j = origin_y+1; j < origin_y+y; ++j) {
 			const auto gameobject = std::make_shared<GameObject>(
 			"bg_"+std::to_string(i)+"_"+std::to_string(j), 
 			"bg", Transform{Vector2d{static_cast<float>(_resolution/_ptm*i), static_cast<float>(_resolution/_ptm*j)}, Vector2d{}});

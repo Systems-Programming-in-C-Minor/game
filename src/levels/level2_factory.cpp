@@ -228,7 +228,9 @@ RaceLevel Level2Factory::get() {
     const auto background_music = std::make_shared<AudioSource>("./assets/audio/background2.mp3", false, true, 0.01,
                                                                 "background");
 
-    const std::vector<std::string> paths = {
+    background_music->play();
+
+	const std::vector<std::string> paths = {
 				"./assets/tracks/track2_bg_1.png",
                 "./assets/tracks/track2_bg_2.png",
                 "./assets/tracks/track2_bg_3.png",
@@ -237,8 +239,6 @@ RaceLevel Level2Factory::get() {
 
     auto bg_factory = BackgroundFactory(paths, 8, 512, 0 ,3);
     bg_factory.get(*scene, 8, 8);
-
-    background_music->play();
 
     return RaceLevel{cars, targets, scene};
 }

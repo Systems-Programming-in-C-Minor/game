@@ -13,9 +13,12 @@
 #include <utils/random.hpp>
 #include <camera.hpp>
 #include <components/text.hpp>
+
+#include "background/background_factory.hpp"
 #include "components/audiosource.hpp"
 #include "objects/debug_draw_lines.hpp"
 #include "objects/debug_draw_target_factory.hpp"
+#include "objects/debug_screen.hpp"
 #include "utils/high_score_reader.hpp"
 #include "objects/high_score_ui_factory.hpp"
 
@@ -29,8 +32,7 @@ RaceLevel Level1Factory::get() {
                                          "./assets/tracks/track1.png",
                                          12.f,
                                          {"./assets/colliders/track1/track1_inner.xml"},
-                                         "./assets/colliders/track1/track1_outer.xml",
-                                         "./assets/tracks/track1_bg.png"
+                                         "./assets/colliders/track1/track1_outer.xml"
             ));
 
     scene->gameobjects.push_back(HighScoreUIFactory::get(get_high_score("level 1", high_score_properties), "level 1"));
@@ -239,6 +241,8 @@ RaceLevel Level1Factory::get() {
 
     scene->gameobjects.push_back(ui_debug_draw_ai_path);
 
+	scene->gameobjects.push_back(std::make_shared<DebugScreenToWorld>(scene->get_event_manager()));
+
     scene->gameobjects.push_back(FpsIndicatorFactory::get(scene->get_event_manager()));
 
     scene->gameobjects.push_back(std::make_shared<GameBehaviour>(scene->get_event_manager(), cars));
@@ -246,6 +250,16 @@ RaceLevel Level1Factory::get() {
     const auto background_music = std::make_shared<AudioSource>("./assets/audio/background1.mp3", false, true, 0.05,"background");
 
     background_music->play();
+
+	const std::vector<std::string> paths = {
+				"./assets/tracks/track1_bg_1.png",
+                "./assets/tracks/track1_bg_2.png",
+                "./assets/tracks/track1_bg_3.png",
+                "./assets/tracks/track1_bg_4.png"
+    };
+
+    auto bg_factory_bot = BackgroundFactory(paths, 15, 512);
+    bg_factory_bot.get_static(*scene, 8, 8, -2);
 
     return RaceLevel{cars, targets, scene};
 }
