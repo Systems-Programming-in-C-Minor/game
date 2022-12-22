@@ -157,10 +157,11 @@ void GameBehaviour::on_button_pressed(const JoystickButtonPressedEvent &event) {
 }
 
 void GameBehaviour::tick() {
-    GameObject::tick();
 
-    if (!_finished)
+    if (!_finished) {
+        GameObject::tick();
         return;
+    }
 
     // Sort cars
     std::multimap<int, std::shared_ptr<Car>> car_multimap;
