@@ -22,6 +22,7 @@ RaceLevel Level2Factory::get() {
     std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f), "level 2");
     std::shared_ptr<JsonProperties> high_score_properties = std::make_shared<JsonProperties>("high-scores.json");
 
+
     scene->gameobjects
             .push_back(TrackFactory::get("level2-track", scene, "./assets/tracks/track2.png", 8.f));
 
@@ -84,29 +85,34 @@ RaceLevel Level2Factory::get() {
                     }));
 
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-86.f, 122.f}, 270.f, 200));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-86.f, 122.f}, 270.f, 100));
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-20.f, -36.f}, 270.f, 200));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{-20.f, -36.f}, 270.f, 100));
     scene->gameobjects.push_back(
-            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{94.f, -103.f}, 90.f, 200));
+            std::make_shared<SpeedBoostObject>(scene->get_event_manager(), scene, Vector2d{94.f, -103.f}, 90.f, 100));
 
     const std::vector<Vector2d> targets{
-            Vector2d{-115.f    ,     99.f},
-            Vector2d{-89.f    ,     117.f},
-            Vector2d{43.f    ,     116.f},
-            Vector2d{60.f    ,     103.f},
-            Vector2d{60.f    ,     30.f},
-            Vector2d{-33.f    ,    23.f},
-            Vector2d{-48.f    ,    11.f},
-            Vector2d{-50.f    ,    -20.f},
-            Vector2d{-29.f    ,    -35.f},
-            Vector2d{100.f    ,    -35.f},
-            Vector2d{111.f    ,    -44.f},
-            Vector2d{111.f    ,    -99.f},
-            Vector2d{13.f    ,    -103.f},
-            Vector2d{-17.f    ,    -111.f},
-            Vector2d{-63.f    ,    -111.f},
-            Vector2d{-100.f    ,    -100.f},
+         Vector2d{-112.f, 94.f	},
+         Vector2d{-91.f	, 117.f	},
+         Vector2d{39.f	, 118.f	},
+         Vector2d{60.f	, 100.f	},
+         Vector2d{60.f	, 36.f	},
+         Vector2d{41.f	, 22.f	},
+         Vector2d{-30.f	, 22.f	},
+         Vector2d{-49.f	, 10.f	},
+         Vector2d{-48.f	, -22.f	},
+         Vector2d{-25.f	, -35.f	},
+         Vector2d{99.f	, -36.f	},
+         Vector2d{112.f	, -49.f	},
+         Vector2d{112.f	, -94.f	},
+         Vector2d{95.f	, -102.f},
+         Vector2d{13.f	, -103.f},
+         Vector2d{-14.f	, -111.f},
+         Vector2d{-42.f , -111.5f},
+         Vector2d{-70.f	, -110.f},
+         Vector2d{-98.f	, -103.f},
+         Vector2d{-112.f, -88.f	},
+         Vector2d{-112.f, -10.f	}
     };
 
     const std::vector<CheckpointDef> check_pos{
@@ -210,7 +216,7 @@ RaceLevel Level2Factory::get() {
         scene->gameobjects.push_back(checkpoint);
     }
 
-    DebugDrawTargetFactory(targets).get(*scene);
+    DebugDrawTargetFactory(targets, 8.f).get(*scene);
 
 	const auto ui_debug_draw_ai_path = std::make_shared<DebugDrawLines>(targets);
 
