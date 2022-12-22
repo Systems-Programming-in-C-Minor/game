@@ -14,9 +14,13 @@
 #include "utils/trigonometry.hpp"
 #include "colliders/void_collider.hpp"
 #include "objects/debug_draw_target_factory.hpp"
+#include "storage/json_properties.hpp"
+#include "utils/high_score_reader.hpp"
+#include "objects/high_score_ui_factory.hpp"
 
 RaceLevel Level2Factory::get() {
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f));
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f), "level 2");
+    std::shared_ptr<JsonProperties> high_score_properties = std::make_shared<JsonProperties>("high-scores.json");
 
     scene->gameobjects
             .push_back(TrackFactory::get("level2-track", scene, "./assets/tracks/track2.png", 8.f));
@@ -27,6 +31,8 @@ RaceLevel Level2Factory::get() {
             std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 10,
                                    Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
     scene->gameobjects.push_back(un_engine);
+
+    scene->gameobjects.push_back(HighScoreUIFactory::get(get_high_score("level 2", high_score_properties), "level 2"));
 
     const std::vector<std::pair<Vector2d, CarColor>> car_positions{
             {Vector2d{-116, 14},  CarColor::Red},
