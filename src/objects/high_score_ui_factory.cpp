@@ -10,6 +10,6 @@ HighScoreUIFactory::get(const std::string &new_high_score, const std::string& le
             "show-high-score", "high-score", level_name == "level 1" ? level1 : level2);
     high_score_ui->add_component(
             std::make_shared<Text>(new_high_score, "./assets/fonts/roboto/Roboto-Medium.ttf", 350, 10,
-                                   Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
+                                   Color{255, 255, 255, 170}, Color{0, 0, 0, 1}, 1));
     return high_score_ui;
 }

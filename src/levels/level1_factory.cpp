@@ -35,6 +35,13 @@ RaceLevel Level1Factory::get() {
                                          "./assets/tracks/track1_bg.png"
             ));
 
+    const auto un_engine = std::make_shared<GameObject>(
+            "ad_board", "ad", Transform{Vector2d{0.f, 66.9f}, Vector2d{}, 0.f, 0.8f});
+    un_engine->add_component(
+            std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 620, 1,
+                                   Color{255, 255, 255, 170}, Color{0, 0, 0, 1}, 1));
+    scene->gameobjects.push_back(un_engine);
+
     scene->gameobjects.push_back(HighScoreUIFactory::get(get_high_score("level 1", high_score_properties), "level 1"));
 
     scene->gameobjects.push_back(std::make_shared<DragCollider>(

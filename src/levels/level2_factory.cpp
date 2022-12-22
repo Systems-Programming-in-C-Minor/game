@@ -30,7 +30,7 @@ RaceLevel Level2Factory::get() {
             "ad_board", "ad", Transform{Vector2d{-42.f, -104.f}, Vector2d{}, 0.f, 0.8f});
     un_engine->add_component(
             std::make_shared<Text>("Powered by UnEngine", "./assets/fonts/roboto/Roboto-Medium.ttf", 500, 0,
-                                   Color{255, 255, 255, 0}, Color{0, 0, 0, 1}, 1));
+                                   Color{255, 255, 255, 170}, Color{0, 0, 0, 1}, 1));
     scene->gameobjects.push_back(un_engine);
 
     scene->gameobjects.push_back(HighScoreUIFactory::get(get_high_score("level 2", high_score_properties), "level 2"));
@@ -218,7 +218,7 @@ RaceLevel Level2Factory::get() {
 
     DebugDrawTargetFactory(targets, 8.f).get(*scene);
 
-	const auto ui_debug_draw_ai_path = std::make_shared<DebugDrawLines>(targets);
+    const auto ui_debug_draw_ai_path = std::make_shared<DebugDrawLines>(targets);
 
     scene->gameobjects.push_back(ui_debug_draw_ai_path);
 
