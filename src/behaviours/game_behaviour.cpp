@@ -63,11 +63,16 @@ void GameBehaviour::on_checkpoint_lapped(const CheckpointLappedEvent &event) {
     const auto car_behaviour = reinterpret_cast<Car *>(event.checkpoint_behaviour->game_object);
     car_behaviour->is_enabled = false;
 
+    int finished = 0;
     for (auto &car: _cars) {
-        if (car.first->get_component<CheckpointBehaviour>()->get_number_of_laps() >= _number_of_laps)
+        if (car.first->get_component<CheckpointBehaviour>()->get_number_of_laps() >= _number_of_laps) {
+            finished++;
             car.second++;
+        }
     }
 
+    if (finished >= _cars_to_finish || finished >= _cars.size())
+        finish();
 }
 
 void GameBehaviour::on_checkpoint_reached(const CheckpointReachedEvent &event) {
@@ -89,12 +94,19 @@ void GameBehaviour::_start() {
     _started = true;
 }
 
+void GameBehaviour::finish() {
+    if (_finished)
+        return;
+
+    _finished = true;
+}
+
 void GameBehaviour::on_start_game(const StartGameMultiplayerEvent &event) {
     _start();
 }
 
 void GameBehaviour::on_stop_game(const StopGameMultiplayerEvent &event) {
-    _finished = true;
+    finish();
 }
 
 void GameBehaviour::toggle_fullscreen() {
@@ -145,17 +157,12 @@ void GameBehaviour::on_button_pressed(const JoystickButtonPressedEvent &event) {
 }
 
 void GameBehaviour::tick() {
-    int finished = 0;
-    for (auto &car: _cars) {
-        if (car.first->get_component<CheckpointBehaviour>()->get_number_of_laps() >= _number_of_laps)
-            finished++;
-    }
+    GameObject::tick();
 
-    if (finished < _cars_to_finish && finished < _cars.size() && !_finished) {
-        GameObject::tick();
+    if (!_finished)
         return;
-    }
 
+    // Sort cars
     std::multimap<int, std::shared_ptr<Car>> car_multimap;
     for (auto &it: _cars) {
         it.first->is_enabled = false;
