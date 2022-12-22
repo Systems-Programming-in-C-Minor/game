@@ -8,6 +8,9 @@
 #include "objects/speed_boost_object.hpp"
 #include <camera.hpp>
 #include <components/text.hpp>
+#include <string>
+
+#include "background/background_factory.hpp"
 #include "components/audiosource.hpp"
 #include "objects/debug_draw_lines.hpp"
 #include "objects/debug_screen.hpp"
@@ -224,6 +227,17 @@ RaceLevel Level2Factory::get() {
 
     const auto background_music = std::make_shared<AudioSource>("./assets/audio/background2.mp3", false, true, 0.01,
                                                                 "background");
+
+    const std::vector<std::string> paths = {
+				"./assets/tracks/track2_bg_1.png",
+                "./assets/tracks/track2_bg_2.png",
+                "./assets/tracks/track2_bg_3.png",
+                "./assets/tracks/track2_bg_2.png"
+    };
+
+    auto bg_factory = BackgroundFactory(paths, 8, 512, 0 ,3);
+    bg_factory.get(*scene, 8, 8);
+
     background_music->play();
 
     return RaceLevel{cars, targets, scene};
