@@ -962,3 +962,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# High score file
+high-scores.json
