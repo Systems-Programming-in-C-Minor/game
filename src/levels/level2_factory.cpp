@@ -19,7 +19,7 @@
 #include "objects/high_score_ui_factory.hpp"
 
 RaceLevel Level2Factory::get() {
-    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(5.f), "level 2");
+    std::shared_ptr<Scene> scene = std::make_shared<Scene>(std::make_shared<Camera>(4.f), "level 2");
     std::shared_ptr<JsonProperties> high_score_properties = std::make_shared<JsonProperties>("high-scores.json");
 
     scene->gameobjects
